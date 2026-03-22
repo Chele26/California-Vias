@@ -15,12 +15,12 @@ var CV_DATA = {
     location: "237 N Montebello Blvd, Montebello, CA 90640",
     beds: 3, baths: 1, area: "1,323 sqft", price: "$465,000",
     soldDate: "01/31/2019",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=237+N+Montebello+Blvd%2C+Montebello%2C+CA+90640&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=1qCFNFuhQIg6h_V7xTlUFXniF9A=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100",
     description: "Casa unifamiliar de 1,323 sqft con 3 recámaras y 1 baño, construida en 1936. Terreno de 3,920 sqft en Montebello. Nivel único.",
     features: ["3 Recámaras", "1 Baño", "Nivel único", "Terreno 3,920 sqft", "Construida 1936"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=237+N+Montebello+Blvd%2C+Montebello%2C+CA+90640&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=1qCFNFuhQIg6h_V7xTlUFXniF9A="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100"
     ]
   },
 

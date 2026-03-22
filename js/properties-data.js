@@ -184,12 +184,12 @@ var CV_DATA = {
     location: "9305 Elizabeth Ave, South Gate, CA 90280",
     beds: 2, baths: 1, area: "960 sqft", price: "$329,000",
     soldDate: "11/04/2014",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=9305+Elizabeth+Ave%2C+South+Gate%2C+CA+90280&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=rqQ6C-1GKSmpKPDk3aDUWsXFL8w=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=AFHa5j-B-R8qzZvgsTIm2A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=266.61353&pitch=0&thumbfov=100",
     description: "Casa unifamiliar de 960 sqft con 2 recámaras y 1 baño, construida en 1934. Amplio terreno de 6,969 sqft en South Gate.",
     features: ["2 Recámaras", "1 Baño", "Terreno 6,969 sqft", "2 Estacionamientos", "Construida 1934"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=9305+Elizabeth+Ave%2C+South+Gate%2C+CA+90280&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=rqQ6C-1GKSmpKPDk3aDUWsXFL8w="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=AFHa5j-B-R8qzZvgsTIm2A&cb_client=search.gws-prod.gps&w=408&h=240&yaw=266.61353&pitch=0&thumbfov=100"
     ]
   },
 

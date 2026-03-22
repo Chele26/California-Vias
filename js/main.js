@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════
-   CALIFORNIA VIAS — main.js
+   CALIFORNIA VILLAS — main.js
    ══════════════════════════════════════════════════ */
 
 const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -179,7 +179,7 @@ if (form) {
     const message = msg.value.trim() || "No additional message.";
 
     const waText = [
-      "🏡 *New Contact Request — California Vias*",
+      "🏡 *New Contact Request — California Villas*",
       "",
       `👤 *Name:* ${name}`,
       `📧 *Email:* ${email}`,

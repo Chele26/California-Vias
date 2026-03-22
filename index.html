@@ -1,212 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>California Vias| Luxury Real Estate</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<style>
-:root{
-  --gold:#C9A84C;--gold-l:#E8C97A;--gold-p:#F5E6C0;--gold-d:#8B6914;
-  --bk:#080808;--bk2:#0F0F0F;--bk3:#161616;--bk4:#1E1E1E;
-  --wh:#F8F5EE;--wh2:rgba(248,245,238,.68);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bk);color:var(--wh);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.03;
-background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
-background-size:300px 300px;}
-#cur,#cur2{position:fixed;top:0;left:0;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%);z-index:99999;}
-#cur{width:9px;height:9px;background:var(--gold);}
-#cur2{width:36px;height:36px;border:1px solid var(--gold);opacity:.55;transition:width .28s,height .28s,opacity .28s;}
-body.lh #cur2{width:56px;height:56px;opacity:.3;}
-body.lh #cur{transform:translate(-50%,-50%) scale(1.6);}
-.gold-bar{height:1px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent);}
-.mini-bar{width:56px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.4rem auto;}
-.lbl{display:block;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;}
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:300;line-height:1.1;}
-.sec-h em{font-style:italic;color:var(--gold-l);}
-.btn-g{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:var(--bk);padding:.85rem 2.4rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-family:'Montserrat',sans-serif;font-weight:500;text-decoration:none;border:none;transition:background .28s,transform .28s;cursor:none;}
-.btn-g:hover{background:var(--gold-l);transform:translateY(-2px);color:var(--bk);}
-.btn-o{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--wh);border:1px solid rgba(248,245,238,.35);padding:.85rem 2.4rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;font-family:'Montserrat',sans-serif;text-decoration:none;transition:border-color .28s,color .28s,transform .28s;cursor:none;}
-.btn-o:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
-.pad{padding:7rem 0;}
-.bg2{background:var(--bk2);}
-.bg3{background:var(--bk3);}
-.grid-bg{background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:64px 64px;}
-.shim{background:linear-gradient(90deg,var(--gold-d) 0%,var(--gold-l) 40%,var(--gold) 50%,var(--gold-l) 60%,var(--gold-d) 100%);background-size:220% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite;}
-@keyframes shimmer{to{background-position:-220% center;}}
-.rv{opacity:0;transform:translateY(52px);transition:opacity .8s ease,transform .8s ease;}
-.rv.on{opacity:1;transform:translateY(0);}
-.rvL{opacity:0;transform:translateX(-52px);transition:opacity .8s ease,transform .8s ease;}
-.rvL.on{opacity:1;transform:translateX(0);}
-.rvR{opacity:0;transform:translateX(52px);transition:opacity .8s ease,transform .8s ease;}
-.rvR.on{opacity:1;transform:translateX(0);}
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>California Vias — Homes With Style & Perspective</title>
 
-/* NAV */
-#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.5rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .4s,padding .4s;}
-#nav.scrolled{background:rgba(8,8,8,.96);padding:1rem 3rem;border-bottom:1px solid rgba(201,168,76,.14);backdrop-filter:blur(14px);}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;letter-spacing:.1em;color:var(--gold);text-decoration:none;}
-.nav-logo span{color:var(--wh);font-weight:300;}
-.nav-ul{display:flex;gap:2.4rem;list-style:none;}
-.nav-ul a{color:var(--wh2);text-decoration:none;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;transition:color .28s;position:relative;}
-.nav-ul a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .28s;}
-.nav-ul a:hover{color:var(--gold);}
-.nav-ul a:hover::after{width:100%;}
-.nav-cta{border:1px solid var(--gold)!important;color:var(--gold)!important;padding:.45rem 1.3rem;}
-.nav-cta:hover{background:var(--gold)!important;color:var(--bk)!important;}
-.nav-cta:hover::after{display:none!important;}
-#hbg-btn{display:none;background:none;border:none;color:var(--gold);font-size:1.35rem;cursor:none;}
-#mob{display:none;position:fixed;inset:0;background:rgba(8,8,8,.98);z-index:9998;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
-#mob.open{display:flex;}
-#mob a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--wh);text-decoration:none;transition:color .28s;}
-#mob a:hover{color:var(--gold);}
-#mob-x{position:absolute;top:1.8rem;right:2rem;background:none;border:none;color:var(--gold);font-size:1.5rem;cursor:none;}
-
-/* HERO */
-#hero{height:100vh;min-height:680px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.h-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1920&q=85') center/cover no-repeat;transform:scale(1.1);transition:transform 12s ease;}
-#hero.loaded .h-bg{transform:scale(1);}
-.h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(8,8,8,.9) 0%,rgba(8,8,8,.58) 55%,rgba(139,105,20,.12) 100%);}
-.h-body{position:relative;z-index:2;text-align:center;padding:0 1.2rem;}
-.h-eye{font-size:.62rem;letter-spacing:.44em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;opacity:0;transform:translateY(18px);animation:fu 1s ease .3s forwards;}
-.h-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,7.8rem);font-weight:300;line-height:1.02;opacity:0;transform:translateY(28px);animation:fu 1.1s ease .5s forwards;}
-.h-title em{display:block;font-style:italic;color:var(--gold-l);}
-.h-sub{font-size:.76rem;letter-spacing:.22em;color:var(--wh2);max-width:480px;margin:2rem auto 3rem;opacity:0;animation:fu 1s ease .75s forwards;}
-.h-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;opacity:0;animation:fu 1s ease .95s forwards;}
-.h-scr{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:fu 1s ease 1.2s forwards;}
-.h-scr span{font-size:.58rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
-.h-line{width:1px;height:48px;background:linear-gradient(180deg,var(--gold),transparent);animation:scP 2s ease infinite;}
-.cn{position:absolute;width:55px;height:55px;z-index:3;}
-.cn::before,.cn::after{content:'';position:absolute;background:var(--gold);}
-.cn::before{width:100%;height:1px;top:0;left:0;}
-.cn::after{width:1px;height:100%;top:0;left:0;}
-.tl{top:5.5rem;left:2rem;}.tr{top:5.5rem;right:2rem;transform:scaleX(-1);}
-.bl{bottom:3.5rem;left:2rem;transform:scaleY(-1);}.br{bottom:3.5rem;right:2rem;transform:scale(-1);}
-@keyframes fu{to{opacity:1;transform:translateY(0);}}
-@keyframes scP{0%,100%{opacity:1;}50%{opacity:.35;}}
-
-/* ABOUT */
-.a-wrap{position:relative;display:inline-block;}
-.a-frame{position:absolute;inset:-13px 13px 13px -13px;border:1px solid var(--gold);z-index:0;}
-.a-img{width:100%;max-width:400px;aspect-ratio:3/4;object-fit:cover;position:relative;z-index:1;display:block;}
-.a-badge{position:absolute;bottom:-1.4rem;right:-1.4rem;z-index:2;background:var(--gold);color:var(--bk);width:105px;height:105px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:'Cormorant Garamond',serif;}
-.a-badge strong{font-size:2rem;line-height:1;}
-.a-badge small{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;}
-.a-stat{border-left:1px solid rgba(201,168,76,.28);padding-left:1.4rem;}
-.a-stat strong{font-family:'Cormorant Garamond',serif;font-size:2.4rem;display:block;line-height:1;}
-.a-stat p{font-size:.7rem;color:var(--wh2);letter-spacing:.07em;margin:0;}
-
-/* PROPERTIES */
-.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:2px;}
-.p-card{position:relative;overflow:hidden;aspect-ratio:4/5;opacity:0;transform:translateY(60px);transition:opacity .7s ease,transform .7s ease;}
-.p-card.on{opacity:1;transform:translateY(0);}
-.p-card:nth-child(1){transition-delay:0s;}.p-card:nth-child(2){transition-delay:.1s;}.p-card:nth-child(3){transition-delay:.2s;}
-.p-card:nth-child(4){transition-delay:.3s;}.p-card:nth-child(5){transition-delay:.4s;}.p-card:nth-child(6){transition-delay:.5s;}
-.p-img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease;}
-.p-card:hover .p-img{transform:scale(1.07);}
-.p-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(8,8,8,.96) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;}
-.p-tag{position:absolute;top:1.1rem;left:1.1rem;background:var(--gold);color:var(--bk);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;padding:.22rem .75rem;font-weight:600;}
-.p-tag.exc{background:rgba(8,8,8,.85);color:var(--gold);border:1px solid var(--gold);}
-.p-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--wh);margin-bottom:.25rem;}
-.p-loc{font-size:.67rem;color:var(--gold);letter-spacing:.15em;margin-bottom:.7rem;}
-.p-det{display:flex;gap:1.1rem;font-size:.65rem;color:var(--wh2);}
-.p-price{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--gold-l);margin-top:.5rem;}
-.p-hov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s;}
-.p-card:hover .p-hov{opacity:1;}
-.p-hov a{background:rgba(201,168,76,.12);border:1px solid var(--gold);color:var(--gold);padding:.65rem 1.7rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);transition:background .28s,color .28s;}
-.p-hov a:hover{background:var(--gold);color:var(--bk);}
-
-/* SERVICES */
-.s-card{border:1px solid rgba(201,168,76,.13);padding:2.4rem 2rem;text-align:center;height:100%;transition:border-color .35s,transform .35s,background .35s;opacity:0;transform:translateY(50px);}
-.s-card.on{opacity:1;transform:translateY(0);}
-.s-card:hover{border-color:var(--gold);transform:translateY(-8px);background:rgba(201,168,76,.04);}
-.s-card i{font-size:1.8rem;color:var(--gold);display:block;margin-bottom:1.4rem;}
-.s-card h4{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--wh);margin-bottom:.75rem;}
-.s-card p{font-size:.76rem;color:var(--wh2);line-height:1.95;}
-
-/* TESTIMONIALS */
-.t-wrap{overflow:hidden;}
-.t-track{display:flex;transition:transform .62s cubic-bezier(.25,.46,.45,.94);}
-.t-slide{min-width:100%;padding:0 1.2rem;}
-.t-card{max-width:780px;margin:0 auto;text-align:center;opacity:0;transform:translateY(36px);transition:opacity .8s,transform .8s;}
-.t-card.on{opacity:1;transform:translateY(0);}
-.t-quote{font-family:'Cormorant Garamond',serif;font-size:5.5rem;color:var(--gold);line-height:.4;display:block;margin-bottom:1.8rem;opacity:.35;}
-.t-stars{color:var(--gold);font-size:.85rem;letter-spacing:.1em;margin-bottom:1.4rem;}
-.t-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.4vw,1.75rem);font-style:italic;font-weight:300;line-height:1.65;color:var(--wh);margin-bottom:1.8rem;}
-.t-auth{color:var(--gold);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;}
-.t-role{color:var(--wh2);font-size:.62rem;margin-top:.25rem;}
-.t-ctrl{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:3rem;}
-.t-btn{background:none;border:1px solid rgba(201,168,76,.35);color:var(--gold);width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:none;transition:background .28s,border-color .28s;}
-.t-btn:hover{background:var(--gold);color:var(--bk);border-color:var(--gold);}
-.t-dots{display:flex;gap:.5rem;}
-.t-dot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.28);cursor:none;transition:background .28s,transform .28s;}
-.t-dot.on{background:var(--gold);transform:scale(1.4);}
-
-/* SOCIAL STRIP */
-.soc-strip{background:var(--gold);padding:.95rem 0;}
-.soc-inner{display:flex;justify-content:center;align-items:center;gap:2.2rem;flex-wrap:wrap;}
-.soc-link{color:var(--bk);font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:.45rem;transition:opacity .28s;}
-.soc-link i{font-size:1rem;}
-.soc-link:hover{opacity:.6;color:var(--bk);}
-
-/* CONTACT */
-.c-wrap{border:1px solid rgba(201,168,76,.18);background:rgba(12,12,12,.92);backdrop-filter:blur(10px);}
-.c-info{padding:3rem;border-right:1px solid rgba(201,168,76,.12);}
-.c-form{padding:3rem;}
-.c-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.9rem;}
-.c-icon{color:var(--gold);font-size:.95rem;margin-top:.1rem;min-width:18px;}
-.c-item h6{font-size:.6rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:.25rem;}
-.c-item p,.c-item a{font-size:.8rem;color:var(--wh2);text-decoration:none;}
-.c-item a:hover{color:var(--gold);}
-.fi{width:100%;background:rgba(255,255,255,.04);border:none;border-bottom:1px solid rgba(201,168,76,.28);color:var(--wh);padding:.85rem 0;font-family:'Montserrat',sans-serif;font-size:.78rem;outline:none;transition:border-color .28s,background .28s;}
-.fi::placeholder{color:rgba(248,245,238,.28);}
-.fi:focus{border-color:var(--gold);background:rgba(201,168,76,.02);}
-textarea.fi{resize:none;height:95px;}
-.fl{font-size:.6rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:.45rem;}
-.fi-sel{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23C9A84C'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .5rem center;background-color:rgba(255,255,255,.04);}
-.fi-sel option{background:var(--bk3);color:var(--wh);}
-.fcheck{display:flex;align-items:center;gap:.65rem;margin-bottom:.5rem;}
-.fcheck input[type=checkbox]{appearance:none;width:13px;height:13px;border:1px solid rgba(201,168,76,.4);background:transparent;cursor:none;position:relative;flex-shrink:0;transition:background .2s;}
-.fcheck input:checked{background:var(--gold);border-color:var(--gold);}
-.fcheck input:checked::after{content:'checkmark';font-size:0;position:absolute;top:-2px;left:2px;}
-.fcheck label{font-size:.7rem;color:var(--wh2);cursor:none;}
-.ferr{font-size:.63rem;color:#e07070;display:none;margin-top:.3rem;}
-.ferr.show{display:block;}
-#success-msg{display:none;border:1px solid var(--gold);background:rgba(201,168,76,.08);padding:1.6rem;text-align:center;color:var(--gold);font-size:.8rem;letter-spacing:.1em;margin-top:1rem;}
-
-/* FOOTER */
-footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.5rem 0 2rem;}
-.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--gold);display:block;margin-bottom:.7rem;}
-.f-tag{font-size:.65rem;letter-spacing:.2em;color:var(--wh2);}
-.f-head{font-size:.62rem;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:1.1rem;}
-.f-ul{list-style:none;}
-.f-ul li{margin-bottom:.55rem;}
-.f-ul a{color:var(--wh2);text-decoration:none;font-size:.76rem;transition:color .28s;}
-.f-ul a:hover{color:var(--gold);}
-.f-soc{display:flex;gap:.85rem;flex-wrap:wrap;}
-.f-si{width:36px;height:36px;border:1px solid rgba(201,168,76,.28);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;font-size:.85rem;transition:background .28s,border-color .28s;}
-.f-si:hover{background:var(--gold);color:var(--bk);border-color:var(--gold);}
-.f-bot{border-top:1px solid rgba(201,168,76,.1);margin-top:3rem;padding-top:1.4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
-.f-copy{font-size:.66rem;color:rgba(248,245,238,.32);}
-.f-made{font-size:.63rem;color:rgba(248,245,238,.18);}
-
-/* WA */
-.wa{position:fixed;bottom:2rem;right:2rem;z-index:998;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.45rem;text-decoration:none;box-shadow:0 4px 22px rgba(37,211,102,.35);animation:flt 3.2s ease-in-out infinite;}
-.wa:hover{color:#fff;transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.5);}
-@keyframes flt{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-
-@media(max-width:900px){
-  .nav-ul{display:none;}#hbg-btn{display:block;}#nav{padding:1.2rem 1.5rem;}#nav.scrolled{padding:.85rem 1.5rem;}
-  .cn{display:none;}.c-info{border-right:none;border-bottom:1px solid rgba(201,168,76,.12);}
-  .a-stat{border-left:none;border-top:1px solid rgba(201,168,76,.28);padding-left:0;padding-top:1rem;}
-  .f-bot{flex-direction:column;text-align:center;}
-}
-@media(max-width:576px){.p-grid{grid-template-columns:1fr;}.soc-inner{gap:1.2rem;}}
-</style>
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
@@ -215,43 +18,81 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
 
 <!-- MOBILE MENU -->
 <div id="mob">
-  <button id="mob-x"><i class="fas fa-times"></i></button>
+  <button id="mob-x" aria-label="Close menu"><i class="fas fa-times"></i></button>
   <a href="#about">About Laura</a>
   <a href="#properties">Properties</a>
+  <a href="#sold">Sold</a>
   <a href="#services">Services</a>
   <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Book a Visit</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <!-- NAVBAR -->
 <nav id="nav">
-  <a class="nav-logo" href="#">California <span>Vistas</span></a>
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="California Vias logo" class="logo-img">
+    <div class="logo-text-wrap">
+      <!-- floating stars & sparkles -->
+      <div class="logo-stars" aria-hidden="true">
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-sparkle"></span>
+        <span class="logo-sparkle"></span>
+        <span class="logo-sparkle"></span>
+      </div>
+      <span class="logo-text">California Vias</span>
+      <span class="logo-sub">Luxury Real Estate</span>
+    </div>
+  </a>
+
   <ul class="nav-ul">
     <li><a href="#about">About</a></li>
     <li><a href="#properties">Properties</a></li>
+    <li><a href="#sold">Sold</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact" class="nav-cta">Book a Visit</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button id="hbg-btn"><i class="fas fa-bars"></i></button>
+
+  <button id="hbg-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="h-bg" id="hBg"></div>
   <div class="h-ov"></div>
-  <div class="cn tl"></div><div class="cn tr"></div>
-  <div class="cn bl"></div><div class="cn br"></div>
+  <div class="h-sheen"></div>
+  <div class="cn tl"></div>
+  <div class="cn tr"></div>
+  <div class="cn bl"></div>
+  <div class="cn br"></div>
+
   <div class="h-body">
-    <p class="h-eye">✦ &nbsp; California Vistas Luxury Real Estate &nbsp; ✦</p>
-    <h1 class="h-title">Where Dreams<br><em>Find Their Home</em></h1>
-    <p class="h-sub">Curating Extraordinary Properties for Exceptional Lives.<br>Elegance is not a luxury — it is a standard.</p>
+    <p class="h-eye">✦ &nbsp; California Vias &nbsp; ✦</p>
+    <h1 class="h-title">
+      Homes With<br><em>Style &amp; Perspective</em>
+    </h1>
+    <p class="h-sub">
+      A curated presentation of homes, spaces and opportunities with a more personal approach.
+    </p>
     <div class="h-btns">
       <a href="#properties" class="btn-g">Explore Properties</a>
-      <a href="#contact" class="btn-o">Schedule a Visit</a>
+      <a href="#contact" class="btn-o">Get in Touch</a>
     </div>
   </div>
-  <div class="h-scr"><span>Discover</span><div class="h-line"></div></div>
+
+  <div class="h-scr">
+    <span>Discover</span>
+    <div class="h-line"></div>
+  </div>
 </section>
 
 <!-- ABOUT -->
@@ -261,83 +102,200 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
       <div class="col-lg-5 text-center text-lg-start rvL">
         <div class="a-wrap d-inline-block">
           <div class="a-frame"></div>
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Laura – Your Agent" class="a-img"/>
-          <div class="a-badge"><strong>15+</strong><small>Years of<br>Excellence</small></div>
+          <div class="a-frame-s"></div>
+          <img src="assets/identidad/laura.jpg" alt="Laura" class="a-img"/>
+          <div class="a-badge">
+            <strong>15+</strong>
+            <small>Years of<br>Experience</small>
+          </div>
         </div>
       </div>
+
       <div class="col-lg-7 rvR">
-        <span class="lbl">✦ Meet Your Agent</span>
-        <h2 class="sec-h mb-3">I'm <em>Laura</em>,<br>Your Luxury Real Estate Expert</h2>
+        <span class="lbl">✦ Meet Laura</span>
+        <h2 class="sec-h mb-3">I'm <em>Laura</em>,<br>Your Property Guide</h2>
         <div class="mini-bar" style="margin-left:0;"></div>
-        <p style="color:var(--wh2);font-size:.83rem;line-height:2;margin-bottom:1.4rem;">With over 15 years navigating California's most prestigious markets, I bring passion, elegance, and an unwavering commitment to finding your perfect home. Every client is family, every property is a masterpiece waiting to be discovered.</p>
-        <p style="color:var(--wh2);font-size:.83rem;line-height:2;margin-bottom:2.5rem;">My approach blends deep market expertise with a warm, personalized touch — because buying or selling a home is one of life's most meaningful journeys, and you deserve nothing less than extraordinary.</p>
+
+        <p class="about-text">
+          I help clients present, discover and understand homes with clarity, care and attention to detail.
+        </p>
+        <p class="about-text">
+          Every property has a story, and every client deserves a process that feels personal, organized and professional.
+        </p>
+
         <div class="row g-4 mb-4">
-          <div class="col-auto"><div class="a-stat"><strong class="shim" data-val="2" data-sfx="B+">$2B+</strong><p>In Luxury Sales</p></div></div>
-          <div class="col-auto"><div class="a-stat"><strong class="shim" data-val="500" data-sfx="+">500+</strong><p>Happy Families</p></div></div>
-          <div class="col-auto"><div class="a-stat"><strong class="shim" data-val="98" data-sfx="%">98%</strong><p>Satisfaction</p></div></div>
+          <div class="col-auto">
+            <div class="a-stat">
+              <strong class="shim" data-val="2" data-pre="$" data-sfx="M+">$2M+</strong>
+              <p>Value Managed</p>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="a-stat">
+              <strong class="shim" data-val="120" data-sfx="+">120+</strong>
+              <p>Clients Assisted</p>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="a-stat">
+              <strong class="shim" data-val="98" data-sfx="%">98%</strong>
+              <p>Satisfaction</p>
+            </div>
+          </div>
         </div>
+
         <a href="#contact" class="btn-g">Work With Laura</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROPERTIES -->
+<!-- PROPERTIES (Active/Available) -->
 <section id="properties" class="pad">
   <div class="container mb-5">
     <div class="text-center rv">
-      <span class="lbl">✦ Featured Listings</span>
-      <h2 class="sec-h">Exceptional <em>Properties</em></h2>
+      <span class="lbl">✦ Featured Collection</span>
+      <h2 class="sec-h">Selected <em>Properties</em></h2>
       <div class="mini-bar"></div>
-      <p style="color:var(--wh2);font-size:.8rem;max-width:480px;margin:0 auto;letter-spacing:.05em;">Each property is handpicked for its architectural distinction, prime location, and unique character.</p>
+      <p class="section-sub">
+        A curated selection of homes presented with strong visuals, clear details and a polished experience.
+      </p>
     </div>
   </div>
-  <div class="p-grid">
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag">For Sale</span><h3 class="p-name">Beverly Hills Estate</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Beverly Hills, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>6 Beds</span><span><i class="fas fa-bath me-1"></i>7 Baths</span><span><i class="fas fa-expand me-1"></i>8,400 sqft</span></div><p class="p-price">$12,500,000</p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag exc">Exclusive</span><h3 class="p-name">Malibu Oceanfront</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Malibu, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>5 Beds</span><span><i class="fas fa-bath me-1"></i>5 Baths</span><span><i class="fas fa-expand me-1"></i>6,200 sqft</span></div><p class="p-price">$18,900,000</p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag">For Sale</span><h3 class="p-name">Hollywood Hills Retreat</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Los Angeles, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>4 Beds</span><span><i class="fas fa-bath me-1"></i>4 Baths</span><span><i class="fas fa-expand me-1"></i>4,800 sqft</span></div><p class="p-price">$7,200,000</p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag">For Lease</span><h3 class="p-name">Bel Air Manor</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Bel Air, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>7 Beds</span><span><i class="fas fa-bath me-1"></i>9 Baths</span><span><i class="fas fa-expand me-1"></i>12,000 sqft</span></div><p class="p-price">$95,000<span style="font-size:.9rem;color:var(--wh2)">/mo</span></p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag">New Listing</span><h3 class="p-name">Pacific Palisades Villa</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Pacific Palisades, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>5 Beds</span><span><i class="fas fa-bath me-1"></i>6 Baths</span><span><i class="fas fa-expand me-1"></i>7,100 sqft</span></div><p class="p-price">$14,750,000</p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
-    <div class="p-card"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" class="p-img" alt=""/><div class="p-ov"><span class="p-tag exc">Coming Soon</span><h3 class="p-name">Santa Barbara Hacienda</h3><p class="p-loc"><i class="fas fa-map-marker-alt me-1"></i>Santa Barbara, CA</p><div class="p-det"><span><i class="fas fa-bed me-1"></i>6 Beds</span><span><i class="fas fa-bath me-1"></i>7 Baths</span><span><i class="fas fa-expand me-1"></i>9,500 sqft</span></div><p class="p-price">$22,000,000</p></div><div class="p-hov"><a href="#contact">Request Info</a></div></div>
+
+  <div class="p-grid" id="propertiesGrid"></div>
+
+  <div class="text-center mt-5 rv">
+    <a href="#contact" class="btn-o">Ask About Available Homes &nbsp;<i class="fas fa-arrow-right fa-xs"></i></a>
   </div>
-  <div class="text-center mt-5 rv"><a href="#contact" class="btn-o">View All Properties &nbsp;<i class="fas fa-arrow-right fa-xs"></i></a></div>
+</section>
+
+<!-- SOLD PROPERTIES -->
+<section id="sold" class="bg3 silver-grid-bg" style="padding:7rem 0;">
+  <div class="container mb-5">
+    <div class="text-center rv">
+      <span class="lbl lbl-s">✦ Closed Transactions</span>
+      <h2 class="sec-h">Properties <em class="silver">Sold</em></h2>
+      <div class="mini-bar-s"></div>
+      <p class="section-sub">
+        A selection of homes successfully represented and closed — each one a story of trust, care and results.
+      </p>
+    </div>
+  </div>
+
+  <div class="sold-grid container" id="soldGrid"></div>
+
+  <div class="text-center mt-5 rv">
+    <a href="#contact" class="btn-s">Thinking of Selling? &nbsp;<i class="fas fa-arrow-right fa-xs"></i></a>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="pad bg2 grid-bg">
   <div class="container">
     <div class="text-center mb-5 rv">
-      <span class="lbl">✦ What We Offer</span>
+      <span class="lbl">✦ What We Do</span>
       <h2 class="sec-h">Our <em>Services</em></h2>
       <div class="mini-bar"></div>
     </div>
+
     <div class="row g-4">
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:0s"><i class="fas fa-home"></i><h4>Luxury Property Sales</h4><p>We specialize in selling California's most distinguished estates, matching exceptional buyers with extraordinary homes through our curated network.</p></div></div>
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:.1s"><i class="fas fa-search-dollar"></i><h4>Property Acquisition</h4><p>From initial search to closing day, we guide you through every step of acquiring your dream property with precision, discretion, and elegance.</p></div></div>
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:.2s"><i class="fas fa-key"></i><h4>Exclusive Leasing</h4><p>Access an exclusive portfolio of luxury rentals — from short-term retreats to long-term residences — across California's most coveted addresses.</p></div></div>
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:.3s"><i class="fas fa-chart-line"></i><h4>Investment Strategy</h4><p>Leverage expert market insights and data-driven analysis to build a real estate portfolio that grows beautifully alongside your vision.</p></div></div>
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:.4s"><i class="fas fa-camera"></i><h4>Staging & Marketing</h4><p>World-class photography, virtual tours, and targeted campaigns that present your property to the right buyers with unrivaled impact.</p></div></div>
-      <div class="col-md-6 col-lg-4"><div class="s-card" style="transition-delay:.5s"><i class="fas fa-handshake"></i><h4>Concierge Relocation</h4><p>Seamless, white-glove relocation services ensuring every detail of your move is handled flawlessly from day one.</p></div></div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card">
+          <i class="fas fa-home"></i>
+          <h4>Home Sales</h4>
+          <p>We present properties with structure, visuals and clarity to help them connect with the right audience.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card silver-card">
+          <i class="fas fa-search-dollar"></i>
+          <h4>Buyer Guidance</h4>
+          <p>Support through the search process with clear communication and a more personalized experience.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card">
+          <i class="fas fa-key"></i>
+          <h4>Rental Assistance</h4>
+          <p>Help finding homes and spaces that match practical needs, lifestyle and preferred location.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card silver-card">
+          <i class="fas fa-chart-line"></i>
+          <h4>Market Perspective</h4>
+          <p>Useful context around price, value and presentation to support better decisions.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card">
+          <i class="fas fa-camera"></i>
+          <h4>Property Presentation</h4>
+          <p>Strong visual display for homes through photos, layout and polished property detail pages.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="s-card silver-card">
+          <i class="fas fa-handshake"></i>
+          <h4>Personal Support</h4>
+          <p>Direct contact, organized follow-up and a process that feels approachable from start to finish.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="pad bg3">
+<section id="testimonials" class="pad bg4">
   <div class="container">
     <div class="text-center mb-5 rv">
-      <span class="lbl">✦ Client Stories</span>
-      <h2 class="sec-h">Words That <em>Inspire Us</em></h2>
+      <span class="lbl">✦ Client Feedback</span>
+      <h2 class="sec-h">What Clients <em>Say</em></h2>
       <div class="mini-bar"></div>
     </div>
+
     <div class="t-wrap">
       <div class="t-track" id="tTrack">
-        <div class="t-slide"><div class="t-card rv"><span class="t-quote">"</span><div class="t-stars">★★★★★</div><p class="t-text">Laura transformed what I thought would be a stressful process into an absolute joy. Her elegance, knowledge, and genuine care made finding our dream home feel effortless. She is truly one of a kind.</p><p class="t-auth">— James &amp; Catherine Whitmore</p><p class="t-role">Beverly Hills, CA · Purchased a $9.2M Estate</p></div></div>
-        <div class="t-slide"><div class="t-card"><span class="t-quote">"</span><div class="t-stars">★★★★★</div><p class="t-text">Working with California Vistas was nothing short of remarkable. Laura's enthusiasm is infectious — you can feel how much she loves what she does. We sold above asking price in just two weeks.</p><p class="t-auth">— Sophia Hartmann</p><p class="t-role">Malibu, CA · Sold Oceanfront Property</p></div></div>
-        <div class="t-slide"><div class="t-card"><span class="t-quote">"</span><div class="t-stars">★★★★★</div><p class="t-text">As an international investor, I needed someone I could trust completely. Laura's professionalism, warmth, and deep market expertise gave me total confidence. She negotiated a deal beyond every expectation.</p><p class="t-auth">— Alejandro Reyes-Moreno</p><p class="t-role">International Investor · Pacific Palisades Portfolio</p></div></div>
-        <div class="t-slide"><div class="t-card"><span class="t-quote">"</span><div class="t-stars">★★★★★</div><p class="t-text">Laura has an extraordinary gift for listening. She found us a property we didn't even know we were looking for. Her joyful spirit and impeccable taste made this the best experience of our lives.</p><p class="t-auth">— The Alderton Family</p><p class="t-role">Santa Barbara, CA · First Luxury Home Purchase</p></div></div>
+        <div class="t-slide">
+          <div class="t-card rv">
+            <span class="t-quote">"</span>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">Laura made the entire process feel clear, calm and well organized. Everything was handled with care.</p>
+            <p class="t-auth">— Daniel &amp; Rebecca</p>
+            <p class="t-role">Home Buyers</p>
+          </div>
+        </div>
+        <div class="t-slide">
+          <div class="t-card">
+            <span class="t-quote">"</span>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">The way the property was presented made a huge difference. It felt polished, modern and easy to understand.</p>
+            <p class="t-auth">— Sofia R.</p>
+            <p class="t-role">Seller</p>
+          </div>
+        </div>
+        <div class="t-slide">
+          <div class="t-card">
+            <span class="t-quote">"</span>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">Great communication, a good eye for detail and a very professional yet personal style.</p>
+            <p class="t-auth">— Alejandro V.</p>
+            <p class="t-role">Client</p>
+          </div>
+        </div>
+        <div class="t-slide">
+          <div class="t-card">
+            <span class="t-quote">"</span>
+            <div class="t-stars">★★★★★</div>
+            <p class="t-text">We always felt guided instead of pressured. That made the whole experience much better.</p>
+            <p class="t-auth">— Parker Family</p>
+            <p class="t-role">Residential Purchase</p>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="t-ctrl">
       <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
       <div class="t-dots" id="tDots"></div>
@@ -346,14 +304,14 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
   </div>
 </section>
 
-<!-- SOCIAL STRIP -->
+<!-- SOCIAL -->
 <div class="soc-strip">
   <div class="soc-inner">
-    <a href="https://facebook.com" target="_blank" class="soc-link"><i class="fab fa-facebook-f"></i> Facebook</a>
-    <a href="https://instagram.com" target="_blank" class="soc-link"><i class="fab fa-instagram"></i> Instagram</a>
-    <a href="https://wa.me/50375003155" target="_blank" class="soc-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    <a href="https://youtube.com" target="_blank" class="soc-link"><i class="fab fa-youtube"></i> YouTube</a>
-    <a href="https://linkedin.com" target="_blank" class="soc-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a href="https://www.instagram.com/tucasaconlaura/" target="_blank" class="soc-link"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="https://www.facebook.com/TuCasaConLaura/" target="_blank" class="soc-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+    <a href="https://www.tiktok.com/@tucasaconlaura" target="_blank" class="soc-link"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://www.linkedin.com/in/tucasaconlaura" target="_blank" class="soc-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <a href="https://tucasaconlaura.com/" target="_blank" class="soc-link"><i class="fas fa-globe"></i> Website</a>
   </div>
 </div>
 
@@ -362,96 +320,69 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
   <div class="container">
     <div class="text-center mb-5 rv">
       <span class="lbl">✦ Let's Connect</span>
-      <h2 class="sec-h">Schedule Your <em>Private Visit</em></h2>
+      <h2 class="sec-h">Contact <em>Laura</em></h2>
       <div class="mini-bar"></div>
-      <p style="color:var(--wh2);font-size:.8rem;max-width:460px;margin:0 auto;letter-spacing:.05em;">Reach out directly to Laura for a personalized consultation. Your dream home is one conversation away.</p>
+      <p class="section-sub">Please give me a call or fill out the form below.</p>
     </div>
+
     <div class="c-wrap rv">
       <div class="row g-0">
         <div class="col-lg-4 c-info">
           <span class="lbl mb-4 d-block">Get in Touch</span>
-          <div class="c-item"><i class="fas fa-phone c-icon"></i><div><h6>Call or Text</h6><a href="tel:+50375003155">+503 7500-3155</a></div></div>
-          <div class="c-item"><i class="fab fa-whatsapp c-icon"></i><div><h6>WhatsApp</h6><a href="https://wa.me/50375003155" target="_blank">Message Laura Directly</a></div></div>
-          <div class="c-item"><i class="fas fa-envelope c-icon"></i><div><h6>Email</h6><a href="mailto:laura@californiavias.com">laura@californiavias.com</a></div></div>
-          <div class="c-item"><i class="fas fa-map-marker-alt c-icon"></i><div><h6>Office</h6><p>9100 Wilshire Blvd, Suite 500<br>Beverly Hills, CA 90210</p></div></div>
-          <div class="c-item"><i class="fas fa-clock c-icon"></i><div><h6>Hours</h6><p>Mon – Sat &nbsp; 9 AM – 7 PM<br>Sunday by Appointment</p></div></div>
-          <p class="f-head mt-3 mb-2">Follow Laura</p>
-          <div class="f-soc">
-            <a href="https://facebook.com" target="_blank" class="f-si"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://instagram.com" target="_blank" class="f-si"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/50375003155" target="_blank" class="f-si"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://youtube.com" target="_blank" class="f-si"><i class="fab fa-youtube"></i></a>
-            <a href="https://linkedin.com" target="_blank" class="f-si"><i class="fab fa-linkedin-in"></i></a>
+          <div class="c-item">
+            <i class="fas fa-phone c-icon"></i>
+            <div><h6>Call</h6><a href="tel:+15628621902">(562) 862-1902</a></div>
+          </div>
+          <div class="c-item">
+            <i class="fab fa-instagram c-icon"></i>
+            <div><h6>Instagram</h6><a href="https://www.instagram.com/tucasaconlaura/" target="_blank">@tucasaconlaura</a></div>
+          </div>
+          <div class="c-item">
+            <i class="fab fa-facebook-f c-icon"></i>
+            <div><h6>Facebook</h6><a href="https://www.facebook.com/TuCasaConLaura/" target="_blank">Tu Casa Con Laura</a></div>
+          </div>
+          <div class="c-item">
+            <i class="fas fa-globe c-icon"></i>
+            <div><h6>Website</h6><a href="https://tucasaconlaura.com/" target="_blank">tucasaconlaura.com</a></div>
           </div>
         </div>
+
         <div class="col-lg-8 c-form">
-          <span class="lbl mb-4 d-block">Book a Private Showing</span>
+          <span class="lbl mb-4 d-block">Send a Message</span>
           <form id="cForm" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="fl">Full Name *</label>
-                <input id="fName" type="text" class="fi" placeholder="Your full name"/>
+                <input id="fName" type="text" class="fi" placeholder="Your full name">
                 <span class="ferr" id="errName">Please enter your name.</span>
               </div>
               <div class="col-md-6">
                 <label class="fl">Email Address *</label>
-                <input id="fEmail" type="email" class="fi" placeholder="your@email.com"/>
+                <input id="fEmail" type="email" class="fi" placeholder="your@email.com">
                 <span class="ferr" id="errEmail">Please enter a valid email.</span>
               </div>
               <div class="col-md-6">
                 <label class="fl">Phone Number</label>
-                <input id="fPhone" type="tel" class="fi" placeholder="+1 (555) 000-0000"/>
+                <input id="fPhone" type="tel" class="fi" placeholder="(562) 862-1902">
               </div>
               <div class="col-md-6">
-                <label class="fl">Preferred Visit Date</label>
-                <input id="fDate" type="date" class="fi fi-sel"/>
+                <label class="fl">Preferred Date</label>
+                <input id="fDate" type="date" class="fi fi-sel">
               </div>
               <div class="col-12">
-                <label class="fl mb-2">I'm Interested In</label>
-                <div class="row g-2">
-                  <div class="col-auto"><label class="fcheck"><input type="checkbox" value="buying"/><span>Buying</span></label></div>
-                  <div class="col-auto"><label class="fcheck"><input type="checkbox" value="selling"/><span>Selling</span></label></div>
-                  <div class="col-auto"><label class="fcheck"><input type="checkbox" value="renting"/><span>Luxury Rental</span></label></div>
-                  <div class="col-auto"><label class="fcheck"><input type="checkbox" value="investing"/><span>Investment</span></label></div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label class="fl">Budget Range</label>
-                <select id="fBudget" class="fi fi-sel">
-                  <option value="" disabled selected>Select your budget</option>
-                  <option>Under $2,000,000</option>
-                  <option>$2M – $5M</option>
-                  <option>$5M – $10M</option>
-                  <option>$10M – $20M</option>
-                  <option>$20M+</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="fl">Property Type</label>
-                <select id="fType" class="fi fi-sel">
-                  <option value="" disabled selected>Select type</option>
-                  <option>Estate / Villa</option>
-                  <option>Oceanfront</option>
-                  <option>Penthouse</option>
-                  <option>Ranch</option>
-                  <option>Modern Contemporary</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label class="fl">Message to Laura</label>
-                <textarea id="fMsg" class="fi" placeholder="Tell Laura about your ideal property, timeline, or any questions..."></textarea>
+                <label class="fl">Message</label>
+                <textarea id="fMsg" class="fi" placeholder="Tell Laura what type of home or property you're looking for..."></textarea>
               </div>
               <div class="col-12 mt-1">
-                <button type="submit" id="fBtn" class="btn-g w-100" style="font-size:.72rem;padding:1rem 2rem;cursor:none;">
-                  <i class="fas fa-calendar-check me-2"></i> Request My Private Consultation
+                <button type="submit" id="fBtn" class="btn-g w-100 form-btn">
+                  <i class="fas fa-paper-plane me-2"></i> Send Request
                 </button>
               </div>
             </div>
           </form>
           <div id="success-msg">
             <i class="fas fa-check-circle me-2"></i>
-            Thank you! Laura will personally reach out within 24 hours. ✨<br>
-            <small style="opacity:.7;font-size:.7rem;letter-spacing:.05em;">A confirmation has been sent to your email.</small>
+            Thank you! Laura will get back to you soon.
           </div>
         </div>
       </div>
@@ -464,16 +395,18 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
   <div class="container">
     <div class="row g-5 mb-5">
       <div class="col-lg-4">
-        <span class="f-logo">California Vistas</span>
-        <p class="f-tag mb-3">Where Dreams Find Their Home.</p>
-        <div class="mini-bar" style="margin:1.2rem 0;"></div>
-        <p style="color:var(--wh2);font-size:.76rem;line-height:1.95;">California's premier luxury real estate firm, dedicated to connecting extraordinary people with extraordinary properties since 2008.</p>
+        <span class="f-logo">California Vias</span>
+        <p class="f-tag mb-3">Homes with style and perspective.</p>
+        <div class="mini-bar footer-bar"></div>
+        <p class="footer-text">
+          A clean and polished property presentation built around strong visuals, good structure and personal communication.
+        </p>
         <div class="f-soc mt-3">
-          <a href="https://facebook.com" target="_blank" class="f-si"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://instagram.com" target="_blank" class="f-si"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/50375003155" target="_blank" class="f-si"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://youtube.com" target="_blank" class="f-si"><i class="fab fa-youtube"></i></a>
-          <a href="https://linkedin.com" target="_blank" class="f-si"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/tucasaconlaura/" target="_blank" class="f-si"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/TuCasaConLaura/" target="_blank" class="f-si"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.tiktok.com/@tucasaconlaura" target="_blank" class="f-si"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.linkedin.com/in/tucasaconlaura" target="_blank" class="f-si"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://tucasaconlaura.com/" target="_blank" class="f-si"><i class="fas fa-globe"></i></a>
         </div>
       </div>
       <div class="col-sm-6 col-lg-2">
@@ -481,121 +414,45 @@ footer{background:var(--bk);border-top:1px solid rgba(201,168,76,.13);padding:4.
         <ul class="f-ul">
           <li><a href="#about">About Laura</a></li>
           <li><a href="#properties">Properties</a></li>
+          <li><a href="#sold">Sold</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="col-sm-6 col-lg-3">
-        <p class="f-head">Our Markets</p>
+        <p class="f-head">Social</p>
         <ul class="f-ul">
-          <li><a href="#">Beverly Hills</a></li>
-          <li><a href="#">Malibu</a></li>
-          <li><a href="#">Bel Air</a></li>
-          <li><a href="#">Hollywood Hills</a></li>
-          <li><a href="#">Pacific Palisades</a></li>
-          <li><a href="#">Santa Barbara</a></li>
+          <li><a href="https://www.instagram.com/tucasaconlaura/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/TuCasaConLaura/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.tiktok.com/@tucasaconlaura" target="_blank">TikTok</a></li>
+          <li><a href="https://www.linkedin.com/in/tucasaconlaura" target="_blank">LinkedIn</a></li>
+          <li><a href="https://tucasaconlaura.com/" target="_blank">Website</a></li>
         </ul>
       </div>
       <div class="col-lg-3">
-        <p class="f-head">Contact Laura</p>
-        <p style="color:var(--wh2);font-size:.76rem;line-height:2.1;">
-          <i class="fas fa-phone me-2" style="color:var(--gold)"></i><a href="tel:+50375003155" style="color:var(--wh2);text-decoration:none;">+503 7500-3155</a><br>
-          <i class="fas fa-envelope me-2" style="color:var(--gold)"></i>laura@californiavias.com<br>
-          <i class="fas fa-map-marker-alt me-2" style="color:var(--gold)"></i>Beverly Hills, CA 90210
+        <p class="f-head">Contact</p>
+        <p class="footer-contact">
+          <i class="fas fa-phone me-2 gold-icon"></i><a href="tel:+15628621902">(562) 862-1902</a><br>
+          <i class="fas fa-globe me-2 gold-icon"></i><a href="https://tucasaconlaura.com/" target="_blank">tucasaconlaura.com</a>
         </p>
-        <a href="https://wa.me/50375003155" target="_blank" class="btn-g mt-3" style="font-size:.64rem;gap:.5rem;">
-          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-        </a>
       </div>
     </div>
+
     <div class="gold-bar"></div>
+    <div class="silver-bar mt-1" style="opacity:.3;"></div>
+
     <div class="f-bot">
-      <p class="f-copy">© 2024 California Vistas Luxury Real Estate. All Rights Reserved.</p>
-      <p class="f-made">Crafted with elegance for Laura · Privacy Policy · Terms of Service</p>
+      <p class="f-copy">© 2026 California Vias. All Rights Reserved.</p>
+      <p class="f-made">Designed for a refined property experience.</p>
     </div>
   </div>
 </footer>
 
-<a href="https://wa.me/50375003155" target="_blank" class="wa"><i class="fab fa-whatsapp"></i></a>
+<a href="tel:+15628621902" class="wa"><i class="fas fa-phone"></i></a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-/* CURSOR */
-const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-(function a(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(a);})();
-document.querySelectorAll('a,button,input,select,textarea,label').forEach(el=>{
-  el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));
-  el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'));
-});
-
-/* NAVBAR */
-const navEl=document.getElementById('nav');
-window.addEventListener('scroll',()=>navEl.classList.toggle('scrolled',scrollY>70));
-
-/* HERO */
-setTimeout(()=>document.getElementById('hero').classList.add('loaded'),100);
-const hBg=document.getElementById('hBg');
-window.addEventListener('scroll',()=>{if(scrollY<window.innerHeight)hBg.style.transform=`scale(1) translateY(${scrollY*.28}px)`;},{ passive:true });
-
-/* MOBILE MENU */
-const mob=document.getElementById('mob');
-document.getElementById('hbg-btn').addEventListener('click',()=>mob.classList.add('open'));
-document.getElementById('mob-x').addEventListener('click',()=>mob.classList.remove('open'));
-mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mob.classList.remove('open')));
-
-/* SCROLL REVEAL */
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('on');});},{threshold:.12});
-document.querySelectorAll('.rv,.rvL,.rvR,.p-card,.s-card,.t-card').forEach(el=>obs.observe(el));
-
-/* TESTIMONIAL SLIDER */
-let cs=0;const tot=4;let autoT;
-const track=document.getElementById('tTrack'),dotsW=document.getElementById('tDots');
-for(let i=0;i<tot;i++){const d=document.createElement('div');d.className='t-dot'+(i===0?' on':'');d.addEventListener('click',()=>goTo(i));dotsW.appendChild(d);}
-function goTo(n){
-  cs=(n+tot)%tot;
-  track.style.transform=`translateX(-${cs*100}%)`;
-  document.querySelectorAll('.t-dot').forEach((d,i)=>d.classList.toggle('on',i===cs));
-  const cards=document.querySelectorAll('.t-card');
-  if(!cards[cs].classList.contains('on'))cards[cs].classList.add('on');
-}
-function tick(){goTo(cs+1);}
-function startA(){autoT=setInterval(tick,5500);}
-function stopA(){clearInterval(autoT);}
-document.getElementById('tNext').addEventListener('click',()=>{stopA();goTo(cs+1);startA();});
-document.getElementById('tPrev').addEventListener('click',()=>{stopA();goTo(cs-1);startA();});
-startA();
-
-/* FORM */
-document.getElementById('cForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  let ok=true;
-  const nm=document.getElementById('fName'),em=document.getElementById('fEmail');
-  const en=document.getElementById('errName'),ee=document.getElementById('errEmail');
-  if(!nm.value.trim()){en.classList.add('show');nm.style.borderColor='#e07070';ok=false;}else{en.classList.remove('show');nm.style.borderColor='';}
-  const er=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!er.test(em.value)){ee.classList.add('show');em.style.borderColor='#e07070';ok=false;}else{ee.classList.remove('show');em.style.borderColor='';}
-  if(!ok)return;
-  const btn=document.getElementById('fBtn');
-  btn.innerHTML='<i class="fas fa-spinner fa-spin me-2"></i> Sending your request...';
-  btn.disabled=true;
-  setTimeout(()=>{this.style.display='none';document.getElementById('success-msg').style.display='block';},1600);
-});
-
-/* STATS COUNTER */
-const cObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    cObs.unobserve(e.target);
-    const el=e.target,val=parseInt(el.dataset.val),sfx=el.dataset.sfx||'';
-    const isPre=el.dataset.pre||'';
-    let cur=0,step=Math.max(1,Math.ceil(val/55));
-    const t=setInterval(()=>{cur+=step;if(cur>=val){cur=val;clearInterval(t);}el.textContent=isPre+cur+sfx;},28);
-  });
-},{threshold:.6});
-document.querySelectorAll('[data-val]').forEach(el=>cObs.observe(el));
-</script>
+<script src="js/properties-data.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

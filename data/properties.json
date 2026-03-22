@@ -1,0 +1,40 @@
+[
+  {
+    "id": "propiedad-1",
+    "title": "Contemporary Hills Residence",
+    "status": "Available",
+    "location": "California",
+    "beds": 6,
+    "baths": 7,
+    "area": "8,400 sqft",
+    "price": "$12,500,000",
+    "cover": "assets/propiedades/propiedad-1/portada.jpg",
+    "description": "A refined property with spacious interior design, strong natural light, elegant finishes and a layout created for comfort and presence.",
+    "media": [
+      "assets/propiedades/propiedad-1/portada.jpg",
+      "assets/propiedades/propiedad-1/slide-2.JPG",
+      "assets/propiedades/propiedad-1/slide-3.JPG",
+      "assets/propiedades/propiedad-1/slide-4.JPG",
+      "assets/propiedades/propiedad-1/slide-5.JPG"
+    ]
+  },
+  {
+    "id": "propiedad-2",
+    "title": "Oceanview Signature Home",
+    "status": "Featured",
+    "location": "California",
+    "beds": 5,
+    "baths": 5,
+    "area": "6,200 sqft",
+    "price": "$18,900,000",
+    "cover": "assets/propiedades/propiedad-2/portada.jpg",
+    "description": "A polished coastal home with open social areas, strong views and a visual identity designed for a memorable presentation.",
+    "media": [
+      "assets/propiedades/propiedad-2/portada.jpg",
+      "assets/propiedades/propiedad-2/slide-2.JPG",
+      "assets/propiedades/propiedad-2/slide-3.JPG",
+      "assets/propiedades/propiedad-2/slide-4.JPG",
+      "assets/propiedades/propiedad-2/slide-5.JPG"
+    ]
+  }
+]

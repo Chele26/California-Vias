@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Details | California Vias</title>
+
+  <link rel="icon" href="assets/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="property-page">
+
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- NAVBAR -->
+<nav id="nav" class="scrolled">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="California Vias logo" class="logo-img">
+    <div class="logo-text-wrap">
+      <div class="logo-stars" aria-hidden="true">
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-sparkle"></span>
+        <span class="logo-sparkle"></span>
+      </div>
+      <span class="logo-text">California Vias</span>
+      <span class="logo-sub">Luxury Real Estate</span>
+    </div>
+  </a>
+
+  <ul class="nav-ul">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#properties">Properties</a></li>
+    <li><a href="index.html#sold">Sold</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+
+  <button id="hbg-btn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mob">
+  <button id="mob-x" aria-label="Close menu"><i class="fas fa-times"></i></button>
+  <a href="index.html#about">About Laura</a>
+  <a href="index.html#properties">Properties</a>
+  <a href="index.html#sold">Sold</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- Property content injected here by property.js -->
+<div id="propRoot" style="min-height:80vh;">
+  <div class="prop-loading">
+    <div class="prop-spinner"></div>
+  </div>
+</div>
+
+<!-- FOOTER (minimal) -->
+<footer style="padding:2rem 0;">
+  <div class="container">
+    <div class="gold-bar"></div>
+    <div class="f-bot mt-3">
+      <p class="f-copy">© 2026 California Vias. All Rights Reserved.</p>
+      <p class="f-made">Designed for a refined property experience.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+15628621902" class="wa"><i class="fas fa-phone"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/properties-data.js"></script>
+<script src="js/property.js"></script>
+</body>
+</html>

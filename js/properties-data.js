@@ -93,12 +93,12 @@ var CV_DATA = {
     location: "2277 E Mountain Woods St, Colton, CA 92324",
     beds: 3, baths: 2, area: "1,276 sqft", price: "$305,000",
     soldDate: "01/11/2018",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=2277+E+Mountain+Woods+St%2C+Colton%2C+CA+92324&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=g-Zt5pQYqirR_XmAjYGawxYg174=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100",
     description: "Hermosa casa remodelada de 3 recámaras y 2 baños con pisos de madera laminada. Recámara principal con baño privado, chimenea y vistas al agua. Garage para 2 autos. Ideal para compradores primerizos.",
     features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=2277+E+Mountain+Woods+St%2C+Colton%2C+CA+92324&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=g-Zt5pQYqirR_XmAjYGawxYg174="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100"
     ]
   },
 
@@ -265,7 +265,6 @@ var CV_DATA = {
     photos: 2,
     media: [
       "assets/propiedades/propiedad-13/slide-1.jpg",
-      "assets/propiedades/propiedad-13/slide-2.jpg"
     ]
   },
 
@@ -277,12 +276,12 @@ var CV_DATA = {
     location: "1320 E Colon St, Wilmington, CA 90744",
     beds: 4, baths: 2, area: "1,522 sqft", price: "$305,000",
     soldDate: "08/28/2019",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=ZVIY1ku3JooCMv5qnVf8vU7C5V0=",
+    cover: "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=LSMEly8q4BQ-L78yMlXauIqIE3M=",
     description: "Dúplex con 2 unidades de 2 recámaras y 1 baño cada una. Construido en 1938 en lote de 5,000 sqft en Wilmington.",
     features: ["Dúplex", "2 Unidades", "4 Recámaras Total", "2 Estacionamientos", "Construido 1938"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=ZVIY1ku3JooCMv5qnVf8vU7C5V0="
+      "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=LSMEly8q4BQ-L78yMlXauIqIE3M  ="
     ]
   },
 

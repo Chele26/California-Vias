@@ -7,43 +7,11 @@
 var CV_DATA = {
   properties: [
 
-  // ─── 1 ──────────────────────────────────────────────────
-  {
-    id: "propiedad-1",
-    status: "Sold",
-    title: "Casa Unifamiliar en Montebello",
-    location: "237 N Montebello Blvd, Montebello, CA 90640",
-    beds: 3, baths: 1, area: "1,323 sqft", price: "$465,000",
-    soldDate: "01/31/2019",
-    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100",
-    description: "Casa unifamiliar de 1,323 sqft con 3 recámaras y 1 baño, construida en 1936. Terreno de 3,920 sqft en Montebello. Nivel único.",
-    features: ["3 Recámaras", "1 Baño", "Nivel único", "Terreno 3,920 sqft", "Construida 1936"],
-    photos: 0,
-    media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100"
-    ]
-  },
+
 
   // ─── 2 ──────────────────────────────────────────────────
   {
     id: "propiedad-2",
-    status: "Sold",
-    title: "Casa Familiar en Compton",
-    location: "1824 E Kay St, Compton, CA 90221",
-    beds: 3, baths: 2, area: "1,400 sqft", price: "$405,000",
-    soldDate: "01/10/2019",
-    cover: "assets/propiedades/propiedad-2/slide-1.jpg",
-    description: "Casa unifamiliar de 1,400 sqft con 3 recámaras y 2 baños, construida en 1948. Lote de 6,534 sqft con patio trasero y 4 espacios de estacionamiento.",
-    features: ["3 Recámaras", "2 Baños", "Patio Trasero", "4 Estacionamientos", "Terreno 6,534 sqft"],
-    photos: 1,
-    media: [
-      "assets/propiedades/propiedad-2/slide-1.jpg"
-    ]
-  },
-
-  // ─── 3 ──────────────────────────────────────────────────
-  {
-    id: "propiedad-3",
     status: "Sold",
     title: "Dúplex de Inversión en San Bernardino",
     location: "1496 N Belle St, San Bernardino, CA 92404",
@@ -63,9 +31,9 @@ var CV_DATA = {
     ]
   },
 
-  // ─── 4 ──────────────────────────────────────────────────
+  // ─── 3 ──────────────────────────────────────────────────
   {
-    id: "propiedad-4",
+    id: "propiedad-3",
     status: "Sold",
     title: "Comunidad de Bungalows en Los Angeles",
     location: "5111 Ascot Ave, Los Angeles, CA 90011",
@@ -85,22 +53,7 @@ var CV_DATA = {
     ]
   },
 
-  // ─── 5 ──────────────────────────────────────────────────
-  {
-    id: "propiedad-5",
-    status: "Sold",
-    title: "Casa Remodelada en Colton",
-    location: "2277 E Mountain Woods St, Colton, CA 92324",
-    beds: 3, baths: 2, area: "1,276 sqft", price: "$305,000",
-    soldDate: "01/11/2018",
-    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100",
-    description: "Hermosa casa remodelada de 3 recámaras y 2 baños con pisos de madera laminada. Recámara principal con baño privado, chimenea y vistas al agua. Garage para 2 autos. Ideal para compradores primerizos.",
-    features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
-    photos: 0,
-    media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100"
-    ]
-  },
+
 
   /* ─── 6 ──────────────────────────────────────────────────
   {
@@ -119,9 +72,9 @@ var CV_DATA = {
     ]
   },
 */
-  // ─── 7 ──────────────────────────────────────────────────
+  // ─── 4 ──────────────────────────────────────────────────
   {
-    id: "propiedad-7",
+    id: "propiedad-4",
     status: "Sold",
     title: "Casa en Lote Esquinero — Long Beach",
     location: "5690 Orizaba Ave, Long Beach, CA 90805",
@@ -144,9 +97,10 @@ var CV_DATA = {
     ]
   },
 
-  // ─── 8 ──────────────────────────────────────────────────
+
+  // ─── 6 ──────────────────────────────────────────────────
   {
-    id: "propiedad-8",
+    id: "propiedad-6",
     status: "Sold",
     title: "Casa Multifamiliar Remodelada — Los Angeles",
     location: "207 E 74th St, Los Angeles, CA 90003",
@@ -166,6 +120,59 @@ var CV_DATA = {
       "assets/propiedades/propiedad-8/slide-7.jpg",
       "assets/propiedades/propiedad-8/slide-8.jpg",
       "assets/propiedades/propiedad-8/slide-9.jpg",
+    ]
+  },
+
+      // ─── 1 ──────────────────────────────────────────────────
+  {
+    id: "propiedad-1",
+    status: "Sold",
+    title: "Casa Familiar en Compton",
+    location: "1824 E Kay St, Compton, CA 90221",
+    beds: 3, baths: 2, area: "1,400 sqft", price: "$405,000",
+    soldDate: "01/10/2019",
+    cover: "assets/propiedades/propiedad-2/slide-1.jpg",
+    description: "Casa unifamiliar de 1,400 sqft con 3 recámaras y 2 baños, construida en 1948. Lote de 6,534 sqft con patio trasero y 4 espacios de estacionamiento.",
+    features: ["3 Recámaras", "2 Baños", "Patio Trasero", "4 Estacionamientos", "Terreno 6,534 sqft"],
+    photos: 1,
+    media: [
+      "assets/propiedades/propiedad-2/slide-1.jpg"
+    ]
+  },
+
+  
+    // ─── 5 ──────────────────────────────────────────────────
+  {
+    id: "propiedad-5",
+    status: "Sold",
+    title: "Casa Remodelada en Colton",
+    location: "2277 E Mountain Woods St, Colton, CA 92324",
+    beds: 3, baths: 2, area: "1,276 sqft", price: "$305,000",
+    soldDate: "01/11/2018",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100",
+    description: "Hermosa casa remodelada de 3 recámaras y 2 baños con pisos de madera laminada. Recámara principal con baño privado, chimenea y vistas al agua. Garage para 2 autos. Ideal para compradores primerizos.",
+    features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
+    photos: 0,
+    media: [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100"
+    ]
+  },
+
+  
+  // ─── 7 ──────────────────────────────────────────────────
+  {
+    id: "propiedad-7",
+    status: "Sold",
+    title: "Casa Unifamiliar en Montebello",
+    location: "237 N Montebello Blvd, Montebello, CA 90640",
+    beds: 3, baths: 1, area: "1,323 sqft", price: "$465,000",
+    soldDate: "01/31/2019",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100",
+    description: "Casa unifamiliar de 1,323 sqft con 3 recámaras y 1 baño, construida en 1936. Terreno de 3,920 sqft en Montebello. Nivel único.",
+    features: ["3 Recámaras", "1 Baño", "Nivel único", "Terreno 3,920 sqft", "Construida 1936"],
+    photos: 0,
+    media: [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100"
     ]
   },
 

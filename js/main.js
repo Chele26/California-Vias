@@ -162,8 +162,6 @@ document.querySelectorAll("[data-val]").forEach((el) => counterObserver.observe(
 
 /* ══════════════════════════════════════════════════
    PROPERTIES RENDER
-   Reads from CV_DATA (properties-data.js)
-   Falls back to data/properties.json if needed
    ══════════════════════════════════════════════════ */
 
 function tagClass(tag) {
@@ -206,27 +204,171 @@ function renderPropertyCard(property, index) {
   `;
 }
 
+/* ── SOLD CARD con carrusel automático ─────────────────────── */
 function renderSoldCard(property, index) {
   const title = property.title || property.name || "Property";
-  const cover = property.cover || (property.media && property.media[0] && (typeof property.media[0] === "string" ? property.media[0] : property.media[0].src)) || "";
   const loc   = property.location || "California";
   const price = property.price || "";
-  const year  = property.soldYear || property.year || "";
+  const year  = property.soldDate || property.soldYear || property.year || "";
+
+  const VIDEO_EXTS = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
+  let slides = [];
+
+  if (property.media && property.media.length) {
+    slides = property.media
+      .map(m => (typeof m === "string" ? m : (m.src || "")))
+      .filter(src => src && !VIDEO_EXTS.test(src));
+  }
+  if (!slides.length && property.cover) {
+    slides = [property.cover];
+  }
+
+  const hasMultiple = slides.length > 1;
+  const cardId = `sold-${property.id || index}`;
+
+  const slidesHTML = slides.map(src => `
+    <div class="sold-card-slide">
+      <img src="${src}" alt="${title}" loading="lazy">
+    </div>
+  `).join("");
+
+  const dotsHTML = hasMultiple ? `
+    <div class="sold-card-dots" id="dots-${cardId}">
+      ${slides.map((_, i) => `
+        <span class="sold-card-dot ${i === 0 ? "active" : ""}" data-index="${i}"></span>
+      `).join("")}
+    </div>
+  ` : "";
 
   return `
-    <div class="sold-card ${index < 3 ? "on" : ""}">
-      ${cover ? `<img src="${cover}" alt="${title}" loading="lazy">` : ""}
-      <div class="sold-card-ov">
-        <span class="sold-badge">Sold</span>
-        <h3 class="sold-name">${title}</h3>
-        <p class="sold-loc"><i class="fas fa-map-marker-alt me-1"></i>${loc}</p>
-        <p class="sold-price">${price}</p>
-        ${year ? `<p class="sold-year">Closed ${year}</p>` : ""}
+    <div class="sold-card on" data-sold-id="${cardId}">
+      <div class="sold-card-inner">
+        <div class="sold-card-track" id="track-${cardId}">
+          ${slidesHTML}
+        </div>
+        ${dotsHTML}
+        <div class="sold-card-ov">
+          <span class="sold-badge">Sold</span>
+          <h3 class="sold-name">${title}</h3>
+          <p class="sold-loc"><i class="fas fa-map-marker-alt me-1"></i>${loc}</p>
+          <p class="sold-price">${price}</p>
+          ${year ? `<p class="sold-year">Closed ${year}</p>` : ""}
+        </div>
       </div>
     </div>
   `;
 }
 
+/* ── Init carrusel automático en sold cards ─────────────────── */
+function initSoldCarousels() {
+  document.querySelectorAll(".sold-card[data-sold-id]").forEach((card) => {
+    if (card.dataset.carouselInit) return;
+    card.dataset.carouselInit = "1";
+
+    const id    = card.dataset.soldId;
+    const trackEl = document.getElementById(`track-${id}`);
+    if (!trackEl) return;
+
+    const slides = trackEl.querySelectorAll(".sold-card-slide");
+    if (slides.length <= 1) return;
+
+    const dotsEl = document.getElementById(`dots-${id}`);
+    const dots   = dotsEl ? dotsEl.querySelectorAll(".sold-card-dot") : [];
+    let current  = 0;
+
+    function goTo(i) {
+      current = (i + slides.length) % slides.length;
+      trackEl.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, idx) => d.classList.toggle("active", idx === current));
+    }
+
+    const interval = 3000 + Math.floor(Math.random() * 1000);
+    setInterval(() => goTo(current + 1), interval);
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", (e) => {
+        e.stopPropagation();
+        goTo(parseInt(dot.dataset.index));
+      });
+    });
+  });
+}
+
+/* ══════════════════════════════════════════════════
+   PAGINACIÓN SOLD — 8 por página (2 filas de 4)
+   ══════════════════════════════════════════════════ */
+const SOLD_PER_PAGE = 8;
+let soldCurrentPage = 1;
+let soldAllProps    = [];
+
+function renderSoldPage(page) {
+  const soldGrid     = document.getElementById("soldGrid");
+  const paginationEl = document.getElementById("soldPagination");
+  if (!soldGrid) return;
+
+  const total      = soldAllProps.length;
+  const totalPages = Math.ceil(total / SOLD_PER_PAGE);
+  const start      = (page - 1) * SOLD_PER_PAGE;
+  const end        = Math.min(start + SOLD_PER_PAGE, total);
+  const pageItems  = soldAllProps.slice(start, end);
+
+  // Render cards de esta página
+  soldGrid.innerHTML = pageItems.map((p, i) => renderSoldCard(p, start + i)).join("");
+  soldGrid.querySelectorAll(".sold-card").forEach(el => obs.observe(el));
+  initSoldCarousels();
+
+  // Render paginación
+  if (!paginationEl) return;
+
+  if (totalPages <= 1) {
+    paginationEl.style.display = "none";
+    return;
+  }
+
+  let html = "";
+
+  // Botón anterior
+  html += `<button class="sold-page-btn sold-page-arrow" ${page === 1 ? "disabled" : ""} data-page="${page - 1}">
+    <i class="fas fa-chevron-left"></i>
+  </button>`;
+
+  // Números de página con ellipsis
+  for (let i = 1; i <= totalPages; i++) {
+    const isFirst  = i === 1;
+    const isLast   = i === totalPages;
+    const isNear   = i >= page - 1 && i <= page + 1;
+
+    if (isFirst || isLast || isNear) {
+      html += `<button class="sold-page-btn sold-page-num ${i === page ? "active" : ""}" data-page="${i}">${i}</button>`;
+    } else if (i === page - 2 || i === page + 2) {
+      html += `<span class="sold-page-ellipsis">…</span>`;
+    }
+  }
+
+  // Botón siguiente
+  html += `<button class="sold-page-btn sold-page-arrow" ${page === totalPages ? "disabled" : ""} data-page="${page + 1}">
+    <i class="fas fa-chevron-right"></i>
+  </button>`;
+
+  paginationEl.innerHTML = html;
+  paginationEl.style.display = "flex";
+
+  // Eventos
+  paginationEl.querySelectorAll(".sold-page-btn:not([disabled])").forEach(btn => {
+    btn.addEventListener("click", () => {
+      soldCurrentPage = parseInt(btn.dataset.page);
+      renderSoldPage(soldCurrentPage);
+      // Scroll suave al inicio de la sección
+      const soldSection = document.getElementById("sold");
+      if (soldSection) {
+        const offset = soldSection.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offset, behavior: "smooth" });
+      }
+    });
+  });
+}
+
+/* ── Carga y renderiza todas las propiedades ─────────────────── */
 async function loadAllProperties() {
   const propertiesGrid = document.getElementById("propertiesGrid");
   const soldGrid       = document.getElementById("soldGrid");
@@ -234,11 +376,9 @@ async function loadAllProperties() {
 
   let allProps = [];
 
-  /* 1. Try CV_DATA from properties-data.js */
   if (typeof CV_DATA !== "undefined" && CV_DATA.properties && CV_DATA.properties.length) {
     allProps = CV_DATA.properties;
   } else {
-    /* 2. Fall back to localStorage or JSON */
     try {
       const stored = localStorage.getItem("cv_properties");
       if (stored) {
@@ -252,17 +392,17 @@ async function loadAllProperties() {
     }
   }
 
-  /* Separate active vs sold */
   const activeProps = allProps.filter(p => {
     const s = (p.status || p.tag || "").toLowerCase();
     return s !== "sold";
   });
-  const soldProps = allProps.filter(p => {
+
+  soldAllProps = allProps.filter(p => {
     const s = (p.status || p.tag || "").toLowerCase();
     return s === "sold";
   });
 
-  /* Render active properties */
+  // Render activas
   if (propertiesGrid) {
     if (activeProps.length === 0) {
       propertiesGrid.innerHTML = `
@@ -277,9 +417,9 @@ async function loadAllProperties() {
     }
   }
 
-  /* Render sold properties */
+  // Render sold con paginación
   if (soldGrid) {
-    if (soldProps.length === 0) {
+    if (soldAllProps.length === 0) {
       soldGrid.innerHTML = `
         <div class="text-center py-5 col-12">
           <p style="color:var(--wh2);font-size:.82rem;letter-spacing:.1em;">
@@ -287,8 +427,8 @@ async function loadAllProperties() {
           </p>
         </div>`;
     } else {
-      soldGrid.innerHTML = soldProps.map(renderSoldCard).join("");
-      document.querySelectorAll(".sold-card").forEach((el) => obs.observe(el));
+      soldCurrentPage = 1;
+      renderSoldPage(soldCurrentPage);
     }
   }
 }

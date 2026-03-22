@@ -43,7 +43,7 @@ const CV_DATA = {
         "assets/propiedades/propiedad-1/slide-4.jpg",
         "assets/propiedades/propiedad-1/slide-5.jpg"
       ]
-    }
+    },
     {
       id: "propiedad-2",
       status: "Featured",

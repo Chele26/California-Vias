@@ -98,7 +98,7 @@ var CV_DATA = {
     features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
     photos: 0,
     media: [
-      "https://maps.googleapihttps://maps.googleapis.com/maps/api/streetview?location=2277+E+Mountain+Woods+St%2C+Colton%2C+CA+92324&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=g-Zt5pQYqirR_XmAjYGawxYg174=s.com/maps/api/streetview?location=2277+E+Mountain+Woods+St%2C+Colton%2C+CA+92324&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=1qCFNFuhQIg6h_V7xTlUFXniF9A="
+      "https://maps.googleapis.com/maps/api/streetview?location=2277+E+Mountain+Woods+St%2C+Colton%2C+CA+92324&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=g-Zt5pQYqirR_XmAjYGawxYg174="
     ]
   },
 

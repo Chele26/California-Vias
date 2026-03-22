@@ -276,12 +276,12 @@ var CV_DATA = {
     location: "1320 E Colon St, Wilmington, CA 90744",
     beds: 4, baths: 2, area: "1,522 sqft", price: "$305,000",
     soldDate: "08/28/2019",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=LSMEly8q4BQ-L78yMlXauIqIE3M=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=CUqPILNV9A3UmWYn_3QA5g&cb_client=search.gws-prod.gps&w=408&h=240&yaw=354.51773&pitch=0&thumbfov=100",
     description: "Dúplex con 2 unidades de 2 recámaras y 1 baño cada una. Construido en 1938 en lote de 5,000 sqft en Wilmington.",
     features: ["Dúplex", "2 Unidades", "4 Recámaras Total", "2 Estacionamientos", "Construido 1938"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=1320+E+Colon+St%2C+Wilmington%2C+CA+90744&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=LSMEly8q4BQ-L78yMlXauIqIE3M  ="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=CUqPILNV9A3UmWYn_3QA5g&cb_client=search.gws-prod.gps&w=408&h=240&yaw=354.51773&pitch=0&thumbfov=100"
     ]
   },
 
@@ -293,12 +293,12 @@ var CV_DATA = {
     location: "335 W 235th St, Carson, CA 90745",
     beds: 3, baths: 1, area: "968 sqft", price: "$255,000",
     soldDate: "09/13/2012",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=335+W+235th+St%2C+Carson%2C+CA+90745&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=XJpa-FUUc-6SiH2OQ6EGAS7ahzg=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=yFGONp5AayIBKTXSG3N9Nw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=351.8652&pitch=0&thumbfov=100",
     description: "Hermosa casa de 3 recámaras y 1 baño en Carson, construida en 1952. Terreno de 5,333 sqft, cerca de escuelas y con fácil acceso a autopistas.",
     features: ["3 Recámaras", "1 Baño", "Terreno 5,333 sqft", "Construida 1952"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=335+W+235th+St%2C+Carson%2C+CA+90745&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=XJpa-FUUc-6SiH2OQ6EGAS7ahzg="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=yFGONp5AayIBKTXSG3N9Nw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=351.8652&pitch=0&thumbfov=100"
     ]
   },
 
@@ -310,12 +310,12 @@ var CV_DATA = {
     location: "1330 Rialto Ave, Colton, CA 92324",
     beds: 4, baths: 2, area: "1,390 sqft", price: "$120,000",
     soldDate: "07/26/2012",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=1330+Rialto+Ave%2C+Colton%2C+CA+92324&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=JR0ZRM3pndzMFi3QYVjUIozleyk=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=MXkfSmveBSzvWkN-lbtOVw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=96.66739&pitch=0&thumbfov=100",
     description: "Gran oportunidad para compradores primerizos: 4 recámaras, 2 baños en lote de 6,969 sqft con garage independiente. Construida en 1937 en Colton.",
     features: ["4 Recámaras", "2 Baños", "Terreno 6,969 sqft", "Garage Independiente", "Primer Comprador"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=1330+Rialto+Ave%2C+Colton%2C+CA+92324&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=JR0ZRM3pndzMFi3QYVjUIozleyk="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=MXkfSmveBSzvWkN-lbtOVw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=96.66739&pitch=0&thumbfov=100"
     ]
   },
 
@@ -327,12 +327,12 @@ var CV_DATA = {
     location: "15132 Castana Ave, Paramount, CA 90723",
     beds: 3, baths: 1, area: "880 sqft", price: "$175,000",
     soldDate: "11/07/2011",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=15132+Castana+Ave%2C+Paramount%2C+CA+90723&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=DBk5KcX_x4cZiykbIHP5a6R7mtU=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Rr9txsAQwWWd9LtUg-Urqg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=86.83874&pitch=0&thumbfov=100",
     description: "Casa de 3 recámaras y 1 baño con ubicación conveniente en Paramount, construida en 1940 en lote de 3,049 sqft. Cerca de escuelas y Paramount High School.",
     features: ["3 Recámaras", "1 Baño", "Lote 3,049 sqft", "Construida 1940"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=15132+Castana+Ave%2C+Paramount%2C+CA+90723&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=DBk5KcX_x4cZiykbIHP5a6R7mtU="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=Rr9txsAQwWWd9LtUg-Urqg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=86.83874&pitch=0&thumbfov=100"
     ]
   },
 
@@ -344,12 +344,12 @@ var CV_DATA = {
     location: "967 E Vernon St, Signal Hill, CA 90755",
     beds: 4, baths: 2, area: "2,060 sqft", price: "$499,000",
     soldDate: "N/A",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=967+E+Vernon+St%2C+Signal+Hill%2C+CA+90755&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=iLHAiMhZuSI4rFE7QjxDEuwUbDk=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ukxbSoPbR5ppX8Q7fzoqtg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=24.179768&pitch=0&thumbfov=100",
     description: "Propiedad multifamiliar de 2,060 sqft construida en 1948. Lote de 6,499 sqft con 3 espacios de estacionamiento en Signal Hill, cerca de Long Beach.",
     features: ["Multi-Familiar", "2,060 sqft", "3 Estacionamientos", "Lote 6,499 sqft", "Construida 1948"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=967+E+Vernon+St%2C+Signal+Hill%2C+CA+90755&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=iLHAiMhZuSI4rFE7QjxDEuwUbDk="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=ukxbSoPbR5ppX8Q7fzoqtg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=24.179768&pitch=0&thumbfov=100"
     ]
   },
 
@@ -379,12 +379,12 @@ var CV_DATA = {
     location: "2540 S Mildred Pl, Ontario, CA 91761",
     beds: 5, baths: 2, area: "2,402 sqft", price: "$270,000",
     soldDate: "11/29/2011",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=2540+S+Mildred+Pl%2C+Ontario%2C+CA+91761&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=dF65KH0rZgdp3tbyjCdBrN4zv_E=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=wRwYgsMepo33f-2xjgzJCA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=276.63068&pitch=0&thumbfov=100",
     description: "Amplia casa familiar de 5 recámaras, 2 baños y 2,402 sqft en vecindario bien mantenido de Ontario. Chimenea, A/C central, garage para 4 autos. Lote de 7,405 sqft.",
     features: ["5 Recámaras", "2 Baños", "Chimenea", "A/C Central", "Garage 4 Autos", "Lote 7,405 sqft"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=2540+S+Mildred+Pl%2C+Ontario%2C+CA+91761&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=dF65KH0rZgdp3tbyjCdBrN4zv_E="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=wRwYgsMepo33f-2xjgzJCA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=276.63068&pitch=0&thumbfov=100"
     ]
   },
 
@@ -396,12 +396,12 @@ var CV_DATA = {
     location: "15795 Dalscote St, Hesperia, CA 92345",
     beds: 2, baths: 1, area: "972 sqft", price: "$74,000",
     soldDate: "09/29/2011",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=15795+Dalscote+St%2C+Hesperia%2C+CA+92345&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=EgZC1na0ExrVEv75_qGmY6x7VuE=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=WwAhR-5DcZqzaqAuDkYqJA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=184.88768&pitch=0&thumbfov=100",
     description: "Excelente oportunidad para compradores primerizos en Hesperia. 2 recámaras, 1 baño, A/C central. Amplio lote de 0.46 acres con vista territorial. Construida en 1995.",
     features: ["2 Recámaras", "1 Baño", "A/C Central", "Lote 0.46 Acres", "Vista Territorial"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=15795+Dalscote+St%2C+Hesperia%2C+CA+92345&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=EgZC1na0ExrVEv75_qGmY6x7VuE="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=WwAhR-5DcZqzaqAuDkYqJA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=184.88768&pitch=0&thumbfov=100"
     ]
   },
 
@@ -413,12 +413,12 @@ var CV_DATA = {
     location: "4375 Levelside Ave, Lakewood, CA 90712",
     beds: 2, baths: 1, area: "966 sqft", price: "$326,000",
     soldDate: "04/20/2011",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=4375+Levelside+Ave%2C+Lakewood%2C+CA+90712&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=pETFoX8vjASmg3dHYzMq_6AkdI8=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=qPB0THIyLD2Je-gP5NeYaA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=267.29144&pitch=0&thumbfov=100",
     description: "Casa de 2 recámaras y 1 baño en vecindario tranquilo de Lakewood. Construida en 1952 con A/C central en lote de 5,662 sqft. Ideal para compradores primerizos.",
     features: ["2 Recámaras", "1 Baño", "A/C Central", "Lote 5,662 sqft", "Construida 1952"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=4375+Levelside+Ave%2C+Lakewood%2C+CA+90712&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=pETFoX8vjASmg3dHYzMq_6AkdI8="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=qPB0THIyLD2Je-gP5NeYaA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=267.29144&pitch=0&thumbfov=100"
     ]
   },
 
@@ -430,12 +430,12 @@ var CV_DATA = {
     location: "1172 W 15th St, San Bernardino, CA 92411",
     beds: 3, baths: 1, area: "1,149 sqft", price: "$87,500",
     soldDate: "12/08/2010",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=1172+W+15th+St%2C+San+Bernardino%2C+CA+92411&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=56_7xv2TgCxPw6t6YPUEJFyLRzs=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=1-ezxGxqBp2PxPy8aCOLxg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=3.2354634&pitch=0&thumbfov=100",
     description: "Casa unifamiliar de nivel único con 3 recámaras y 1 baño en San Bernardino. Vendida en condición 'as-is'. Lote de 6,534 sqft con garage independiente. Construida en 1943.",
     features: ["3 Recámaras", "1 Baño", "Garage Independiente", "Terreno 6,534 sqft", "As-Is"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=1172+W+15th+St%2C+San+Bernardino%2C+CA+92411&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=56_7xv2TgCxPw6t6YPUEJFyLRzs="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=1-ezxGxqBp2PxPy8aCOLxg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=3.2354634&pitch=0&thumbfov=100"
     ]
   },
 
@@ -447,46 +447,12 @@ var CV_DATA = {
     location: "6983 Olive St, Highland, CA 92346",
     beds: 3, baths: 1, area: "1,188 sqft", price: "$83,000",
     soldDate: "07/22/2010",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=6983+Olive+St%2C+Highland%2C+CA+92346&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=gDW1VD2xHYALaGzPgfxqGde_jlM=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=UleGFszMNVXvvzk-mVfPzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=100.46604&pitch=0&thumbfov=100",
     description: "Casa unifamiliar de 3 recámaras y 1.5 baños en Highland, construida en 1958. Lote de 7,405 sqft con garage independiente. Vendida en condición 'as-is'.",
     features: ["3 Recámaras", "1.5 Baños", "Terreno 7,405 sqft", "Garage Independiente", "As-Is"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=6983+Olive+St%2C+Highland%2C+CA+92346&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=gDW1VD2xHYALaGzPgfxqGde_jlM="
-    ]
-  },
-
-  // ─── 25 ─────────────────────────────────────────────────
-  {
-    id: "propiedad-25",
-    status: "Sold",
-    title: "Venta Corta Familiar — Ontario",
-    location: "2540 S Mildred Pl, Ontario, CA 91761",
-    beds: 5, baths: 2, area: "2,402 sqft", price: "$170,000",
-    soldDate: "04/07/2016",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=2540+S+Mildred+Pl%2C+Ontario%2C+CA+91761&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=dF65KH0rZgdp3tbyjCdBrN4zv_E=",
-    description: "Venta corta aprobada. Gran casa familiar de 5 recámaras en vecindario bien mantenido de Ontario. Chimenea, A/C central, garage para 4 autos en lote de 7,405 sqft.",
-    features: ["5 Recámaras", "2 Baños", "Venta Corta", "Chimenea", "A/C Central", "Garage 4 Autos"],
-    photos: 0,
-    media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=2540+S+Mildred+Pl%2C+Ontario%2C+CA+91761&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=dF65KH0rZgdp3tbyjCdBrN4zv_E="
-    ]
-  },
-
-  // ─── 26 ─────────────────────────────────────────────────
-  {
-    id: "propiedad-26",
-    status: "Sold",
-    title: "Casa As-Is en Highland — 2015",
-    location: "6983 Olive St, Highland, CA 92346",
-    beds: 3, baths: 1, area: "1,188 sqft", price: "$100,000",
-    soldDate: "04/10/2015",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=6983+Olive+St%2C+Highland%2C+CA+92346&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=gDW1VD2xHYALaGzPgfxqGde_jlM=",
-    description: "Casa unifamiliar de 3 recámaras y 1.5 baños en Highland. Vendida en condición 'as-is' sin garantías ni reparaciones. Lote de 7,405 sqft con garage independiente.",
-    features: ["3 Recámaras", "1.5 Baños", "Terreno 7,405 sqft", "Garage Independiente", "As-Is"],
-    photos: 0,
-    media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=6983+Olive+St%2C+Highland%2C+CA+92346&size=960x720&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&signature=gDW1VD2xHYALaGzPgfxqGde_jlM="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=UleGFszMNVXvvzk-mVfPzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=100.46604&pitch=0&thumbfov=100"
     ]
   }
 

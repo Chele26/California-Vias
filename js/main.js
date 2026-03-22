@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════
-   CALIFORNIA VIAS — main.js
+   CALIFORNIA VILLAS — main.js
    ══════════════════════════════════════════════════ */
 
 const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -42,7 +42,6 @@ setTimeout(() => {
   const hero = document.getElementById("hero");
   if (hero) {
     hero.classList.add("loaded");
-    // Zoom sutil solo en desktop
     if (!isTouchDevice) {
       const bg = document.getElementById("hBg");
       if (bg) bg.style.transform = "scale(1.06)";
@@ -60,9 +59,9 @@ if (hBg && !isTouchDevice) {
 }
 
 /* ── MOBILE MENU ── */
-const mob         = document.getElementById("mob");
-const openMenuBtn = document.getElementById("hbg-btn");
-const closeMenuBtn= document.getElementById("mob-x");
+const mob          = document.getElementById("mob");
+const openMenuBtn  = document.getElementById("hbg-btn");
+const closeMenuBtn = document.getElementById("mob-x");
 
 if (mob && openMenuBtn && closeMenuBtn) {
   openMenuBtn.addEventListener("click",  () => mob.classList.add("open"));
@@ -82,10 +81,10 @@ document.querySelectorAll(".rv,.rvL,.rvR,.p-card,.s-card,.t-card,.sold-card").fo
 });
 
 /* ── TESTIMONIAL SLIDER ── */
-const track      = document.getElementById("tTrack");
-const dotsWrapper= document.getElementById("tDots");
-const nextBtn    = document.getElementById("tNext");
-const prevBtn    = document.getElementById("tPrev");
+const track       = document.getElementById("tTrack");
+const dotsWrapper = document.getElementById("tDots");
+const nextBtn     = document.getElementById("tNext");
+const prevBtn     = document.getElementById("tPrev");
 
 if (track && dotsWrapper && nextBtn && prevBtn) {
   const totalSlides = document.querySelectorAll(".t-slide").length;
@@ -116,22 +115,51 @@ if (track && dotsWrapper && nextBtn && prevBtn) {
   startAuto();
 }
 
-/* ── CONTACT FORM ── */
+/* ── CONTACT FORM (with TCPA validation) ── */
 const form = document.getElementById("cForm");
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     let ok = true;
-    const nm = document.getElementById("fName");
-    const em = document.getElementById("fEmail");
-    const en = document.getElementById("errName");
-    const ee = document.getElementById("errEmail");
 
-    if (!nm.value.trim()) { en.classList.add("show"); nm.style.borderColor = "#e07070"; ok = false; }
-    else { en.classList.remove("show"); nm.style.borderColor = ""; }
+    const nm   = document.getElementById("fName");
+    const em   = document.getElementById("fEmail");
+    const tcpa = document.getElementById("fTcpa");
+    const en   = document.getElementById("errName");
+    const ee   = document.getElementById("errEmail");
+    const et   = document.getElementById("errTcpa");
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) { ee.classList.add("show"); em.style.borderColor = "#e07070"; ok = false; }
-    else { ee.classList.remove("show"); em.style.borderColor = ""; }
+    // Validate name
+    if (!nm.value.trim()) {
+      en.classList.add("show");
+      nm.style.borderColor = "#e07070";
+      ok = false;
+    } else {
+      en.classList.remove("show");
+      nm.style.borderColor = "";
+    }
+
+    // Validate email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) {
+      ee.classList.add("show");
+      em.style.borderColor = "#e07070";
+      ok = false;
+    } else {
+      ee.classList.remove("show");
+      em.style.borderColor = "";
+    }
+
+    // Validate TCPA checkbox
+    if (!tcpa.checked) {
+      et.classList.add("show");
+      const tcpaWrap = document.querySelector(".tcpa-wrap");
+      if (tcpaWrap) tcpaWrap.classList.add("tcpa-error");
+      ok = false;
+    } else {
+      et.classList.remove("show");
+      const tcpaWrap = document.querySelector(".tcpa-wrap");
+      if (tcpaWrap) tcpaWrap.classList.remove("tcpa-error");
+    }
 
     if (!ok) return;
 
@@ -144,6 +172,18 @@ if (form) {
       document.getElementById("success-msg").style.display = "block";
     }, 1200);
   });
+
+  // Clear TCPA error live when user checks the box
+  const tcpaInput = document.getElementById("fTcpa");
+  if (tcpaInput) {
+    tcpaInput.addEventListener("change", () => {
+      if (tcpaInput.checked) {
+        document.getElementById("errTcpa").classList.remove("show");
+        const tcpaWrap = document.querySelector(".tcpa-wrap");
+        if (tcpaWrap) tcpaWrap.classList.remove("tcpa-error");
+      }
+    });
+  }
 }
 
 /* ── COUNTERS ── */
@@ -272,7 +312,7 @@ function initSoldCarousels() {
     if (card.dataset.carouselInit) return;
     card.dataset.carouselInit = "1";
 
-    const id    = card.dataset.soldId;
+    const id      = card.dataset.soldId;
     const trackEl = document.getElementById(`track-${id}`);
     if (!trackEl) return;
 
@@ -319,12 +359,10 @@ function renderSoldPage(page) {
   const end        = Math.min(start + SOLD_PER_PAGE, total);
   const pageItems  = soldAllProps.slice(start, end);
 
-  // Render cards de esta página
   soldGrid.innerHTML = pageItems.map((p, i) => renderSoldCard(p, start + i)).join("");
   soldGrid.querySelectorAll(".sold-card").forEach(el => obs.observe(el));
   initSoldCarousels();
 
-  // Render paginación
   if (!paginationEl) return;
 
   if (totalPages <= 1) {
@@ -334,16 +372,14 @@ function renderSoldPage(page) {
 
   let html = "";
 
-  // Botón anterior
   html += `<button class="sold-page-btn sold-page-arrow" ${page === 1 ? "disabled" : ""} data-page="${page - 1}">
     <i class="fas fa-chevron-left"></i>
   </button>`;
 
-  // Números de página con ellipsis
   for (let i = 1; i <= totalPages; i++) {
-    const isFirst  = i === 1;
-    const isLast   = i === totalPages;
-    const isNear   = i >= page - 1 && i <= page + 1;
+    const isFirst = i === 1;
+    const isLast  = i === totalPages;
+    const isNear  = i >= page - 1 && i <= page + 1;
 
     if (isFirst || isLast || isNear) {
       html += `<button class="sold-page-btn sold-page-num ${i === page ? "active" : ""}" data-page="${i}">${i}</button>`;
@@ -352,7 +388,6 @@ function renderSoldPage(page) {
     }
   }
 
-  // Botón siguiente
   html += `<button class="sold-page-btn sold-page-arrow" ${page === totalPages ? "disabled" : ""} data-page="${page + 1}">
     <i class="fas fa-chevron-right"></i>
   </button>`;
@@ -360,12 +395,10 @@ function renderSoldPage(page) {
   paginationEl.innerHTML = html;
   paginationEl.style.display = "flex";
 
-  // Eventos
   paginationEl.querySelectorAll(".sold-page-btn:not([disabled])").forEach(btn => {
     btn.addEventListener("click", () => {
       soldCurrentPage = parseInt(btn.dataset.page);
       renderSoldPage(soldCurrentPage);
-      // Scroll suave al inicio de la sección
       const soldSection = document.getElementById("sold");
       if (soldSection) {
         const offset = soldSection.getBoundingClientRect().top + window.scrollY - 80;
@@ -409,7 +442,6 @@ async function loadAllProperties() {
     return s === "sold";
   });
 
-  // Render activas
   if (propertiesGrid) {
     if (activeProps.length === 0) {
       propertiesGrid.innerHTML = `
@@ -424,7 +456,6 @@ async function loadAllProperties() {
     }
   }
 
-  // Render sold con paginación
   if (soldGrid) {
     if (soldAllProps.length === 0) {
       soldGrid.innerHTML = `

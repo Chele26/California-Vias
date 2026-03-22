@@ -1,5 +1,5 @@
   /* ══════════════════════════════════════════════════
-    CALIFORNIA VIAS — property.js
+    CALIFORNIA VILLAS — property.js
     Detail page for a single property
     ══════════════════════════════════════════════════ */
 
@@ -70,7 +70,7 @@
   }
 
   function renderProperty(p) {
-    document.title = (p.title || p.name || "Property") + " | California Vias";
+    document.title = (p.title || p.name || "Property") + " | California Villas";
 
     // Gather media
     const VIDEO_EXTS = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;

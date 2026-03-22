@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════════════
-   CALIFORNIA VIAS — style.css
+   CALIFORNIA VILLAS — style.css
    Dark luxury: black texture · metallic gold · silver accents
    ══════════════════════════════════════════════════════════════ */
 
@@ -288,7 +288,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 
 /* LOGO AREA */
 .nav-logo { display:flex; align-items:center; gap:.9rem; text-decoration:none; }
-.logo-img  { height:100px; width: 150px;; display:block; transition:filter .3s; }
+.logo-img  { height:75px; width: 150px;; display:block; transition:filter .3s; }
 .logo-img:hover { filter:drop-shadow(0 0 8px rgba(201,168,76,.55)); }
 
 .logo-text-wrap {
@@ -491,7 +491,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
     rgba(6,6,6,.42) 50%,
     rgba(139,105,20,.22) 100%
   );
-  /* sin backdrop-filter — costoso en mobile */
 }
 
 /* Metallic sheen overlay */
@@ -626,7 +625,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   gap: 2px;
 }
 
-/* Card base — animación de brillo y hover */
 .p-card {
   position: relative;
   overflow: hidden;
@@ -637,13 +635,11 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 .p-card.on { opacity:1; transform:translateY(0); }
 
-/* Hover: borde dorado y sombra dramática */
 .p-card:hover {
   box-shadow: 0 0 0 1px rgba(201,168,76,.4), 0 16px 56px rgba(0,0,0,.8);
   z-index: 2;
 }
 
-/* Brillo diagonal en hover */
 .p-card::after {
   content: '';
   position: absolute;
@@ -661,7 +657,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 .p-card:hover::after { opacity: 1; }
 
-/* Animación de pulso sutil en el borde superior */
 .p-card::before {
   content: '';
   position: absolute;
@@ -716,7 +711,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 .p-price  { font-family:'Cormorant Garamond',serif; font-size:1.45rem; color:var(--gold-l); margin-top:.5rem; }
 .p-price.silver-price { color:var(--silver-l); }
 
-/* ── VIEW DETAILS — más llamativo ─────────────────────────── */
+/* ── VIEW DETAILS ─────────────────────────────────────────── */
 .p-hov {
   position: absolute;
   inset: 0;
@@ -747,7 +742,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   overflow: hidden;
 }
 
-/* Sweep de luz en el botón */
 .p-hov a::before {
   content: '';
   position: absolute;
@@ -800,7 +794,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   margin-bottom: 5rem;
 }
 
-/* Sold grid — 4 columnas fijas */
 .sold-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -818,7 +811,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 .sold-card.on { opacity:1; transform:translateY(0); }
 
-/* Contenedor interno para el carrusel */
 .sold-card-inner {
   position: relative;
   width: 100%;
@@ -826,7 +818,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   overflow: hidden;
 }
 
-/* Track del carrusel */
 .sold-card-track {
   display: flex;
   height: 100%;
@@ -851,7 +842,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 .sold-card:hover .sold-card-slide img { transform: scale(1.05); }
 
-/* Dots del carrusel interno */
 .sold-card-dots {
   position: absolute;
   bottom: 4.2rem;
@@ -1186,7 +1176,6 @@ footer {
 .carousel-slide { min-width:100%; height:100%; position:relative; overflow:hidden; }
 .carousel-slide img, .carousel-slide video { width:100%; height:100%; object-fit:cover; display:block; }
 
-/* Flechas del carrusel — discretas y pequeñas */
 .car-arrow {
   position: absolute;
   top: 50%;
@@ -1353,11 +1342,9 @@ footer {
   body { cursor: auto; }
   #cur, #cur2 { display: none !important; }
 
-  /* Sin animaciones de estrellas del logo */
   .logo-star,
   .logo-sparkle { animation: none !important; opacity: 0 !important; }
 
-  /* Sin shimmer animado — gradient estático, mantener clip para visibilidad */
   .shim {
     animation: none !important;
     background: linear-gradient(90deg, var(--gold-d) 0%, var(--gold-xl) 50%, var(--gold-d) 100%) !important;
@@ -1383,7 +1370,6 @@ footer {
     -webkit-text-fill-color: transparent !important;
   }
 
-  /* Sin blur/parallax en hero */
   .h-bg {
     filter: brightness(0.62) saturate(1.1) !important;
     transform: scale(1) !important;
@@ -1391,12 +1377,10 @@ footer {
     will-change: auto !important;
   }
 
-  /* Transiciones más cortas */
   .p-card, .sold-card, .s-card {
     transition: opacity .35s ease, transform .35s ease !important;
   }
 
-  /* View details siempre visible en touch */
   .p-hov { opacity: 1 !important; background: transparent; pointer-events: none; }
   .p-hov a { pointer-events: all; }
 }
@@ -1417,7 +1401,8 @@ footer {
   #hbg-btn      { display: block; }
   #nav          { padding: 1rem 1.4rem; }
   #nav.scrolled { padding: .75rem 1.4rem; }
-  .logo-img     { height: 44px; }
+  /* ✅ CORREGIDO: logo más grande en tablet */
+  .logo-img     { height: 62px; width: auto; }
   .logo-text    { font-size: 1.15rem; }
   .cn           { display: none; }
 
@@ -1457,9 +1442,12 @@ footer {
   /* Navbar */
   #nav          { padding: .9rem 1.2rem; }
   #nav.scrolled { padding: .7rem 1.2rem; }
+  /* ✅ CORREGIDO: logo más grande en mobile */
   .logo-img {
-    height: 48px;
-    max-width: 150px;}
+    height: 64px;
+    width: auto;
+    max-width: 180px;
+  }
   .logo-text    { font-size: 1.05rem; letter-spacing: .1em; }
 
   /* Hero */
@@ -1486,7 +1474,6 @@ footer {
   .a-frame-s{ inset: -4px 4px 4px -4px; }
   .about-text { font-size: .8rem; }
 
-  /* Stats — asegurar visibilidad aunque background-clip falle */
   .a-stat strong { font-size: 2rem; color: var(--gold); }
   .a-stat p      { font-size: .65rem; }
 
@@ -1549,7 +1536,8 @@ footer {
    ══════════════════════════════════════════════════ */
 @media (max-width: 576px) {
   /* Navbar */
-  .logo-img  { height: 36px; }
+  /* ✅ CORREGIDO: logo más grande en mobile pequeño */
+  .logo-img  { height: 56px; width: auto; }
   .logo-text { font-size: .95rem; }
   #nav       { padding: .85rem 1rem; }
 
@@ -1616,4 +1604,116 @@ footer {
   .prop-actions { flex-direction: column; }
   .prop-actions .btn-g,
   .prop-actions .btn-o { width: 100%; justify-content: center; }
+}
+
+/* ══════════════════════════════════════════════════
+   TCPA DISCLAIMER — Consent checkbox
+   ══════════════════════════════════════════════════ */
+
+.tcpa-wrap {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(201,168,76,.18);
+  background: rgba(201,168,76,.03);
+  transition: border-color .28s, background .28s;
+}
+.tcpa-wrap.tcpa-error {
+  border-color: rgba(224,112,112,.55);
+  background: rgba(224,112,112,.04);
+}
+
+.tcpa-label {
+  display: flex;
+  align-items: flex-start;
+  gap: .85rem;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Hidden native checkbox */
+.tcpa-checkbox-box {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: .12rem;
+}
+.tcpa-checkbox-box input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Custom checkmark box */
+.tcpa-checkmark {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(201,168,76,.5);
+  background: rgba(255,255,255,.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .25s, background .25s;
+  z-index: 1;
+}
+.tcpa-checkmark i {
+  font-size: .6rem;
+  color: var(--bk);
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+/* Checked state */
+.tcpa-checkbox-box input:checked ~ .tcpa-checkmark {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.tcpa-checkbox-box input:checked ~ .tcpa-checkmark i {
+  opacity: 1;
+}
+
+/* Focus ring for accessibility */
+.tcpa-checkbox-box input:focus-visible ~ .tcpa-checkmark {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Hover states */
+.tcpa-label:hover .tcpa-checkmark {
+  border-color: var(--gold);
+}
+
+/* Disclaimer text */
+.tcpa-text {
+  font-size: .7rem;
+  color: var(--wh2);
+  line-height: 1.7;
+  letter-spacing: .02em;
+}
+.tcpa-text a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: rgba(201,168,76,.4);
+  transition: color .2s, text-decoration-color .2s;
+}
+.tcpa-text a:hover {
+  color: var(--gold-l);
+  text-decoration-color: var(--gold-l);
+}
+
+/* Error message */
+.tcpa-wrap .ferr {
+  margin-top: .6rem;
+  margin-left: 1.75rem;
+  display: none;
+}
+.tcpa-wrap .ferr.show { display: block; }
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .tcpa-wrap { padding: .9rem 1rem; }
+  .tcpa-text  { font-size: .67rem; }
 }

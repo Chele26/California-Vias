@@ -25,11 +25,11 @@ const CV_DATA = {
       baths: 1,
       area: "1,079 sqft",
       price: "$713,000",
-      cover: "assets/propiedades/propiedad-1/slide-1.jpg",
+      cover: "assets/propiedades/propiedad-1/portada.jpg",
       description: "Charming single family residence built in 1923, situated on a 4,801 sq ft lot in Los Angeles. This classic Spanish-style home combines timeless character with a prime location.",
       features: ["Single Family Residence", "4,801 sqft Lot", "Built in 1923", "Estimated Rent $2,941/mo", "Zestimate $729,900", "$661/sqft"],
       media: [
-        "assets/propiedades/propiedad-1/slide-1.jpg",
+        "assets/propiedades/propiedad-1/portada.jpg",
         "assets/propiedades/propiedad-1/slide-2.jpg",
         "assets/propiedades/propiedad-1/slide-3.jpg",
         "assets/propiedades/propiedad-1/slide-4.jpg",
@@ -51,7 +51,6 @@ const CV_DATA = {
       description: "An iconic oceanfront residence where the horizon becomes part of the living experience. Designed for those who demand the very best — in space, light and setting.",
       features: ["Ocean Views", "Private Beach Access", "Chef's Kitchen", "Rooftop Terrace", "Home Office", "Spa & Gym"],
       media: [
-         "assets/propiedades/propiedad-2/portada.mp4",
         "assets/propiedades/propiedad-2/slide-1.jpg",
         "assets/propiedades/propiedad-2/slide-2.jpg",
         "assets/propiedades/propiedad-2/slide-3.jpg",

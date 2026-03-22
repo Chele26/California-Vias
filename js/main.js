@@ -44,7 +44,7 @@ setTimeout(() => {
 }, 100);
 
 const hBg = document.getElementById("hBg");
-if (hBg) {
+if (hBg && !isTouchDevice) {
   window.addEventListener("scroll", () => {
     if (window.scrollY < window.innerHeight) {
       hBg.style.transform = `scale(1) translateY(${window.scrollY * 0.28}px)`;

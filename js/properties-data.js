@@ -158,7 +158,7 @@ var CV_DATA = {
     ]
   },
 
-  
+
   // ─── 7 ──────────────────────────────────────────────────
   {
     id: "propiedad-7",
@@ -201,12 +201,12 @@ var CV_DATA = {
     location: "400 S Bullis Rd, Compton, CA 90221",
     beds: 3, baths: 1, area: "965 sqft", price: "$197,000",
     soldDate: "10/23/2014",
-    cover: "https://maps.googleapis.com/maps/api/streetview?location=400+S+Bullis+Rd%2C+Compton%2C+CA+90221&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=8j2knBnPnlEMvrD7ajwK_gT7vSE=",
+    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dWvbRL1GtVXGLFOQ7omOkw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=95.908966&pitch=0&thumbfov=100",
     description: "Casa unifamiliar de 965 sqft con 3 recámaras y 1 baño, construida en 1944 en lote de 6,141 sqft en Compton.",
     features: ["3 Recámaras", "1 Baño", "Terreno 6,141 sqft", "Construida 1944"],
     photos: 0,
     media: [
-      "https://maps.googleapis.com/maps/api/streetview?location=400+S+Bullis+Rd%2C+Compton%2C+CA+90221&size=576x432&key=AIzaSyARFMLB1na-BBWf7_R3-5YOQQaHqEJf6RQ&source=outdoor&&signature=8j2knBnPnlEMvrD7ajwK_gT7vSE ="
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=dWvbRL1GtVXGLFOQ7omOkw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=95.908966&pitch=0&thumbfov=100"
     ]
   },
 

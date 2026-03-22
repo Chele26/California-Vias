@@ -282,6 +282,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   padding: .95rem 3rem;
   border-bottom: 1px solid var(--bd-g);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 /* LOGO AREA */
@@ -473,6 +474,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   transform: scale(1.08);
   transition: transform 12s ease;
   filter: blur(3px) brightness(0.68) saturate(1.2);
+  will-change: transform;
 }
 #hero.loaded .h-bg { transform: scale(1); }
 
@@ -485,7 +487,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
     rgba(6,6,6,.42) 50%,
     rgba(139,105,20,.22) 100%
   );
-  backdrop-filter: blur(1px);
+  /* sin backdrop-filter — costoso en mobile */
 }
 
 /* Metallic sheen overlay */
@@ -731,7 +733,6 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   font-size: .72rem;
   letter-spacing: .26em;
   text-transform: uppercase;
-  backdrop-filter: blur(12px);
   transition: background .3s, color .3s, transform .3s, box-shadow .3s;
   box-shadow:
     0 0 28px rgba(201,168,76,.25),
@@ -985,8 +986,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 /* ── CONTACT ───────────────────────────────────────────────── */
 .c-wrap {
   border: 1px solid var(--bd-g);
-  background: rgba(10,10,10,.95);
-  backdrop-filter: blur(12px);
+  background: rgba(10,10,10,.98);
   position: relative;
   overflow: hidden;
 }
@@ -1188,14 +1188,13 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(8,8,8,.42);
+  background: rgba(8,8,8,.55);
   border: 1px solid rgba(201,168,76,.22);
   color: rgba(201,168,76,.75);
   width: 36px; height: 36px;
   display: flex; align-items:center; justify-content:center;
   cursor: pointer;
   transition: background .28s, border-color .28s, color .28s, opacity .28s;
-  backdrop-filter: blur(6px);
   font-size: .75rem;
   opacity: .5;
 }
@@ -1224,9 +1223,8 @@ footer {
   font-size: .6rem;
   letter-spacing: .22em;
   color: var(--gold);
-  background: rgba(8,8,8,.7);
+  background: rgba(8,8,8,.8);
   padding: .3rem .7rem;
-  backdrop-filter: blur(6px);
   border: 1px solid rgba(201,168,76,.2);
 }
 .car-thumbs { display:flex; gap:4px; margin-top:4px; }
@@ -1339,7 +1337,38 @@ footer {
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 @media (hover:hover) and (pointer:fine) { body { cursor:none; } }
-@media (hover:none), (pointer:coarse)   { body { cursor:auto; } #cur,#cur2{display:none!important;} }
+@media (hover:none), (pointer:coarse)   {
+  body { cursor:auto; }
+  #cur, #cur2 { display:none !important; }
+
+  /* Desactivar animaciones costosas en mobile */
+  .logo-star,
+  .logo-sparkle { animation: none !important; opacity: 0 !important; }
+
+  .shim, .shim-silver {
+    animation: none !important;
+    background: var(--gold) !important;
+    -webkit-text-fill-color: var(--gold) !important;
+  }
+
+  .h-bg {
+    filter: brightness(0.62) saturate(1.1) !important;
+    transform: scale(1) !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+
+  /* Reducir transiciones en mobile */
+  .p-card, .sold-card, .s-card {
+    transition: opacity .4s ease, transform .4s ease !important;
+  }
+
+  /* Sin shimmer en logo */
+  .logo-text {
+    animation: none !important;
+    background-position: 0% center !important;
+  }
+}
 
 @media(max-width:1200px){
   .sold-grid { grid-template-columns: repeat(2, 1fr); }

@@ -25,16 +25,16 @@ const CV_DATA = {
   properties: [
     {
       id: "propiedad-1",
-      status: "Available",
-      title: "Contemporary Hills Residence",
-      location: "California",
-      beds: 6,
-      baths: 7,
-      area: "8,400 sqft",
-      price: "$12,500,000",
+      status: "Sold",
+      title: "Spanish Style Single Family Residence",
+      location: "5922 7th Ave, Los Angeles, CA 90043",
+      beds: 2,
+      baths: 1,
+      area: "1,079 sqft",
+      price: "$713,000",
       cover: "assets/propiedades/propiedad-1/slide-1.jpg",
-      description: "A breathtaking contemporary masterpiece perched above the hills, offering panoramic views and architectural excellence. Every detail has been crafted for a life of refined comfort and style.",
-      features: ["Home Theater", "Wine Cellar", "Infinity Pool", "Smart Home", "4-Car Garage", "Guest House"],
+      description: "Charming single family residence built in 1923, situated on a 4,801 sq ft lot in Los Angeles. This classic Spanish-style home combines timeless character with a prime location, offering an estimated rental income of $2,941/mo and a Zestimate® of $729,900.",
+      features: ["Single Family Residence", "4,801 sqft Lot", "Built in 1923", "Estimated Rent $2,941/mo", "Zestimate $729,900", "$661/sqft"],
       media: [
         "assets/propiedades/propiedad-1/portada.mp4",
         "assets/propiedades/propiedad-1/slide-1.jpg",
@@ -43,7 +43,7 @@ const CV_DATA = {
         "assets/propiedades/propiedad-1/slide-4.jpg",
         "assets/propiedades/propiedad-1/slide-5.jpg"
       ]
-    },
+    }
     {
       id: "propiedad-2",
       status: "Featured",
@@ -194,12 +194,12 @@ const CV_DATA = {
 
   /* ── SERVICES ──────────────────────────────────────── */
   services: [
-    { icon: "fas fa-home",        title: "Property Sales",        text: "We present and market distinctive homes with a polished strategy designed to connect the right buyers with the right spaces." },
-    { icon: "fas fa-search-dollar",title:"Buyer Guidance",         text: "From first search to final decision, we help clients navigate every stage of the process with clarity and confidence." },
-    { icon: "fas fa-key",         title: "Premium Leasing",       text: "We assist in securing refined rental opportunities for clients seeking flexibility, comfort and strong location value." },
-    { icon: "fas fa-chart-line",  title: "Market Insight",        text: "Our recommendations are supported by local knowledge, pricing awareness and a practical understanding of property value." },
-    { icon: "fas fa-camera",      title: "Presentation & Media",  text: "We use strong visuals and clear presentation to help each listing communicate quality, atmosphere and identity." },
-    { icon: "fas fa-handshake",   title: "Personalized Support",  text: "Every client receives direct guidance, responsive communication and a more personal experience from beginning to end." }
+    { icon: "fas fa-home", title: "Property Sales", text: "We present and market distinctive homes with a polished strategy designed to connect the right buyers with the right spaces." },
+    { icon: "fas fa-search-dollar", title: "Buyer Guidance", text: "From first search to final decision, we help clients navigate every stage of the process with clarity and confidence." },
+    { icon: "fas fa-key", title: "Premium Leasing", text: "We assist in securing refined rental opportunities for clients seeking flexibility, comfort and strong location value." },
+    { icon: "fas fa-chart-line", title: "Market Insight", text: "Our recommendations are supported by local knowledge, pricing awareness and a practical understanding of property value." },
+    { icon: "fas fa-camera", title: "Presentation & Media", text: "We use strong visuals and clear presentation to help each listing communicate quality, atmosphere and identity." },
+    { icon: "fas fa-handshake", title: "Personalized Support", text: "Every client receives direct guidance, responsive communication and a more personal experience from beginning to end." }
   ],
 
   /* ── TESTIMONIALS ──────────────────────────────────── */
@@ -217,9 +217,9 @@ const CV_DATA = {
     const saved = localStorage.getItem("cv_data");
     if (saved) {
       const parsed = JSON.parse(saved);
-      if (parsed.properties)   CV_DATA.properties   = parsed.properties;
-      if (parsed.services)     CV_DATA.services      = parsed.services;
-      if (parsed.testimonials) CV_DATA.testimonials  = parsed.testimonials;
+      if (parsed.properties) CV_DATA.properties = parsed.properties;
+      if (parsed.services) CV_DATA.services = parsed.services;
+      if (parsed.testimonials) CV_DATA.testimonials = parsed.testimonials;
     }
   } catch (e) { /* ignore */ }
 })();

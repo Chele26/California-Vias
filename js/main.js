@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════
-   CALIFORNIA VILLAS — main.js
+   CALIFORNIA VIAS — main.js
    ══════════════════════════════════════════════════ */
 
 const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
@@ -115,7 +115,12 @@ if (track && dotsWrapper && nextBtn && prevBtn) {
   startAuto();
 }
 
-/* ── CONTACT FORM (with TCPA validation) ── */
+/* ══════════════════════════════════════════════════
+   CONTACT FORM — WhatsApp submission
+   ══════════════════════════════════════════════════ */
+
+const WHATSAPP_NUMBER = "15628621902"; // Laura's number (no + no spaces)
+
 const form = document.getElementById("cForm");
 if (form) {
   form.addEventListener("submit", function (e) {
@@ -124,6 +129,9 @@ if (form) {
 
     const nm   = document.getElementById("fName");
     const em   = document.getElementById("fEmail");
+    const ph   = document.getElementById("fPhone");
+    const dt   = document.getElementById("fDate");
+    const msg  = document.getElementById("fMsg");
     const tcpa = document.getElementById("fTcpa");
     const en   = document.getElementById("errName");
     const ee   = document.getElementById("errEmail");
@@ -163,14 +171,40 @@ if (form) {
 
     if (!ok) return;
 
+    // ── Build WhatsApp message ──
+    const name    = nm.value.trim();
+    const email   = em.value.trim();
+    const phone   = ph.value.trim()  || "Not provided";
+    const date    = dt.value         || "Not specified";
+    const message = msg.value.trim() || "No additional message.";
+
+    const waText = [
+      "🏡 *New Contact Request — California Vias*",
+      "",
+      `👤 *Name:* ${name}`,
+      `📧 *Email:* ${email}`,
+      `📞 *Phone:* ${phone}`,
+      `📅 *Preferred Date:* ${date}`,
+      "",
+      `💬 *Message:*`,
+      message,
+      "",
+      "✅ _Client has consented to receive calls/texts (TCPA)._"
+    ].join("\n");
+
+    const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
+    // ── Show spinner briefly then open WhatsApp ──
     const btn = document.getElementById("fBtn");
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Opening WhatsApp...';
     btn.disabled = true;
 
     setTimeout(() => {
-      this.style.display = "none";
-      document.getElementById("success-msg").style.display = "block";
-    }, 1200);
+      form.style.display = "none";
+      const successEl = document.getElementById("success-msg");
+      if (successEl) successEl.style.display = "block";
+      window.open(waURL, "_blank");
+    }, 900);
   });
 
   // Clear TCPA error live when user checks the box

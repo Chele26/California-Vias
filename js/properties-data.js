@@ -32,7 +32,7 @@ const CV_DATA = {
       baths: 7,
       area: "8,400 sqft",
       price: "$12,500,000",
-      cover: "assets/propiedades/propiedad-1/portada.jpg",
+      cover: "assets/propiedades/propiedad-1/slide-1.jpg",
       description: "A breathtaking contemporary masterpiece perched above the hills, offering panoramic views and architectural excellence. Every detail has been crafted for a life of refined comfort and style.",
       features: ["Home Theater", "Wine Cellar", "Infinity Pool", "Smart Home", "4-Car Garage", "Guest House"],
       media: [

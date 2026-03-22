@@ -208,9 +208,21 @@ function initCarousel(total) {
     });
   }
 
-  // Auto-play any video on slide 0
+  // Auto-play first video — use IntersectionObserver so browser allows it
   const firstVideo = track.querySelector(".carousel-slide:first-child video");
-  if (firstVideo) firstVideo.play().catch(()=>{});
+  if (firstVideo) {
+    firstVideo.muted = true;
+    const autoObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          firstVideo.play().catch(() => {});
+        } else {
+          firstVideo.pause();
+        }
+      });
+    }, { threshold: 0.3 });
+    autoObs.observe(firstVideo);
+  }
 
   if (prev) prev.addEventListener("click", () => goTo(current - 1));
   if (next) next.addEventListener("click", () => goTo(current + 1));

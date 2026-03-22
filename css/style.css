@@ -288,7 +288,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 
 /* LOGO AREA */
 .nav-logo { display:flex; align-items:center; gap:.9rem; text-decoration:none; }
-.logo-img  { height:52px; width:auto; display:block; transition:filter .3s; }
+.logo-img  { height:70px; width: 180px;; display:block; transition:filter .3s; }
 .logo-img:hover { filter:drop-shadow(0 0 8px rgba(201,168,76,.55)); }
 
 .logo-text-wrap {

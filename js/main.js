@@ -40,7 +40,14 @@ if (navEl) {
 /* ── HERO ── */
 setTimeout(() => {
   const hero = document.getElementById("hero");
-  if (hero) hero.classList.add("loaded");
+  if (hero) {
+    hero.classList.add("loaded");
+    // Zoom sutil solo en desktop
+    if (!isTouchDevice) {
+      const bg = document.getElementById("hBg");
+      if (bg) bg.style.transform = "scale(1.06)";
+    }
+  }
 }, 100);
 
 const hBg = document.getElementById("hBg");

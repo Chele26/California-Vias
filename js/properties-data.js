@@ -461,6 +461,18 @@ var CV_DATA = {
     media: [
       "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=UleGFszMNVXvvzk-mVfPzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=100.46604&pitch=0&thumbfov=100"
     ]
+  },
+
+    {
+    id: "propiedad-25",
+    status: "Pending",
+    title: "Town House en Compton CA",
+    cover: "assets/propiedades/propiedad-25/slide-1.jpg",
+    description: "Text me for more details about this property: 562-862-1902.",
+    videos: 1,
+    media: [
+      "assets/propiedades/propiedad-25/v2.mp4",
+    ]
   }
 
 ]

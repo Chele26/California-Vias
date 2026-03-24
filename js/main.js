@@ -179,17 +179,17 @@ if (form) {
     const message = msg.value.trim() || "No additional message.";
 
     const waText = [
-      "🏡 *New Contact Request — California Villas*",
+      "*New Contact Request — Tu Casa con Laura*",
       "",
-      `👤 *Name:* ${name}`,
-      `📧 *Email:* ${email}`,
-      `📞 *Phone:* ${phone}`,
-      `📅 *Preferred Date:* ${date}`,
+      `*Name:* ${name}`,
+      `*Email:* ${email}`,
+      `*Phone:* ${phone}`,
+      `*Preferred Date:* ${date}`,
       "",
-      `💬 *Message:*`,
+      `*Message:*`,
       message,
       "",
-      "✅ _Client has consented to receive calls/texts (TCPA)._"
+      "_Client has consented to receive calls/texts (TCPA)._"
     ].join("\n");
 
     const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
@@ -506,3 +506,44 @@ async function loadAllProperties() {
 }
 
 loadAllProperties();
+
+/* ── CONSENT MODAL ── */
+const consentModal = document.getElementById("consentModal");
+const openConsentModal = document.getElementById("openConsentModal");
+const closeConsentModal = document.getElementById("closeConsentModal");
+const consentBackdrop = document.getElementById("consentBackdrop");
+
+function showConsentModal() {
+  if (!consentModal) return;
+  consentModal.classList.add("open");
+  consentModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+}
+
+function hideConsentModal() {
+  if (!consentModal) return;
+  consentModal.classList.remove("open");
+  consentModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+if (openConsentModal) {
+  openConsentModal.addEventListener("click", function (e) {
+    e.preventDefault();
+    showConsentModal();
+  });
+}
+
+if (closeConsentModal) {
+  closeConsentModal.addEventListener("click", hideConsentModal);
+}
+
+if (consentBackdrop) {
+  consentBackdrop.addEventListener("click", hideConsentModal);
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    hideConsentModal();
+  }
+});

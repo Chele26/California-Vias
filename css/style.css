@@ -511,8 +511,55 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0 1.2rem;
+  padding: 5.5rem 1.2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
 }
+/* ── HERO BRAND (logo + nombre dentro del hero) ──────────────── */
+.hero-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 0rem;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fu 1s ease .3s forwards;
+}
+
+.hero-logo {
+  width: auto;
+  height: clamp(250px, 20vw, 260px);
+  max-width: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(201,168,76,.35));
+  margin-bottom: -.6rem;
+}
+
+.hero-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(.58rem, 1.3vw, .75rem);
+  letter-spacing: .38em;
+  text-transform: uppercase;
+  color: var(--gold-l);
+  text-align: center;
+  margin-top: .6rem;
+}
+
+.hero-license {
+  font-size: clamp(.5rem, 1vw, .62rem);
+  letter-spacing: .2em;
+  color: var(--wh3);
+  margin: .2rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
 .h-eye {
   font-size: .6rem;
   letter-spacing: .44em;
@@ -538,7 +585,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   letter-spacing: .16em;
   color: var(--wh2);
   max-width: 560px;
-  margin: 2rem auto 3rem;
+  margin: 1rem auto 1.8rem;
   opacity: 0;
   animation: fu 1s ease .75s forwards;
 }
@@ -550,25 +597,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   opacity: 0;
   animation: fu 1s ease .95s forwards;
 }
-.h-scr {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
-  opacity: 0;
-  animation: fu 1s ease 1.2s forwards;
-}
-.h-scr span { font-size:.58rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; }
-.h-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(180deg, var(--gold), transparent);
-  animation: scP 2s ease infinite;
-}
+.h-scr { display: none; }
 
 /* Corner decorations */
 .cn { position:absolute; width:55px; height:55px; z-index:3; }
@@ -1459,6 +1488,12 @@ footer {
   .h-btns .btn-o { width: 100%; max-width: 280px; justify-content: center; }
   .h-eye   { font-size: .55rem; }
 
+  /* Hero brand */
+  .hero-logo    { height: clamp(110px, 22vw, 180px); max-width: 300px; margin-bottom: -.4rem; }
+  .hero-brand   { margin-bottom: .8rem; }
+  .hero-name    { font-size: .58rem; letter-spacing: .28em; }
+  .hero-license { font-size: .5rem; letter-spacing: .16em; }
+
   /* Secciones */
   .pad  { padding: 3.5rem 0; }
   .sec-h { font-size: clamp(1.9rem, 7vw, 2.8rem); }
@@ -1546,6 +1581,12 @@ footer {
   .h-sub   { font-size: .7rem; letter-spacing: .07em; }
   .h-btns .btn-g,
   .h-btns .btn-o { max-width: 100%; }
+
+  /* Hero brand */
+  .hero-logo    { height: clamp(90px, 26vw, 140px); max-width: 250px; margin-bottom: -.3rem; }
+  .hero-brand   { margin-bottom: .7rem; }
+  .hero-name    { font-size: .54rem; letter-spacing: .22em; }
+  .hero-license { font-size: .46rem; }
 
   /* About — imagen centrada más pequeña */
   .a-img    { max-width: 220px; }

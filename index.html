@@ -169,6 +169,50 @@
     </div>
   </section>
 
+  <!-- YOUTUBE / CHANNEL INVITE -->
+  <section id="channel" class="yt-section">
+    <div class="yt-inner">
+
+      <!-- Left: text -->
+      <div class="yt-copy rv">
+        <span class="lbl">✦ On Our Channel</span>
+        <h2 class="sec-h">Watch. Learn.<br><em>Get Inspired.</em></h2>
+        <div class="mini-bar" style="margin-left:0;"></div>
+        <p class="yt-desc">
+          Tune in to our YouTube channel for exclusive webinars, market insights,
+          and real client testimonials that will guide you through every step of
+          your real estate journey.
+        </p>
+        <a
+          href="https://www.youtube.com/@tucasaconlaura"
+          target="_blank"
+          rel="noopener"
+          class="yt-cta"
+        >
+          <i class="fab fa-youtube"></i>
+          Visit Our Channel
+        </a>
+      </div>
+
+      <!-- Right: video embed -->
+      <div class="yt-embed rv">
+        <div class="yt-frame-wrap">
+          <div class="yt-corner yt-c-tl"></div>
+          <div class="yt-corner yt-c-br"></div>
+          <iframe
+            src="https://www.youtube.com/embed/Ya_OWZwyD8A?si=sI_OjpWKJwDk6J33&rel=0&modestbranding=1"
+            title="Tu Casa con Laura — YouTube"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- PROPERTIES (Active/Available) -->
   <section id="properties" class="pad">
     <div class="container mb-5">
@@ -541,6 +585,166 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/properties-data.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- YouTube section styles -->
+  <style>
+    /* ── YOUTUBE SECTION ────────────────────────────────────────── */
+    .yt-section {
+      padding: 6rem 0;
+      background: var(--bk2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle diagonal shimmer lines (matches metal-bg) */
+    .yt-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(
+          105deg,
+          transparent,
+          transparent 2px,
+          rgba(201,168,76,.012) 2px,
+          rgba(201,168,76,.012) 4px
+        );
+    }
+
+    /* Gold accent glow top-left */
+    .yt-section::after {
+      content: '';
+      position: absolute;
+      top: -120px;
+      left: -120px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Two-column layout */
+    .yt-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    /* LEFT — copy */
+    .yt-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .95rem;
+      font-weight: 300;
+      color: var(--wh2);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .yt-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      padding: .85rem 2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      transition: background .3s, color .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .yt-cta i {
+      font-size: 1.1rem;
+      transition: transform .3s;
+    }
+
+    .yt-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s ease;
+    }
+
+    .yt-cta span, .yt-cta i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .yt-cta:hover {
+      color: var(--bk);
+    }
+
+    .yt-cta:hover::before {
+      transform: scaleX(1);
+    }
+
+    .yt-cta:hover i {
+      transform: scale(1.15);
+    }
+
+    /* RIGHT — video frame */
+    .yt-frame-wrap {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--bd-g);
+      box-shadow:
+        0 0 0 1px rgba(201,168,76,.08),
+        0 24px 60px rgba(0,0,0,.65),
+        0 0 40px rgba(201,168,76,.06);
+    }
+
+    /* Gold corner accents */
+    .yt-corner {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border-color: var(--gold);
+      border-style: solid;
+      z-index: 2;
+    }
+    .yt-c-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .yt-c-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+    .yt-frame-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .yt-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .yt-copy {
+        text-align: center;
+      }
+      .yt-copy .mini-bar {
+        margin: 0 auto !important;
+      }
+      .yt-cta {
+        margin: 0 auto;
+        display: flex;
+        width: fit-content;
+      }
+    }
+  </style>
 </body>
 
 </html>

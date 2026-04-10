@@ -1758,3 +1758,32 @@ footer {
   .tcpa-wrap { padding: .9rem 1rem; }
   .tcpa-text  { font-size: .67rem; }
 }
+
+.carousel-wrap {
+  background: #0a0a0a;
+  border: 1px solid rgba(201,168,76,.12);
+}
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+}
+.carousel-slide img {
+  object-fit: contain;   /* nunca recorta la imagen */
+}
+/* Videos siguen con cover — son siempre landscape */
+.carousel-slide video {
+  object-fit: cover;
+}
+ 
+/* Thumbnails también muestran imagen completa */
+.car-thumb {
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.car-thumb img {
+  object-fit: contain;
+}

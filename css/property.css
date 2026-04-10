@@ -46,10 +46,13 @@
 /* ── CAROUSEL ────────────────────────────────────────── */
 .carousel-wrap {
   position: relative;
-  background: #000;
+  /* Dark background so letterbox/pillarbox areas look intentional */
+  background: #0a0a0a;
   overflow: hidden;
   aspect-ratio: 16/9;
   max-height: 680px;
+  /* Subtle gold border to frame the image area */
+  border: 1px solid rgba(201,168,76,.12);
 }
 
 .carousel-track {
@@ -63,16 +66,24 @@
   height: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
 }
 
+/* ── KEY FIX: contain so images are never cropped ── */
 .carousel-slide img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* show full image, no cropping */
   display: block;
 }
 
+/* Videos keep cover — they're usually landscape and look better full */
 .carousel-slide video {
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -88,7 +99,7 @@
   color: var(--gold);
   width: 48px; height: 48px;
   display: flex; align-items: center; justify-content: center;
-  cursor: none;
+  cursor: pointer;
   transition: background .28s, border-color .28s;
   backdrop-filter: blur(8px);
 }
@@ -121,7 +132,7 @@
   border: 1px solid rgba(201,168,76,.2);
 }
 
-/* Thumbnails */
+/* ── THUMBNAILS ──────────────────────────────────────── */
 .car-thumbs {
   display: flex;
   gap: 4px;
@@ -131,14 +142,27 @@
   flex: 1;
   aspect-ratio: 16/9;
   overflow: hidden;
-  cursor: none;
+  cursor: pointer;
   border: 2px solid transparent;
   transition: border-color .25s;
   position: relative;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .car-thumb.active { border-color: var(--gold); }
-.car-thumb img, .car-thumb video {
-  width: 100%; height: 100%;
+
+/* Thumbnails also use contain so you can recognise the image */
+.car-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.car-thumb video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -278,3 +302,4 @@
   .car-thumbs { display: none; }
   .prop-specs { gap: .9rem; }
 }
+

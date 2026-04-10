@@ -230,7 +230,7 @@ var CV_DATA = {
   // ─── 12 ─────────────────────────────────────────────────
   {
     id: "propiedad-12",
-    status: "Pending",
+    status: "sold",
     title: "Casa con Sala Familiar y Chimenea — Compton",
     location: "2717 W Tichenor St, Compton, CA 90220",
     beds: 4, baths: 2, area: "1,764 sqft", price: "$665,000",
@@ -462,10 +462,10 @@ var CV_DATA = {
       "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=UleGFszMNVXvvzk-mVfPzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=100.46604&pitch=0&thumbfov=100"
     ]
   },
-
+ // ─── 25 ─────────────────────────────────────────────────
     {
     id: "propiedad-25",
-    status: "Pending",
+    status: "Sold",
     title: "Town House en Compton CA",
     cover: "assets/propiedades/propiedad-25/slide-1.jpg",
     description: "Text me for more details about this property: 562-862-1902.",
@@ -473,6 +473,39 @@ var CV_DATA = {
     media: [
       "assets/propiedades/propiedad-25/v2.mp4",
     ]
+  },
+
+   // ─── 26 ─────────────────────────────────────────────────
+
+    {
+id: "propiedad-26",
+status: "Featured",
+title: "Casa Remodelada en Downey",
+location: "11508 Old River School Rd, Downey, CA 90241",
+beds: 3,
+baths: 2,
+area: "1,123 sqft",
+price: "$850,000",
+soldDate: "N/A",
+cover: "assets/propiedades/propiedad-26/slide-1.jpeg",
+description: "Hermosa casa muy limpia y bien cuidada en la ciudad de Downey. Remodelada en 2010, incluyendo baños, pisos, cocina, ventanas, techo, tuberías de cobre y sistema eléctrico. Cuenta con patio amplio tipo paraíso con árboles frutales como aguacate, además de rampa para acceso y shutters en todas las ventanas.",
+features: [
+  "3 Recámaras",
+  "2 Baños",
+  "Remodelación completa (2010)",
+  "Tuberías de cobre",
+  "Sistema eléctrico actualizado",
+  "Patio amplio con árboles frutales",
+  "Rampa para acceso",
+  "Ventanas con shutters"
+],
+photos: 4,
+    media: [
+      "assets/propiedades/propiedad-26/slide-1.jpeg",
+      "assets/propiedades/propiedad-26/slide-2.jpeg",
+      "assets/propiedades/propiedad-26/slide-3.jpeg",
+      "assets/propiedades/propiedad-26/slide-4.jpeg",
+ ]
   }
 
 ]

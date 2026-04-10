@@ -83,12 +83,10 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/properties-data.js"></script>
-<script src="js/property.js"></script>
 
-<!-- i18n: auto language detection + manual toggle -->
+<!-- ① i18n PRIMERO — llena window.i18n antes de que property.js arranque -->
 <script>
 (function() {
-  /* ── TRANSLATIONS ──────────────────────────────────────────── */
   const translations = {
     en: {
       'nav.about':        'About',
@@ -98,26 +96,25 @@
       'nav.services':     'Services',
       'nav.contact':      'Contact',
 
-      /* Property page labels — used by property.js via window.i18n */
-      'prop.backBtn':       '← Back to Properties',
-      'prop.overview':      'Property Overview',
-      'prop.beds':          'Beds',
-      'prop.baths':         'Baths',
-      'prop.sqft':          'Sq Ft',
-      'prop.garage':        'Garage',
-      'prop.yearBuilt':     'Year Built',
-      'prop.lotSize':       'Lot Size',
-      'prop.status':        'Status',
-      'prop.features':      '✦ Features & Highlights',
-      'prop.description':   '✦ About This Property',
-      'prop.contact':       'Interested in This Property?',
-      'prop.contactSub':    'Contact Laura for more information or to schedule a showing.',
-      'prop.callBtn':       'Call Laura',
-      'prop.msgBtn':        'Send a Message',
-      'prop.gallery':       'Photo Gallery',
-      'prop.available':     'Available',
-      'prop.sold':          'Sold',
-      'prop.pending':       'Pending',
+      'prop.backBtn':     '← Back to Properties',
+      'prop.overview':    'Property Overview',
+      'prop.beds':        'Beds',
+      'prop.baths':       'Baths',
+      'prop.sqft':        'Sq Ft',
+      'prop.garage':      'Garage',
+      'prop.yearBuilt':   'Year Built',
+      'prop.lotSize':     'Lot Size',
+      'prop.status':      'Status',
+      'prop.features':    '✦ Features & Highlights',
+      'prop.description': '✦ About This Property',
+      'prop.contact':     'Interested in This Property?',
+      'prop.contactSub':  'Contact Laura for more information or to schedule a showing.',
+      'prop.callBtn':     'Call Laura',
+      'prop.msgBtn':      'Send a Message',
+      'prop.gallery':     'Photo Gallery',
+      'prop.available':   'Available',
+      'prop.sold':        'Sold',
+      'prop.pending':     'Pending',
 
       'footer.copy': '© 2026 Tu Casa con Laura. All Rights Reserved.',
       'footer.made': 'Designed for a refined property experience.',
@@ -130,33 +127,31 @@
       'nav.services':     'Servicios',
       'nav.contact':      'Contacto',
 
-      /* Property page labels */
-      'prop.backBtn':       '← Volver a Propiedades',
-      'prop.overview':      'Resumen de la Propiedad',
-      'prop.beds':          'Rec.',
-      'prop.baths':         'Baños',
-      'prop.sqft':          'Pies²',
-      'prop.garage':        'Garage',
-      'prop.yearBuilt':     'Año de Construcción',
-      'prop.lotSize':       'Tamaño del Lote',
-      'prop.status':        'Estado',
-      'prop.features':      '✦ Características Destacadas',
-      'prop.description':   '✦ Acerca de Esta Propiedad',
-      'prop.contact':       '¿Interesado en Esta Propiedad?',
-      'prop.contactSub':    'Contáctame para obtener más información o programar una visita.',
-      'prop.callBtn':       'Llamar a Laura',
-      'prop.msgBtn':        'Enviar un Mensaje',
-      'prop.gallery':       'Galería de Fotos',
-      'prop.available':     'Disponible',
-      'prop.sold':          'Vendida',
-      'prop.pending':       'Pendiente',
+      'prop.backBtn':     '← Volver a Propiedades',
+      'prop.overview':    'Resumen de la Propiedad',
+      'prop.beds':        'Rec.',
+      'prop.baths':       'Baños',
+      'prop.sqft':        'Pies²',
+      'prop.garage':      'Garage',
+      'prop.yearBuilt':   'Año de Construcción',
+      'prop.lotSize':     'Tamaño del Lote',
+      'prop.status':      'Estado',
+      'prop.features':    '✦ Características Destacadas',
+      'prop.description': '✦ Acerca de Esta Propiedad',
+      'prop.contact':     '¿Interesado en Esta Propiedad?',
+      'prop.contactSub':  'Contáctame para obtener más información o programar una visita.',
+      'prop.callBtn':     'Llamar a Laura',
+      'prop.msgBtn':      'Enviar un Mensaje',
+      'prop.gallery':     'Galería de Fotos',
+      'prop.available':   'Disponible',
+      'prop.sold':        'Vendida',
+      'prop.pending':     'Pendiente',
 
       'footer.copy': '© 2026 Tu Casa con Laura. Todos los Derechos Reservados.',
       'footer.made': 'Diseñado para una experiencia inmobiliaria refinada.',
     }
   };
 
-  /* ── APPLY TRANSLATIONS ────────────────────────────────────── */
   function applyLang(lang) {
     const t = translations[lang] || translations.en;
     document.documentElement.lang = lang;
@@ -176,8 +171,8 @@
     localStorage.setItem('tcl-lang', lang);
     window.__currentLang = lang;
 
-    /* Expose translations for property.js to use */
-    window.i18n = t;
+    /* Expose translations so property.js can read them immediately */
+    window.i18n     = t;
     window.i18nLang = lang;
 
     /* If property content is already rendered, re-translate labels */
@@ -186,7 +181,6 @@
     }
   }
 
-  /* ── DETECT LANGUAGE ───────────────────────────────────────── */
   function detectLang() {
     const saved = localStorage.getItem('tcl-lang');
     if (saved && translations[saved]) return saved;
@@ -194,7 +188,6 @@
     return browser.startsWith('es') ? 'es' : 'en';
   }
 
-  /* ── TOGGLE ────────────────────────────────────────────────── */
   function initToggle() {
     const btn = document.getElementById('langToggle');
     if (!btn) return;
@@ -203,8 +196,9 @@
     });
   }
 
-  /* ── INIT ──────────────────────────────────────────────────── */
+  /* Run immediately — window.i18n is set BEFORE property.js loads */
   applyLang(detectLang());
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initToggle);
   } else {
@@ -213,7 +207,10 @@
 })();
 </script>
 
-<!-- Lang toggle + property label styles -->
+<!-- ② property.js DESPUÉS — window.i18n ya existe cuando este script corre -->
+<script src="js/property.js"></script>
+
+<!-- Lang toggle styles -->
 <style>
   .lang-toggle {
     background: transparent;

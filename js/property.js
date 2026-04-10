@@ -1,4 +1,4 @@
-  /* ══════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════
     CALIFORNIA VILLAS — property.js
     Detail page for a single property
     ══════════════════════════════════════════════════ */
@@ -35,6 +35,33 @@
     })();
   }
 
+  /* ── Helper: get i18n label with fallback ── */
+  function t(key, fallback) {
+    return (window.i18n && window.i18n[key]) ? window.i18n[key] : fallback;
+  }
+
+  /* ── Wait until window.i18n is populated ── */
+  function waitForI18n(callback) {
+    if (window.i18n) {
+      callback();
+      return;
+    }
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts++;
+      if (window.i18n) {
+        clearInterval(interval);
+        callback();
+      } else if (attempts >= 50) {
+        clearInterval(interval);
+        callback(); // fallback: render with English defaults
+      }
+    }, 20);
+  }
+
+  /* ── Store current property for re-renders ── */
+  let _currentProperty = null;
+
   /* ── Load property data ── */
   async function loadProperty() {
     const params = new URLSearchParams(window.location.search);
@@ -44,11 +71,9 @@
 
     let properties = [];
 
-    // 1. Try CV_DATA
     if (typeof CV_DATA !== "undefined" && CV_DATA.properties) {
       properties = CV_DATA.properties;
     } else {
-      // 2. Try localStorage
       try {
         const stored = localStorage.getItem("cv_properties");
         if (stored) {
@@ -66,13 +91,15 @@
     const property = properties.find(p => p.id === decodeURIComponent(id));
     if (!property) { showError("Property not found."); return; }
 
-    renderProperty(property);
+    _currentProperty = property;
+
+    // Wait for i18n before first render so all labels are correct
+    waitForI18n(() => renderProperty(property));
   }
 
   function renderProperty(p) {
-    document.title = (p.title || p.name || "Property") + " | California Villas";
+    document.title = (p.title || p.name || "Property") + " | Tu Casa con Laura";
 
-    // Gather media
     const VIDEO_EXTS = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
 
     let mediaItems = [];
@@ -81,7 +108,6 @@
         if (typeof m === "string") {
           return { type: VIDEO_EXTS.test(m) ? "video" : "image", src: m, caption: "" };
         }
-        // object with explicit type — respect it, but also auto-detect if missing
         if (!m.type) m.type = VIDEO_EXTS.test(m.src) ? "video" : "image";
         return m;
       });
@@ -92,10 +118,17 @@
     const status = p.status || p.tag || "Available";
     const isExc  = status === "Featured" || status === "Coming Soon";
 
+    // Translate status label
+    const statusLower = status.toLowerCase();
+    let statusLabel = status;
+    if (statusLower === "sold")           statusLabel = t("prop.sold", "Sold");
+    else if (statusLower === "available") statusLabel = t("prop.available", "Available");
+    else if (statusLower === "pending")   statusLabel = t("prop.pending", "Pending");
+
     const html = `
       <div class="prop-back">
         <a href="index.html#properties" class="back-link">
-          <i class="fas fa-arrow-left me-2"></i>Back to Properties
+          <i class="fas fa-arrow-left me-2"></i>${t("prop.backBtn", "← Back to Properties")}
         </a>
       </div>
 
@@ -125,7 +158,6 @@
               <div class="car-counter" id="carCounter">1 / ${mediaItems.length}</div>
             </div>
 
-            <!-- Thumbnails -->
             ${mediaItems.length > 1 ? `
               <div class="car-thumbs" id="carThumbs">
                 ${mediaItems.map((m, i) => `
@@ -144,7 +176,7 @@
           <div class="col-lg-5">
             <div class="prop-info">
               <div class="prop-tag-row">
-                <span class="prop-tag ${isExc ? "exc" : ""}">${status}</span>
+                <span class="prop-tag ${isExc ? "exc" : ""}">${statusLabel}</span>
                 <span class="prop-loc-tag"><i class="fas fa-map-marker-alt"></i>${p.location || "California"}</span>
               </div>
 
@@ -156,23 +188,26 @@
               </div>
 
               <div class="prop-specs">
-                ${p.beds  ? `<div class="prop-spec"><i class="fas fa-bed"></i><strong>${p.beds}</strong> Beds</div>`  : ""}
-                ${p.baths ? `<div class="prop-spec"><i class="fas fa-bath"></i><strong>${p.baths}</strong> Baths</div>` : ""}
+                ${p.beds  ? `<div class="prop-spec"><i class="fas fa-bed"></i><strong>${p.beds}</strong> ${t("prop.beds", "Beds")}</div>`  : ""}
+                ${p.baths ? `<div class="prop-spec"><i class="fas fa-bath"></i><strong>${p.baths}</strong> ${t("prop.baths", "Baths")}</div>` : ""}
                 ${(p.area || p.sqft) ? `<div class="prop-spec"><i class="fas fa-expand"></i><strong>${p.area || p.sqft}</strong></div>` : ""}
               </div>
 
-              ${p.description ? `<p class="prop-description">${p.description}</p>` : ""}
+              ${p.description ? `
+                <p class="prop-features-title">${t("prop.description", "✦ About This Property")}</p>
+                <p class="prop-description">${p.description}</p>
+              ` : ""}
 
               ${(p.features && p.features.length) ? `
-                <p class="prop-features-title">✦ &nbsp; Highlights</p>
+                <p class="prop-features-title">${t("prop.features", "✦ Features & Highlights")}</p>
                 <div class="prop-features">
                   ${p.features.map(f => `<span class="prop-feature"><i class="fas fa-check"></i>${f}</span>`).join("")}
                 </div>
               ` : ""}
 
               <div class="prop-actions">
-                <a href="tel:+15628621902" class="btn-g"><i class="fas fa-phone me-2"></i>Call Laura</a>
-                <a href="index.html#contact" class="btn-o"><i class="fas fa-envelope me-2"></i>Inquiry</a>
+                <a href="tel:+15628621902" class="btn-g"><i class="fas fa-phone me-2"></i>${t("prop.callBtn", "Call Laura")}</a>
+                <a href="index.html#contact" class="btn-o"><i class="fas fa-envelope me-2"></i>${t("prop.msgBtn", "Send a Message")}</a>
               </div>
             </div>
           </div>
@@ -185,15 +220,20 @@
     initCarousel(mediaItems.length);
   }
 
+  /* ── Re-render when language toggles (called by i18n script in property.html) ── */
+  window.reApplyPropLabels = function() {
+    if (_currentProperty) renderProperty(_currentProperty);
+  };
+
   function initCarousel(total) {
     if (total <= 1) return;
 
-    const track  = document.getElementById("carTrack");
-    const prev   = document.getElementById("carPrev");
-    const next   = document.getElementById("carNext");
-    const counter= document.getElementById("carCounter");
-    const thumbs = document.querySelectorAll(".car-thumb");
-    let current  = 0;
+    const track   = document.getElementById("carTrack");
+    const prev    = document.getElementById("carPrev");
+    const next    = document.getElementById("carNext");
+    const counter = document.getElementById("carCounter");
+    const thumbs  = document.querySelectorAll(".car-thumb");
+    let current   = 0;
 
     function goTo(i) {
       current = (i + total) % total;
@@ -201,24 +241,19 @@
       if (counter) counter.textContent = `${current + 1} / ${total}`;
       thumbs.forEach((t, idx) => t.classList.toggle("active", idx === current));
 
-      // Pause/play videos
       document.querySelectorAll(".carousel-slide video").forEach((v, idx) => {
         if (idx === current) v.play().catch(()=>{});
         else { v.pause(); v.currentTime = 0; }
       });
     }
 
-    // Auto-play first video — use IntersectionObserver so browser allows it
     const firstVideo = track.querySelector(".carousel-slide:first-child video");
     if (firstVideo) {
       firstVideo.muted = true;
       const autoObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            firstVideo.play().catch(() => {});
-          } else {
-            firstVideo.pause();
-          }
+          if (entry.isIntersecting) firstVideo.play().catch(() => {});
+          else firstVideo.pause();
         });
       }, { threshold: 0.3 });
       autoObs.observe(firstVideo);
@@ -227,11 +262,10 @@
     if (prev) prev.addEventListener("click", () => goTo(current - 1));
     if (next) next.addEventListener("click", () => goTo(current + 1));
 
-    thumbs.forEach((t) => {
-      t.addEventListener("click", () => goTo(parseInt(t.dataset.index)));
+    thumbs.forEach((th) => {
+      th.addEventListener("click", () => goTo(parseInt(th.dataset.index)));
     });
 
-    // Touch/swipe
     let startX = 0;
     const wrap = document.getElementById("carouselWrap");
     if (wrap) {
@@ -242,7 +276,6 @@
       });
     }
 
-    // Keyboard
     document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft")  goTo(current - 1);
       if (e.key === "ArrowRight") goTo(current + 1);

@@ -547,28 +547,22 @@ document.addEventListener("keydown", function (e) {
     hideConsentModal();
   }
 
-  // ── YOUTUBE SWITCH ──
-function changeVideo(id) {
+// ── YOUTUBE PRO GALLERY FIX ──
+document.addEventListener("DOMContentLoaded", () => {
   const iframe = document.getElementById("mainVideo");
-  iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-}
+  const buttons = document.querySelectorAll(".yt-video-item");
 
-// ── YOUTUBE PRO GALLERY ──
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const id = button.getAttribute("data-video");
 
-document.querySelectorAll(".yt-video-item").forEach((button) => {
-  button.addEventListener("click", () => {
-    const id = button.dataset.video;
-    const iframe = document.getElementById("mainVideo");
+      if (!iframe || !id) return;
 
-    if (!id || !iframe) return;
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
 
-    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-
-    document.querySelectorAll(".yt-video-item").forEach((item) => {
-      item.classList.remove("active");
+      buttons.forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
     });
-
-    button.classList.add("active");
   });
 });
 });

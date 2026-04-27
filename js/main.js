@@ -546,4 +546,25 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     hideConsentModal();
   }
+
+  // ── YOUTUBE SWITCH ──
+function changeVideo(id) {
+  const iframe = document.getElementById("mainVideo");
+  iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+}
+
+// ── YOUTUBE PRO GALLERY ──
+function changeVideo(button, id) {
+  const iframe = document.getElementById("mainVideo");
+  if (!iframe) return;
+
+  iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+
+  document.querySelectorAll(".yt-video-item").forEach(item => {
+    item.classList.remove("active");
+  });
+
+  button.classList.add("active");
+}
+
 });

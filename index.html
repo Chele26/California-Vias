@@ -140,8 +140,8 @@
             tailored to each client. From first-time buyers to complex transactions, I bring knowledge, negotiation
             expertise, and a deep understanding of the market to every opportunity.
           </p>
-               <p class="about-text">
-            CA DRE LIC 01820066 
+          <p class="about-text">
+            CA DRE LIC 01820066
           </p>
 
           <span class="lbl mt-4 d-block" data-i18n="about.highlights">✦ Highlights</span>
@@ -187,13 +187,8 @@
           and real client testimonials that will guide you through every step of
           your real estate journey.
         </p>
-        <a
-          href="https://www.youtube.com/@tucasaconlaura"
-          target="_blank"
-          rel="noopener"
-          class="yt-cta"
-          data-i18n="yt.cta"
-        >
+        <a href="https://www.youtube.com/@tucasaconlaura" target="_blank" rel="noopener" class="yt-cta"
+          data-i18n="yt.cta">
           <i class="fab fa-youtube"></i>
           Visit Our Channel
         </a>
@@ -201,19 +196,59 @@
 
       <!-- Right: video embed -->
       <div class="yt-embed rv">
-        <div class="yt-frame-wrap">
-          <div class="yt-corner yt-c-tl"></div>
-          <div class="yt-corner yt-c-br"></div>
-          <iframe
-            src="https://www.youtube.com/embed/Ya_OWZwyD8A?si=sI_OjpWKJwDk6J33&rel=0&modestbranding=1"
-            title="Tu Casa con Laura — YouTube"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+
+  <div class="yt-pro-layout">
+
+    <div class="yt-featured-video yt-shorts-video">
+      <iframe
+        id="mainVideo"
+        src="https://www.youtube.com/embed/ziCRrKRrAQo?rel=0&modestbranding=1"
+        title="Tu Casa con Laura — Featured Short"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="yt-playlist">
+
+      <button class="yt-video-item active" onclick="changeVideo(this, 'ziCRrKRrAQo')">
+        <img src="https://img.youtube.com/vi/ziCRrKRrAQo/hqdefault.jpg" alt="Video">
+        <div>
+          <span>Real Estate Short</span>
+          <small>Tips and market insights</small>
         </div>
-      </div>
+      </button>
+
+      <button class="yt-video-item" onclick="changeVideo(this, 'hsi0SEGWwGI')">
+        <img src="https://img.youtube.com/vi/hsi0SEGWwGI/hqdefault.jpg" alt="Video">
+        <div>
+          <span>Home Buying Advice</span>
+          <small>Quick guidance for buyers</small>
+        </div>
+      </button>
+
+      <button class="yt-video-item" onclick="changeVideo(this, 'jcjfBSytcys')">
+        <img src="https://img.youtube.com/vi/jcjfBSytcys/hqdefault.jpg" alt="Video">
+        <div>
+          <span>Laura Insights</span>
+          <small>Real estate advice in short format</small>
+        </div>
+      </button>
+
+      <button class="yt-video-item" onclick="changeVideo(this, 'Z3n0IvfFM1A')">
+        <img src="https://img.youtube.com/vi/Z3n0IvfFM1A/hqdefault.jpg" alt="Video">
+        <div>
+          <span>Property Tips</span>
+          <small>Short and useful real estate content</small>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
     </div>
   </section>
@@ -234,7 +269,8 @@
     <div class="p-grid" id="propertiesGrid"></div>
 
     <div class="text-center mt-5 rv">
-      <a href="#contact" class="btn-o" data-i18n="props.cta">Ask About Available Homes &nbsp;<i class="fas fa-arrow-right fa-xs"></i></a>
+      <a href="#contact" class="btn-o" data-i18n="props.cta">Ask About Available Homes &nbsp;<i
+          class="fas fa-arrow-right fa-xs"></i></a>
     </div>
   </section>
 
@@ -257,7 +293,8 @@
     <div id="soldPagination" class="sold-pagination container" style="display:none;"></div>
 
     <div class="text-center mt-5 rv">
-      <a href="#contact" class="btn-s" data-i18n="sold.cta">Thinking of Selling? &nbsp;<i class="fas fa-arrow-right fa-xs"></i></a>
+      <a href="#contact" class="btn-s" data-i18n="sold.cta">Thinking of Selling? &nbsp;<i
+          class="fas fa-arrow-right fa-xs"></i></a>
     </div>
   </section>
 
@@ -275,42 +312,48 @@
           <div class="s-card">
             <i class="fas fa-home"></i>
             <h4 data-i18n="services.s1.title">Home Sales</h4>
-            <p data-i18n="services.s1.desc">We present properties with structure, visuals and clarity to help them connect with the right audience.</p>
+            <p data-i18n="services.s1.desc">We present properties with structure, visuals and clarity to help them
+              connect with the right audience.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="s-card silver-card">
             <i class="fas fa-search-dollar"></i>
             <h4 data-i18n="services.s2.title">Buyer Guidance</h4>
-            <p data-i18n="services.s2.desc">Support through the search process with clear communication and a more personalized experience.</p>
+            <p data-i18n="services.s2.desc">Support through the search process with clear communication and a more
+              personalized experience.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="s-card">
             <i class="fas fa-key"></i>
             <h4 data-i18n="services.s3.title">Rental Assistance</h4>
-            <p data-i18n="services.s3.desc">Help finding homes and spaces that match practical needs, lifestyle and preferred location.</p>
+            <p data-i18n="services.s3.desc">Help finding homes and spaces that match practical needs, lifestyle and
+              preferred location.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="s-card silver-card">
             <i class="fas fa-chart-line"></i>
             <h4 data-i18n="services.s4.title">Market Perspective</h4>
-            <p data-i18n="services.s4.desc">Useful context around price, value and presentation to support better decisions.</p>
+            <p data-i18n="services.s4.desc">Useful context around price, value and presentation to support better
+              decisions.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="s-card">
             <i class="fas fa-camera"></i>
             <h4 data-i18n="services.s5.title">Property Presentation</h4>
-            <p data-i18n="services.s5.desc">Strong visual display for homes through photos, layout and polished property detail pages.</p>
+            <p data-i18n="services.s5.desc">Strong visual display for homes through photos, layout and polished property
+              detail pages.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
           <div class="s-card silver-card">
             <i class="fas fa-handshake"></i>
             <h4 data-i18n="services.s6.title">Personal Support</h4>
-            <p data-i18n="services.s6.desc">Direct contact, organized follow-up and a process that feels approachable from start to finish.</p>
+            <p data-i18n="services.s6.desc">Direct contact, organized follow-up and a process that feels approachable
+              from start to finish.</p>
           </div>
         </div>
       </div>
@@ -332,7 +375,8 @@
             <div class="t-card rv">
               <span class="t-quote">"</span>
               <div class="t-stars">★★★★★</div>
-              <p class="t-text" data-i18n="test.t1.text">Laura made the entire process feel clear, calm and well organized. Everything was handled with care.</p>
+              <p class="t-text" data-i18n="test.t1.text">Laura made the entire process feel clear, calm and well
+                organized. Everything was handled with care.</p>
               <p class="t-auth">— Daniel &amp; Rebecca</p>
               <p class="t-role" data-i18n="test.t1.role">Home Buyers</p>
             </div>
@@ -341,7 +385,8 @@
             <div class="t-card">
               <span class="t-quote">"</span>
               <div class="t-stars">★★★★★</div>
-              <p class="t-text" data-i18n="test.t2.text">The way the property was presented made a huge difference. It felt polished, modern and easy to understand.</p>
+              <p class="t-text" data-i18n="test.t2.text">The way the property was presented made a huge difference. It
+                felt polished, modern and easy to understand.</p>
               <p class="t-auth">— Sofia R.</p>
               <p class="t-role" data-i18n="test.t2.role">Seller</p>
             </div>
@@ -350,7 +395,8 @@
             <div class="t-card">
               <span class="t-quote">"</span>
               <div class="t-stars">★★★★★</div>
-              <p class="t-text" data-i18n="test.t3.text">Great communication, a good eye for detail and a very professional yet personal style.</p>
+              <p class="t-text" data-i18n="test.t3.text">Great communication, a good eye for detail and a very
+                professional yet personal style.</p>
               <p class="t-auth">— Alejandro V.</p>
               <p class="t-role" data-i18n="test.t3.role">Client</p>
             </div>
@@ -359,7 +405,8 @@
             <div class="t-card">
               <span class="t-quote">"</span>
               <div class="t-stars">★★★★★</div>
-              <p class="t-text" data-i18n="test.t4.text">We always felt guided instead of pressured. That made the whole experience much better.</p>
+              <p class="t-text" data-i18n="test.t4.text">We always felt guided instead of pressured. That made the whole
+                experience much better.</p>
               <p class="t-auth">— Parker Family</p>
               <p class="t-role" data-i18n="test.t4.role">Residential Purchase</p>
             </div>
@@ -413,19 +460,22 @@
             <div class="c-item">
               <i class="fab fa-instagram c-icon"></i>
               <div>
-                <h6>Instagram</h6><a href="https://www.instagram.com/tucasaconlaura/" target="_blank">@tucasaconlaura</a>
+                <h6>Instagram</h6><a href="https://www.instagram.com/tucasaconlaura/"
+                  target="_blank">@tucasaconlaura</a>
               </div>
             </div>
             <div class="c-item">
               <i class="fab fa-facebook-f c-icon"></i>
               <div>
-                <h6>Facebook</h6><a href="https://www.facebook.com/TuCasaConLaura/" target="_blank">Tu Casa Con Laura</a>
+                <h6>Facebook</h6><a href="https://www.facebook.com/TuCasaConLaura/" target="_blank">Tu Casa Con
+                  Laura</a>
               </div>
             </div>
             <div class="c-item">
               <i class="fas fa-globe c-icon"></i>
               <div>
-                <h6 data-i18n="contact.website">Website</h6><a href="https://tucasaconlaura.com/" target="_blank">tucasaconlaura.com</a>
+                <h6 data-i18n="contact.website">Website</h6><a href="https://tucasaconlaura.com/"
+                  target="_blank">tucasaconlaura.com</a>
               </div>
             </div>
           </div>
@@ -436,7 +486,8 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="fl" data-i18n="contact.fname">Full Name *</label>
-                  <input id="fName" type="text" class="fi" data-i18n-placeholder="contact.fnamePh" placeholder="Your full name">
+                  <input id="fName" type="text" class="fi" data-i18n-placeholder="contact.fnamePh"
+                    placeholder="Your full name">
                   <span class="ferr" id="errName" data-i18n="contact.errName">Please enter your name.</span>
                 </div>
                 <div class="col-md-6">
@@ -454,7 +505,8 @@
                 </div>
                 <div class="col-12">
                   <label class="fl" data-i18n="contact.fmsg">Message</label>
-                  <textarea id="fMsg" class="fi" data-i18n-placeholder="contact.fmsgPh" placeholder="Tell Laura what type of home or property you're looking for..."></textarea>
+                  <textarea id="fMsg" class="fi" data-i18n-placeholder="contact.fmsgPh"
+                    placeholder="Tell Laura what type of home or property you're looking for..."></textarea>
                 </div>
 
                 <div class="col-12">
@@ -480,15 +532,21 @@
                       <span class="tcpa-text" data-i18n="contact.tcpa">
                         By proceeding, I am electronically signing and consenting to receive marketing communications
                         (about real estate brokerage services and one or more properties that I may buy, sell, or rent),
-                        that may be delivered to me via email, telephone and/or text messaging (using "automated technology"
-                        such as an automatic telephone dialing system, and/or an artificial or prerecorded voice), from Laura Hernandez
-                        and its independent contractor real estate professionals using the contact information I provided.
-                        Your consent is not a condition of purchase and you may revoke it at any time by replying to any of our texts
-                        to opt-out, unsubscribing via email, or contacting us directly at the email or telephone number listed
+                        that may be delivered to me via email, telephone and/or text messaging (using "automated
+                        technology"
+                        such as an automatic telephone dialing system, and/or an artificial or prerecorded voice), from
+                        Laura Hernandez
+                        and its independent contractor real estate professionals using the contact information I
+                        provided.
+                        Your consent is not a condition of purchase and you may revoke it at any time by replying to any
+                        of our texts
+                        to opt-out, unsubscribing via email, or contacting us directly at the email or telephone number
+                        listed
                         on this website.
                       </span>
                     </label>
-                    <small id="errTcpa" class="ferr" data-i18n="contact.errTcpa">You must accept the consent terms to continue.</small>
+                    <small id="errTcpa" class="ferr" data-i18n="contact.errTcpa">You must accept the consent terms to
+                      continue.</small>
                   </div>
                 </div>
               </div>
@@ -512,7 +570,8 @@
           <p class="f-tag mb-3" data-i18n="footer.tag">Homes with style and perspective.</p>
           <div class="mini-bar footer-bar"></div>
           <p class="footer-text" data-i18n="footer.desc">
-            A clean and polished property presentation built around strong visuals, good structure and personal communication.
+            A clean and polished property presentation built around strong visuals, good structure and personal
+            communication.
           </p>
           <div class="f-soc mt-3">
             <a href="https://www.instagram.com/tucasaconlaura/" target="_blank" class="f-si"><i
@@ -579,263 +638,263 @@
 
   <!-- i18n: auto language detection + manual toggle -->
   <script>
-  (function() {
-    /* ── TRANSLATIONS ──────────────────────────────────────────── */
-    const translations = {
-      en: {
-        'nav.about':        'About',
-        'nav.aboutFull':    'About Laura',
-        'nav.properties':   'Properties',
-        'nav.sold':         'Sold',
-        'nav.services':     'Services',
-        'nav.testimonials': 'Testimonials',
-        'nav.contact':      'Contact',
+    (function () {
+      /* ── TRANSLATIONS ──────────────────────────────────────────── */
+      const translations = {
+        en: {
+          'nav.about': 'About',
+          'nav.aboutFull': 'About Laura',
+          'nav.properties': 'Properties',
+          'nav.sold': 'Sold',
+          'nav.services': 'Services',
+          'nav.testimonials': 'Testimonials',
+          'nav.contact': 'Contact',
 
-        'hero.title':    'Homes With',
-        'hero.titleEm':  'Style & Perspective',
-        'hero.sub':      'A curated presentation of homes, spaces and opportunities with a more personal approach.',
-        'hero.cta1':     'Explore Properties',
-        'hero.cta2':     'Get in Touch',
-        'hero.discover': 'Discover',
+          'hero.title': 'Homes With',
+          'hero.titleEm': 'Style & Perspective',
+          'hero.sub': 'A curated presentation of homes, spaces and opportunities with a more personal approach.',
+          'hero.cta1': 'Explore Properties',
+          'hero.cta2': 'Get in Touch',
+          'hero.discover': 'Discover',
 
-        'about.label':      '✦ Meet Laura',
-        'about.title':      "I'm <em>Laura</em>,<br>Your Trusted Property Advisor",
-        'about.p1':         'With over 25 years of experience in the real estate industry, I specialize in guiding clients through every step of buying, selling, and investing with clarity, strategy, and care.',
-        'about.p2':         'Based in California, I proudly serve a wide range of communities, helping individuals and families find not just a property — but the right place to build their future.',
-        'about.p3':         'My approach is personal, detail-oriented, and focused on delivering a seamless and professional experience tailored to each client. From first-time buyers to complex transactions, I bring knowledge, negotiation expertise, and a deep understanding of the market to every opportunity.',
-        'about.highlights': '✦ Highlights',
-        'about.stat1':      'Value Managed',
-        'about.stat2':      'Years Experience',
-        'about.stat3':      'Client Satisfaction',
-        'about.cta':        'Work With Laura',
-        'about.badge':      'Years of<br>Experience',
+          'about.label': '✦ Meet Laura',
+          'about.title': "I'm <em>Laura</em>,<br>Your Trusted Property Advisor",
+          'about.p1': 'With over 25 years of experience in the real estate industry, I specialize in guiding clients through every step of buying, selling, and investing with clarity, strategy, and care.',
+          'about.p2': 'Based in California, I proudly serve a wide range of communities, helping individuals and families find not just a property — but the right place to build their future.',
+          'about.p3': 'My approach is personal, detail-oriented, and focused on delivering a seamless and professional experience tailored to each client. From first-time buyers to complex transactions, I bring knowledge, negotiation expertise, and a deep understanding of the market to every opportunity.',
+          'about.highlights': '✦ Highlights',
+          'about.stat1': 'Value Managed',
+          'about.stat2': 'Years Experience',
+          'about.stat3': 'Client Satisfaction',
+          'about.cta': 'Work With Laura',
+          'about.badge': 'Years of<br>Experience',
 
-        'yt.label':   '✦ On Our Channel',
-        'yt.title':   'Watch. Learn.',
-        'yt.titleEm': 'Get Inspired.',
-        'yt.desc':    'Tune in to our YouTube channel for exclusive webinars, market insights, and real client testimonials that will guide you through every step of your real estate journey.',
-        'yt.cta':     'Visit Our Channel',
+          'yt.label': '✦ On Our Channel',
+          'yt.title': 'Watch. Learn.',
+          'yt.titleEm': 'Get Inspired.',
+          'yt.desc': 'Tune in to our YouTube channel for exclusive webinars, market insights, and real client testimonials that will guide you through every step of your real estate journey.',
+          'yt.cta': 'Visit Our Channel',
 
-        'props.label': '✦ Featured Collection',
-        'props.title': 'Selected <em>Properties</em>',
-        'props.sub':   'A curated selection of homes presented with strong visuals, clear details and a polished experience.',
-        'props.cta':   'Ask About Available Homes',
+          'props.label': '✦ Featured Collection',
+          'props.title': 'Selected <em>Properties</em>',
+          'props.sub': 'A curated selection of homes presented with strong visuals, clear details and a polished experience.',
+          'props.cta': 'Ask About Available Homes',
 
-        'sold.label': '✦ Closed Transactions',
-        'sold.title': 'Properties <em class="silver">Sold</em>',
-        'sold.sub':   'A selection of homes successfully represented and closed — each one a story of trust, care and results.',
-        'sold.cta':   'Thinking of Selling?',
+          'sold.label': '✦ Closed Transactions',
+          'sold.title': 'Properties <em class="silver">Sold</em>',
+          'sold.sub': 'A selection of homes successfully represented and closed — each one a story of trust, care and results.',
+          'sold.cta': 'Thinking of Selling?',
 
-        'services.label':      '✦ What We Do',
-        'services.title':      'Our <em>Services</em>',
-        'services.s1.title':   'Home Sales',
-        'services.s1.desc':    'We present properties with structure, visuals and clarity to help them connect with the right audience.',
-        'services.s2.title':   'Buyer Guidance',
-        'services.s2.desc':    'Support through the search process with clear communication and a more personalized experience.',
-        'services.s3.title':   'Rental Assistance',
-        'services.s3.desc':    'Help finding homes and spaces that match practical needs, lifestyle and preferred location.',
-        'services.s4.title':   'Market Perspective',
-        'services.s4.desc':    'Useful context around price, value and presentation to support better decisions.',
-        'services.s5.title':   'Property Presentation',
-        'services.s5.desc':    'Strong visual display for homes through photos, layout and polished property detail pages.',
-        'services.s6.title':   'Personal Support',
-        'services.s6.desc':    'Direct contact, organized follow-up and a process that feels approachable from start to finish.',
+          'services.label': '✦ What We Do',
+          'services.title': 'Our <em>Services</em>',
+          'services.s1.title': 'Home Sales',
+          'services.s1.desc': 'We present properties with structure, visuals and clarity to help them connect with the right audience.',
+          'services.s2.title': 'Buyer Guidance',
+          'services.s2.desc': 'Support through the search process with clear communication and a more personalized experience.',
+          'services.s3.title': 'Rental Assistance',
+          'services.s3.desc': 'Help finding homes and spaces that match practical needs, lifestyle and preferred location.',
+          'services.s4.title': 'Market Perspective',
+          'services.s4.desc': 'Useful context around price, value and presentation to support better decisions.',
+          'services.s5.title': 'Property Presentation',
+          'services.s5.desc': 'Strong visual display for homes through photos, layout and polished property detail pages.',
+          'services.s6.title': 'Personal Support',
+          'services.s6.desc': 'Direct contact, organized follow-up and a process that feels approachable from start to finish.',
 
-        'test.label':      '✦ Client Feedback',
-        'test.title':      'What Clients <em>Say</em>',
-        'test.t1.text':    'Laura made the entire process feel clear, calm and well organized. Everything was handled with care.',
-        'test.t1.role':    'Home Buyers',
-        'test.t2.text':    'The way the property was presented made a huge difference. It felt polished, modern and easy to understand.',
-        'test.t2.role':    'Seller',
-        'test.t3.text':    'Great communication, a good eye for detail and a very professional yet personal style.',
-        'test.t3.role':    'Client',
-        'test.t4.text':    'We always felt guided instead of pressured. That made the whole experience much better.',
-        'test.t4.role':    'Residential Purchase',
+          'test.label': '✦ Client Feedback',
+          'test.title': 'What Clients <em>Say</em>',
+          'test.t1.text': 'Laura made the entire process feel clear, calm and well organized. Everything was handled with care.',
+          'test.t1.role': 'Home Buyers',
+          'test.t2.text': 'The way the property was presented made a huge difference. It felt polished, modern and easy to understand.',
+          'test.t2.role': 'Seller',
+          'test.t3.text': 'Great communication, a good eye for detail and a very professional yet personal style.',
+          'test.t3.role': 'Client',
+          'test.t4.text': 'We always felt guided instead of pressured. That made the whole experience much better.',
+          'test.t4.role': 'Residential Purchase',
 
-        'contact.label':        '✦ Let\'s Connect',
-        'contact.title':        'Contact <em>Laura</em>',
-        'contact.sub':          'Please give me a call or fill out the form below.',
-        'contact.getInTouch':   'Get in Touch',
-        'contact.call':         'Call',
-        'contact.website':      'Website',
-        'contact.sendMsg':      'Send a Message',
-        'contact.fname':        'Full Name *',
-        'contact.fnamePh':      'Your full name',
-        'contact.femail':       'Email Address *',
-        'contact.fphone':       'Phone Number',
-        'contact.fdate':        'Preferred Date',
-        'contact.fmsg':         'Message',
-        'contact.fmsgPh':       "Tell Laura what type of home or property you're looking for...",
-        'contact.send':         'Send',
-        'contact.consentShort': 'I consent to receive communications in accordance with the terms below.',
-        'contact.tcpa':         'By proceeding, I am electronically signing and consenting to receive marketing communications (about real estate brokerage services and one or more properties that I may buy, sell, or rent), that may be delivered to me via email, telephone and/or text messaging (using "automated technology" such as an automatic telephone dialing system, and/or an artificial or prerecorded voice), from Laura Hernandez and its independent contractor real estate professionals using the contact information I provided. Your consent is not a condition of purchase and you may revoke it at any time by replying to any of our texts to opt-out, unsubscribing via email, or contacting us directly at the email or telephone number listed on this website.',
-        'contact.errName':      'Please enter your name.',
-        'contact.errEmail':     'Please enter a valid email.',
-        'contact.errTcpa':      'You must accept the consent terms to continue.',
-        'contact.successMsg':   'Thank you! Laura will get back to you soon.',
+          'contact.label': '✦ Let\'s Connect',
+          'contact.title': 'Contact <em>Laura</em>',
+          'contact.sub': 'Please give me a call or fill out the form below.',
+          'contact.getInTouch': 'Get in Touch',
+          'contact.call': 'Call',
+          'contact.website': 'Website',
+          'contact.sendMsg': 'Send a Message',
+          'contact.fname': 'Full Name *',
+          'contact.fnamePh': 'Your full name',
+          'contact.femail': 'Email Address *',
+          'contact.fphone': 'Phone Number',
+          'contact.fdate': 'Preferred Date',
+          'contact.fmsg': 'Message',
+          'contact.fmsgPh': "Tell Laura what type of home or property you're looking for...",
+          'contact.send': 'Send',
+          'contact.consentShort': 'I consent to receive communications in accordance with the terms below.',
+          'contact.tcpa': 'By proceeding, I am electronically signing and consenting to receive marketing communications (about real estate brokerage services and one or more properties that I may buy, sell, or rent), that may be delivered to me via email, telephone and/or text messaging (using "automated technology" such as an automatic telephone dialing system, and/or an artificial or prerecorded voice), from Laura Hernandez and its independent contractor real estate professionals using the contact information I provided. Your consent is not a condition of purchase and you may revoke it at any time by replying to any of our texts to opt-out, unsubscribing via email, or contacting us directly at the email or telephone number listed on this website.',
+          'contact.errName': 'Please enter your name.',
+          'contact.errEmail': 'Please enter a valid email.',
+          'contact.errTcpa': 'You must accept the consent terms to continue.',
+          'contact.successMsg': 'Thank you! Laura will get back to you soon.',
 
-        'footer.tag':        'Homes with style and perspective.',
-        'footer.desc':       'A clean and polished property presentation built around strong visuals, good structure and personal communication.',
-        'footer.quickLinks': 'Quick Links',
-      },
+          'footer.tag': 'Homes with style and perspective.',
+          'footer.desc': 'A clean and polished property presentation built around strong visuals, good structure and personal communication.',
+          'footer.quickLinks': 'Quick Links',
+        },
 
-      es: {
-        'nav.about':        'Acerca',
-        'nav.aboutFull':    'Acerca de Laura',
-        'nav.properties':   'Propiedades',
-        'nav.sold':         'Vendidas',
-        'nav.services':     'Servicios',
-        'nav.testimonials': 'Testimonios',
-        'nav.contact':      'Contacto',
+        es: {
+          'nav.about': 'Acerca',
+          'nav.aboutFull': 'Acerca de Laura',
+          'nav.properties': 'Propiedades',
+          'nav.sold': 'Vendidas',
+          'nav.services': 'Servicios',
+          'nav.testimonials': 'Testimonios',
+          'nav.contact': 'Contacto',
 
-        'hero.title':    'Hogares Con',
-        'hero.titleEm':  'Estilo y Visión',
-        'hero.sub':      'Una presentación cuidada de hogares, espacios y oportunidades con un enfoque más personal.',
-        'hero.cta1':     'Ver Propiedades',
-        'hero.cta2':     'Contáctame',
-        'hero.discover': 'Descubrir',
+          'hero.title': 'Hogares Con',
+          'hero.titleEm': 'Estilo y Visión',
+          'hero.sub': 'Una presentación cuidada de hogares, espacios y oportunidades con un enfoque más personal.',
+          'hero.cta1': 'Ver Propiedades',
+          'hero.cta2': 'Contáctame',
+          'hero.discover': 'Descubrir',
 
-        'about.label':      '✦ Conoce a Laura',
-        'about.title':      'Soy <em>Laura</em>,<br>Tu Asesora de Confianza',
-        'about.p1':         'Con más de 25 años de experiencia en bienes raíces, me especializo en guiar a mis clientes en cada paso de la compra, venta e inversión con claridad, estrategia y dedicación.',
-        'about.p2':         'Con base en California, sirvo con orgullo a una amplia variedad de comunidades, ayudando a personas y familias a encontrar no solo una propiedad, sino el lugar ideal para construir su futuro.',
-        'about.p3':         'Mi enfoque es personal y detallado, enfocado en brindar una experiencia fluida y profesional adaptada a cada cliente. Desde compradores por primera vez hasta transacciones complejas, aporto conocimiento, experiencia en negociación y un profundo entendimiento del mercado.',
-        'about.highlights': '✦ Logros',
-        'about.stat1':      'Valor Gestionado',
-        'about.stat2':      'Años de Experiencia',
-        'about.stat3':      'Satisfacción del Cliente',
-        'about.cta':        'Trabaja con Laura',
-        'about.badge':      'Años de<br>Experiencia',
+          'about.label': '✦ Conoce a Laura',
+          'about.title': 'Soy <em>Laura</em>,<br>Tu Asesora de Confianza',
+          'about.p1': 'Con más de 25 años de experiencia en bienes raíces, me especializo en guiar a mis clientes en cada paso de la compra, venta e inversión con claridad, estrategia y dedicación.',
+          'about.p2': 'Con base en California, sirvo con orgullo a una amplia variedad de comunidades, ayudando a personas y familias a encontrar no solo una propiedad, sino el lugar ideal para construir su futuro.',
+          'about.p3': 'Mi enfoque es personal y detallado, enfocado en brindar una experiencia fluida y profesional adaptada a cada cliente. Desde compradores por primera vez hasta transacciones complejas, aporto conocimiento, experiencia en negociación y un profundo entendimiento del mercado.',
+          'about.highlights': '✦ Logros',
+          'about.stat1': 'Valor Gestionado',
+          'about.stat2': 'Años de Experiencia',
+          'about.stat3': 'Satisfacción del Cliente',
+          'about.cta': 'Trabaja con Laura',
+          'about.badge': 'Años de<br>Experiencia',
 
-        'yt.label':   '✦ En Nuestro Canal',
-        'yt.title':   'Mira. Aprende.',
-        'yt.titleEm': 'Inspírate.',
-        'yt.desc':    'Sintoniza nuestro canal de YouTube para webinars exclusivos, análisis del mercado y testimonios reales de clientes que te guiarán en cada paso de tu proceso inmobiliario.',
-        'yt.cta':     'Visita Nuestro Canal',
+          'yt.label': '✦ En Nuestro Canal',
+          'yt.title': 'Mira. Aprende.',
+          'yt.titleEm': 'Inspírate.',
+          'yt.desc': 'Sintoniza nuestro canal de YouTube para webinars exclusivos, análisis del mercado y testimonios reales de clientes que te guiarán en cada paso de tu proceso inmobiliario.',
+          'yt.cta': 'Visita Nuestro Canal',
 
-        'props.label': '✦ Colección Destacada',
-        'props.title': 'Propiedades <em>Seleccionadas</em>',
-        'props.sub':   'Una selección cuidada de hogares presentados con imágenes de calidad, detalles claros y una experiencia elegante.',
-        'props.cta':   'Consulta Propiedades Disponibles',
+          'props.label': '✦ Colección Destacada',
+          'props.title': 'Propiedades <em>Seleccionadas</em>',
+          'props.sub': 'Una selección cuidada de hogares presentados con imágenes de calidad, detalles claros y una experiencia elegante.',
+          'props.cta': 'Consulta Propiedades Disponibles',
 
-        'sold.label': '✦ Transacciones Cerradas',
-        'sold.title': 'Propiedades <em class="silver">Vendidas</em>',
-        'sold.sub':   'Una selección de hogares representados y cerrados exitosamente — cada uno, una historia de confianza, dedicación y resultados.',
-        'sold.cta':   '¿Pensando en Vender?',
+          'sold.label': '✦ Transacciones Cerradas',
+          'sold.title': 'Propiedades <em class="silver">Vendidas</em>',
+          'sold.sub': 'Una selección de hogares representados y cerrados exitosamente — cada uno, una historia de confianza, dedicación y resultados.',
+          'sold.cta': '¿Pensando en Vender?',
 
-        'services.label':      '✦ Lo Que Hacemos',
-        'services.title':      'Nuestros <em>Servicios</em>',
-        'services.s1.title':   'Venta de Propiedades',
-        'services.s1.desc':    'Presentamos propiedades con estructura, imágenes y claridad para conectarlas con el comprador indicado.',
-        'services.s2.title':   'Asesoría al Comprador',
-        'services.s2.desc':    'Acompañamiento en el proceso de búsqueda con comunicación clara y una experiencia más personalizada.',
-        'services.s3.title':   'Asistencia en Renta',
-        'services.s3.desc':    'Ayuda para encontrar hogares y espacios que se adapten a tus necesidades, estilo de vida y ubicación preferida.',
-        'services.s4.title':   'Perspectiva de Mercado',
-        'services.s4.desc':    'Contexto útil sobre precios, valor y presentación para apoyar mejores decisiones.',
-        'services.s5.title':   'Presentación de Propiedades',
-        'services.s5.desc':    'Visualización sólida de hogares a través de fotos, diseño y páginas de detalle de propiedades de alta calidad.',
-        'services.s6.title':   'Apoyo Personal',
-        'services.s6.desc':    'Contacto directo, seguimiento organizado y un proceso accesible de principio a fin.',
+          'services.label': '✦ Lo Que Hacemos',
+          'services.title': 'Nuestros <em>Servicios</em>',
+          'services.s1.title': 'Venta de Propiedades',
+          'services.s1.desc': 'Presentamos propiedades con estructura, imágenes y claridad para conectarlas con el comprador indicado.',
+          'services.s2.title': 'Asesoría al Comprador',
+          'services.s2.desc': 'Acompañamiento en el proceso de búsqueda con comunicación clara y una experiencia más personalizada.',
+          'services.s3.title': 'Asistencia en Renta',
+          'services.s3.desc': 'Ayuda para encontrar hogares y espacios que se adapten a tus necesidades, estilo de vida y ubicación preferida.',
+          'services.s4.title': 'Perspectiva de Mercado',
+          'services.s4.desc': 'Contexto útil sobre precios, valor y presentación para apoyar mejores decisiones.',
+          'services.s5.title': 'Presentación de Propiedades',
+          'services.s5.desc': 'Visualización sólida de hogares a través de fotos, diseño y páginas de detalle de propiedades de alta calidad.',
+          'services.s6.title': 'Apoyo Personal',
+          'services.s6.desc': 'Contacto directo, seguimiento organizado y un proceso accesible de principio a fin.',
 
-        'test.label':      '✦ Opiniones de Clientes',
-        'test.title':      'Lo Que Dicen <em>Nuestros Clientes</em>',
-        'test.t1.text':    'Laura hizo que todo el proceso se sintiera claro, tranquilo y bien organizado. Todo fue manejado con cuidado.',
-        'test.t1.role':    'Compradores',
-        'test.t2.text':    'La forma en que se presentó la propiedad marcó una gran diferencia. Se veía elegante, moderna y fácil de entender.',
-        'test.t2.role':    'Vendedora',
-        'test.t3.text':    'Excelente comunicación, buen ojo para los detalles y un estilo muy profesional pero cercano.',
-        'test.t3.role':    'Cliente',
-        'test.t4.text':    'Siempre nos sentimos guiados, no presionados. Eso hizo que toda la experiencia fuera mucho mejor.',
-        'test.t4.role':    'Compra Residencial',
+          'test.label': '✦ Opiniones de Clientes',
+          'test.title': 'Lo Que Dicen <em>Nuestros Clientes</em>',
+          'test.t1.text': 'Laura hizo que todo el proceso se sintiera claro, tranquilo y bien organizado. Todo fue manejado con cuidado.',
+          'test.t1.role': 'Compradores',
+          'test.t2.text': 'La forma en que se presentó la propiedad marcó una gran diferencia. Se veía elegante, moderna y fácil de entender.',
+          'test.t2.role': 'Vendedora',
+          'test.t3.text': 'Excelente comunicación, buen ojo para los detalles y un estilo muy profesional pero cercano.',
+          'test.t3.role': 'Cliente',
+          'test.t4.text': 'Siempre nos sentimos guiados, no presionados. Eso hizo que toda la experiencia fuera mucho mejor.',
+          'test.t4.role': 'Compra Residencial',
 
-        'contact.label':        '✦ Conectemos',
-        'contact.title':        'Contacta a <em>Laura</em>',
-        'contact.sub':          'Llámame o completa el formulario a continuación.',
-        'contact.getInTouch':   'Ponte en Contacto',
-        'contact.call':         'Llamar',
-        'contact.website':      'Sitio Web',
-        'contact.sendMsg':      'Enviar un Mensaje',
-        'contact.fname':        'Nombre Completo *',
-        'contact.fnamePh':      'Tu nombre completo',
-        'contact.femail':       'Correo Electrónico *',
-        'contact.fphone':       'Número de Teléfono',
-        'contact.fdate':        'Fecha Preferida',
-        'contact.fmsg':         'Mensaje',
-        'contact.fmsgPh':       '¿Qué tipo de hogar o propiedad estás buscando?',
-        'contact.send':         'Enviar',
-        'contact.consentShort': 'Doy mi consentimiento para recibir comunicaciones según los términos a continuación.',
-        'contact.tcpa':         'Al continuar, firmo electrónicamente y doy mi consentimiento para recibir comunicaciones de marketing (sobre servicios de corretaje de bienes raíces y propiedades que pueda comprar, vender o rentar), que pueden ser entregadas por correo electrónico, teléfono y/o mensajes de texto (usando "tecnología automatizada"), de parte de Laura Hernández y sus agentes independientes, usando la información de contacto que proporcioné. Mi consentimiento no es condición de compra y puedo revocarlo en cualquier momento respondiendo a un mensaje de texto, cancelando la suscripción por correo o contactando directamente al número o email de este sitio.',
-        'contact.errName':      'Por favor ingresa tu nombre.',
-        'contact.errEmail':     'Por favor ingresa un correo válido.',
-        'contact.errTcpa':      'Debes aceptar los términos de consentimiento para continuar.',
-        'contact.successMsg':   '¡Gracias! Laura se pondrá en contacto contigo pronto.',
+          'contact.label': '✦ Conectemos',
+          'contact.title': 'Contacta a <em>Laura</em>',
+          'contact.sub': 'Llámame o completa el formulario a continuación.',
+          'contact.getInTouch': 'Ponte en Contacto',
+          'contact.call': 'Llamar',
+          'contact.website': 'Sitio Web',
+          'contact.sendMsg': 'Enviar un Mensaje',
+          'contact.fname': 'Nombre Completo *',
+          'contact.fnamePh': 'Tu nombre completo',
+          'contact.femail': 'Correo Electrónico *',
+          'contact.fphone': 'Número de Teléfono',
+          'contact.fdate': 'Fecha Preferida',
+          'contact.fmsg': 'Mensaje',
+          'contact.fmsgPh': '¿Qué tipo de hogar o propiedad estás buscando?',
+          'contact.send': 'Enviar',
+          'contact.consentShort': 'Doy mi consentimiento para recibir comunicaciones según los términos a continuación.',
+          'contact.tcpa': 'Al continuar, firmo electrónicamente y doy mi consentimiento para recibir comunicaciones de marketing (sobre servicios de corretaje de bienes raíces y propiedades que pueda comprar, vender o rentar), que pueden ser entregadas por correo electrónico, teléfono y/o mensajes de texto (usando "tecnología automatizada"), de parte de Laura Hernández y sus agentes independientes, usando la información de contacto que proporcioné. Mi consentimiento no es condición de compra y puedo revocarlo en cualquier momento respondiendo a un mensaje de texto, cancelando la suscripción por correo o contactando directamente al número o email de este sitio.',
+          'contact.errName': 'Por favor ingresa tu nombre.',
+          'contact.errEmail': 'Por favor ingresa un correo válido.',
+          'contact.errTcpa': 'Debes aceptar los términos de consentimiento para continuar.',
+          'contact.successMsg': '¡Gracias! Laura se pondrá en contacto contigo pronto.',
 
-        'footer.tag':        'Hogares con estilo y visión.',
-        'footer.desc':       'Una presentación limpia y elegante de propiedades basada en imágenes de calidad, buena estructura y comunicación personal.',
-        'footer.quickLinks': 'Enlaces Rápidos',
+          'footer.tag': 'Hogares con estilo y visión.',
+          'footer.desc': 'Una presentación limpia y elegante de propiedades basada en imágenes de calidad, buena estructura y comunicación personal.',
+          'footer.quickLinks': 'Enlaces Rápidos',
+        }
+      };
+
+      /* ── APPLY TRANSLATIONS ────────────────────────────────────── */
+      function applyLang(lang) {
+        const t = translations[lang] || translations.en;
+        document.documentElement.lang = lang;
+
+        // Text nodes
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+
+        // Placeholders
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const key = el.getAttribute('data-i18n-placeholder');
+          if (t[key] !== undefined) el.placeholder = t[key];
+        });
+
+        // Toggle button label: show the OTHER language
+        const lbl = document.getElementById('langLabel');
+        if (lbl) lbl.textContent = lang === 'en' ? 'ES' : 'EN';
+
+        // Page title
+        document.title = lang === 'es'
+          ? 'Laura D. Hernandez | Realtor® y Productora Destacada'
+          : 'Laura D. Hernandez | Realtor® and Top Producer';
+
+        localStorage.setItem('tcl-lang', lang);
+        window.__currentLang = lang;
       }
-    };
 
-    /* ── APPLY TRANSLATIONS ────────────────────────────────────── */
-    function applyLang(lang) {
-      const t = translations[lang] || translations.en;
-      document.documentElement.lang = lang;
+      /* ── DETECT LANGUAGE ───────────────────────────────────────── */
+      function detectLang() {
+        // 1. User preference saved
+        const saved = localStorage.getItem('tcl-lang');
+        if (saved && translations[saved]) return saved;
+        // 2. Browser language
+        const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+        if (browser.startsWith('es')) return 'es';
+        return 'en';
+      }
 
-      // Text nodes
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.innerHTML = t[key];
-      });
+      /* ── TOGGLE ────────────────────────────────────────────────── */
+      function initToggle() {
+        const btn = document.getElementById('langToggle');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+          const next = window.__currentLang === 'en' ? 'es' : 'en';
+          applyLang(next);
+        });
+      }
 
-      // Placeholders
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key] !== undefined) el.placeholder = t[key];
-      });
-
-      // Toggle button label: show the OTHER language
-      const lbl = document.getElementById('langLabel');
-      if (lbl) lbl.textContent = lang === 'en' ? 'ES' : 'EN';
-
-      // Page title
-      document.title = lang === 'es'
-        ? 'Laura D. Hernandez | Realtor® y Productora Destacada'
-        : 'Laura D. Hernandez | Realtor® and Top Producer';
-
-      localStorage.setItem('tcl-lang', lang);
-      window.__currentLang = lang;
-    }
-
-    /* ── DETECT LANGUAGE ───────────────────────────────────────── */
-    function detectLang() {
-      // 1. User preference saved
-      const saved = localStorage.getItem('tcl-lang');
-      if (saved && translations[saved]) return saved;
-      // 2. Browser language
-      const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-      if (browser.startsWith('es')) return 'es';
-      return 'en';
-    }
-
-    /* ── TOGGLE ────────────────────────────────────────────────── */
-    function initToggle() {
-      const btn = document.getElementById('langToggle');
-      if (!btn) return;
-      btn.addEventListener('click', () => {
-        const next = window.__currentLang === 'en' ? 'es' : 'en';
-        applyLang(next);
-      });
-    }
-
-    /* ── INIT ──────────────────────────────────────────────────── */
-    applyLang(detectLang());
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initToggle);
-    } else {
-      initToggle();
-    }
-  })();
+      /* ── INIT ──────────────────────────────────────────────────── */
+      applyLang(detectLang());
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initToggle);
+      } else {
+        initToggle();
+      }
+    })();
   </script>
 
   <!-- Lang toggle button style -->
@@ -853,6 +912,7 @@
       transition: background .25s, color .25s;
       border-radius: 2px;
     }
+
     .lang-toggle:hover {
       background: var(--gold);
       color: var(--bk);
@@ -860,165 +920,177 @@
   </style>
 </body>
 
-  <!-- YouTube section styles -->
-  <style>
-    /* ── YOUTUBE SECTION ────────────────────────────────────────── */
-    .yt-section {
-      padding: 6rem 0;
-      background: var(--bk2);
-      position: relative;
-      overflow: hidden;
-    }
+<!-- YouTube section styles -->
+<style>
+  /* ── YOUTUBE SECTION ────────────────────────────────────────── */
+  .yt-section {
+    padding: 6rem 0;
+    background: var(--bk2);
+    position: relative;
+    overflow: hidden;
+  }
 
-    /* Subtle diagonal shimmer lines (matches metal-bg) */
-    .yt-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        repeating-linear-gradient(
-          105deg,
-          transparent,
-          transparent 2px,
-          rgba(201,168,76,.012) 2px,
-          rgba(201,168,76,.012) 4px
-        );
-    }
+  /* Subtle diagonal shimmer lines (matches metal-bg) */
+  .yt-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(105deg,
+        transparent,
+        transparent 2px,
+        rgba(201, 168, 76, .012) 2px,
+        rgba(201, 168, 76, .012) 4px);
+  }
 
-    /* Gold accent glow top-left */
-    .yt-section::after {
-      content: '';
-      position: absolute;
-      top: -120px;
-      left: -120px;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
+  /* Gold accent glow top-left */
+  .yt-section::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 168, 76, .07) 0%, transparent 70%);
+    pointer-events: none;
+  }
 
-    /* Two-column layout */
+  /* Two-column layout */
+  .yt-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  /* LEFT — copy */
+  .yt-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .95rem;
+    font-weight: 300;
+    color: var(--wh2);
+    line-height: 1.85;
+    margin-bottom: 2rem;
+  }
+
+  .yt-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    padding: .85rem 2rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    transition: background .3s, color .3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .yt-cta i {
+    font-size: 1.1rem;
+    transition: transform .3s;
+  }
+
+  .yt-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .35s ease;
+  }
+
+  .yt-cta span,
+  .yt-cta i {
+    position: relative;
+    z-index: 1;
+  }
+
+  .yt-cta:hover {
+    color: var(--bk);
+  }
+
+  .yt-cta:hover::before {
+    transform: scaleX(1);
+  }
+
+  .yt-cta:hover i {
+    transform: scale(1.15);
+  }
+
+  /* RIGHT — video frame */
+  .yt-frame-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--bd-g);
+    box-shadow:
+      0 0 0 1px rgba(201, 168, 76, .08),
+      0 24px 60px rgba(0, 0, 0, .65),
+      0 0 40px rgba(201, 168, 76, .06);
+  }
+
+  /* Gold corner accents */
+  .yt-corner {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-color: var(--gold);
+    border-style: solid;
+    z-index: 2;
+  }
+
+  .yt-c-tl {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+
+  .yt-c-br {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+
+  .yt-frame-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
     .yt-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
-    /* LEFT — copy */
-    .yt-desc {
-      font-family: 'Montserrat', sans-serif;
-      font-size: .95rem;
-      font-weight: 300;
-      color: var(--wh2);
-      line-height: 1.85;
-      margin-bottom: 2rem;
+    .yt-copy {
+      text-align: center;
+    }
+
+    .yt-copy .mini-bar {
+      margin: 0 auto !important;
     }
 
     .yt-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: .65rem;
-      padding: .85rem 2rem;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: 'Montserrat', sans-serif;
-      font-size: .78rem;
-      font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      transition: background .3s, color .3s;
-      position: relative;
-      overflow: hidden;
+      margin: 0 auto;
+      display: flex;
+      width: fit-content;
     }
-
-    .yt-cta i {
-      font-size: 1.1rem;
-      transition: transform .3s;
-    }
-
-    .yt-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .35s ease;
-    }
-
-    .yt-cta span, .yt-cta i {
-      position: relative;
-      z-index: 1;
-    }
-
-    .yt-cta:hover {
-      color: var(--bk);
-    }
-
-    .yt-cta:hover::before {
-      transform: scaleX(1);
-    }
-
-    .yt-cta:hover i {
-      transform: scale(1.15);
-    }
-
-    /* RIGHT — video frame */
-    .yt-frame-wrap {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      border: 1px solid var(--bd-g);
-      box-shadow:
-        0 0 0 1px rgba(201,168,76,.08),
-        0 24px 60px rgba(0,0,0,.65),
-        0 0 40px rgba(201,168,76,.06);
-    }
-
-    /* Gold corner accents */
-    .yt-corner {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      border-color: var(--gold);
-      border-style: solid;
-      z-index: 2;
-    }
-    .yt-c-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
-    .yt-c-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
-
-    .yt-frame-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .yt-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .yt-copy {
-        text-align: center;
-      }
-      .yt-copy .mini-bar {
-        margin: 0 auto !important;
-      }
-      .yt-cta {
-        margin: 0 auto;
-        display: flex;
-        width: fit-content;
-      }
-    }
-  </style>
+  }
+</style>
 </body>
 
 </html>

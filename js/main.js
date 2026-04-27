@@ -546,6 +546,7 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") {
     hideConsentModal();
   }
+});
 
 // ── YOUTUBE PRO GALLERY FIX ──
 document.addEventListener("DOMContentLoaded", () => {
@@ -564,5 +565,4 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("active");
     });
   });
-});
 });

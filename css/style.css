@@ -2080,3 +2080,72 @@ footer {
   }
 }
 
+/* === YOUTUBE FIX PRO === */
+
+/* contenedor principal */
+.yt-pro-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* video grande + lista */
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* VIDEO PRINCIPAL */
+.yt-featured-video {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 🔥 clave para que no se vea cuadrado */
+}
+
+.yt-featured-video iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  display: block;
+}
+
+/* PLAYLIST */
+.yt-playlist {
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* items */
+.yt-video-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: .8rem;
+  padding: .7rem;
+}
+
+.yt-video-item img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ocultar scrollbar feo */
+.yt-playlist::-webkit-scrollbar {
+  width: 4px;
+}
+
+.yt-playlist::-webkit-scrollbar-thumb {
+  background: rgba(201,168,76,.4);
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .yt-pro-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .yt-featured-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .yt-playlist {
+    max-height: none;
+  }
+}

@@ -554,17 +554,21 @@ function changeVideo(id) {
 }
 
 // ── YOUTUBE PRO GALLERY ──
-function changeVideo(button, id) {
-  const iframe = document.getElementById("mainVideo");
-  if (!iframe) return;
 
-  iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+document.querySelectorAll(".yt-video-item").forEach((button) => {
+  button.addEventListener("click", () => {
+    const id = button.dataset.video;
+    const iframe = document.getElementById("mainVideo");
 
-  document.querySelectorAll(".yt-video-item").forEach(item => {
-    item.classList.remove("active");
+    if (!id || !iframe) return;
+
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+
+    document.querySelectorAll(".yt-video-item").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
   });
-
-  button.classList.add("active");
-}
-
+});
 });

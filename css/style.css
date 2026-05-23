@@ -2149,3 +2149,69 @@ footer {
     max-height: none;
   }
 }
+/* ── CONTACT QR CODES & BROKERAGE ─────────────────────── */
+.c-qr-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.c-qr-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+.c-qr-img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(201,168,76,.3);
+  padding: 4px;
+  background: #080808;
+  display: block;
+}
+.c-qr-label {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .6rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--wh2);
+}
+.c-qr-label i { color: var(--gold); font-size: .75rem; }
+.c-qr-label a { color: var(--wh2); text-decoration: none; transition: color .2s; }
+.c-qr-label a:hover { color: var(--gold); }
+
+.c-brokerage {
+  margin-top: .5rem;
+}
+.c-brokerage-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 .2rem;
+}
+.c-brokerage-lic {
+  font-size: .6rem;
+  letter-spacing: .12em;
+  color: var(--wh2);
+  margin: 0;
+}
+
+/* ── NAVBAR BROKERAGE LINE ───────────────────────────── */
+.logo-brokerage {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .48rem;
+  font-weight: 400;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,.6);
+  line-height: 1;
+  margin-top: .15rem;
+  white-space: nowrap;
+}

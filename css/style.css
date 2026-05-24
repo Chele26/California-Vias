@@ -2149,22 +2149,238 @@ footer {
     max-height: none;
   }
 }
+/* ═══════════════════════════════════════════════════
+   FEATURED SOLD — Trophy Strip
+   ═══════════════════════════════════════════════════ */
+
+.sold-featured-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: .5rem;
+}
+
+.featured-sold-card {
+  background: rgba(12,12,12,.85);
+  border: 1px solid rgba(201,168,76,.18);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .7s ease, transform .7s ease, border-color .3s;
+  position: relative;
+}
+.featured-sold-card.on { opacity: 1; transform: translateY(0); }
+.featured-sold-card:hover { border-color: rgba(201,168,76,.55); }
+
+/* Staggered entrance */
+.featured-sold-card:nth-child(1) { transition-delay: 0s; }
+.featured-sold-card:nth-child(2) { transition-delay: .12s; }
+.featured-sold-card:nth-child(3) { transition-delay: .24s; }
+
+/* Image area */
+.fsc-img-wrap {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #080808;
+}
+.fsc-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.75) brightness(.85);
+  transition: transform .6s ease, filter .6s ease;
+}
+.featured-sold-card:hover .fsc-img {
+  transform: scale(1.04);
+  filter: saturate(.9) brightness(.92);
+}
+.fsc-no-img {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; color: rgba(201,168,76,.2);
+}
+.fsc-img-ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.08) 0%, rgba(0,0,0,.55) 100%);
+  pointer-events: none;
+}
+
+/* Gold ribbon */
+.fsc-ribbon {
+  position: absolute;
+  top: 1rem; left: 0;
+  background: var(--gold);
+  color: var(--bk);
+  font-family: 'Montserrat', sans-serif;
+  font-size: .48rem;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  padding: .32rem 1rem .32rem .85rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  z-index: 5;
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%);
+  padding-right: 1.3rem;
+}
+.fsc-ribbon-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(8,8,8,.5);
+  flex-shrink: 0;
+}
+
+/* Body */
+.fsc-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+}
+.fsc-loc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .58rem;
+  letter-spacing: .14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+.fsc-loc i { opacity: .7; }
+.fsc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 300;
+  color: var(--wh);
+  line-height: 1.2;
+  margin-bottom: .9rem;
+}
+
+/* Specs row */
+.fsc-specs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 1rem;
+}
+.fs-spec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 .9rem;
+  flex: 1;
+}
+.fs-spec:first-child { padding-left: 0; }
+.fs-spec-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--wh);
+  line-height: 1;
+}
+.fs-spec-lbl {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .5rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--wh3);
+  margin-top: .2rem;
+}
+.fs-spec-div {
+  width: 1px;
+  height: 28px;
+  background: rgba(201,168,76,.2);
+  flex-shrink: 0;
+}
+
+/* Gold divider */
+.fsc-divider {
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,.1) 100%);
+  margin-bottom: .9rem;
+  width: 40%;
+}
+
+.fsc-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--gold-l);
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.fsc-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .55rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--wh3);
+}
+
+/* "More Closed Transactions" divider */
+.sold-more-label {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 2.5rem 0 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .58rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--wh3);
+}
+.sold-more-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(201,168,76,.15);
+}
+
+/* Specs on small sold cards */
+.sc-specs-row {
+  display: flex;
+  gap: .7rem;
+  margin-bottom: .4rem;
+  flex-wrap: wrap;
+}
+.sc-spec {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .52rem;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.5);
+  display: flex;
+  align-items: center;
+  gap: .28rem;
+}
+.sc-spec i { color: rgba(201,168,76,.55); font-size: .5rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sold-featured-wrap { grid-template-columns: 1fr 1fr; }
+  .featured-sold-card:nth-child(3) { display: none; }
+}
+@media (max-width: 580px) {
+  .sold-featured-wrap { grid-template-columns: 1fr; }
+  .featured-sold-card:nth-child(2),
+  .featured-sold-card:nth-child(3) { display: none; }
+  .fsc-title { font-size: 1.25rem; }
+  .fsc-price { font-size: 1.5rem; }
+}
+
 /* ── CONTACT QR CODES & BROKERAGE ─────────────────────── */
 .c-qr-section {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+  flex-wrap: nowrap;
 }
 .c-qr-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .4rem;
+  gap: .45rem;
 }
 .c-qr-img {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border: 1px solid rgba(201,168,76,.3);
   padding: 4px;
   background: #080808;
@@ -2174,21 +2390,24 @@ footer {
   display: flex;
   align-items: center;
   gap: .3rem;
-  font-size: .6rem;
-  letter-spacing: .12em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .58rem;
+  letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--wh2);
 }
-.c-qr-label i { color: var(--gold); font-size: .75rem; }
-.c-qr-label a { color: var(--wh2); text-decoration: none; transition: color .2s; }
-.c-qr-label a:hover { color: var(--gold); }
-
-.c-brokerage {
-  margin-top: .5rem;
+.c-qr-label i { color: var(--gold); font-size: .72rem; }
+.c-qr-label a {
+  color: var(--wh2) !important;
+  text-decoration: none;
+  transition: color .2s;
 }
+.c-qr-label a:hover { color: var(--gold) !important; }
+
+.c-brokerage { margin-top: 1.2rem; }
 .c-brokerage-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: .65rem;
+  font-size: .62rem;
   font-weight: 500;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -2196,13 +2415,14 @@ footer {
   margin: 0 0 .2rem;
 }
 .c-brokerage-lic {
-  font-size: .6rem;
+  font-size: .58rem;
   letter-spacing: .12em;
   color: var(--wh2);
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ── NAVBAR BROKERAGE LINE ───────────────────────────── */
+/* Navbar brokerage line */
 .logo-brokerage {
   display: block;
   font-family: 'Montserrat', sans-serif;

@@ -285,7 +285,7 @@ function renderPropertyCard(property, index) {
   `;
 }
 
-/* ── SOLD CARD con carrusel automático ─────────────────────── */
+/* ── SOLD CARD — regular grid ───────────────────────────────── */
 function renderSoldCard(property, index) {
   const title = property.title || property.name || "Property";
   const loc   = property.location || "California";
@@ -321,6 +321,12 @@ function renderSoldCard(property, index) {
     </div>
   ` : "";
 
+  const specsHTML = [
+    property.beds  ? `<span class="sc-spec"><i class="fas fa-bed"></i> ${property.beds} Bed</span>` : "",
+    property.baths ? `<span class="sc-spec"><i class="fas fa-bath"></i> ${property.baths} Bath</span>` : "",
+    property.area  ? `<span class="sc-spec"><i class="fas fa-expand"></i> ${property.area}</span>` : "",
+  ].filter(Boolean).join("");
+
   return `
     <div class="sold-card on" data-sold-id="${cardId}">
       <div class="sold-card-inner">
@@ -332,6 +338,7 @@ function renderSoldCard(property, index) {
           <span class="sold-badge">Sold</span>
           <h3 class="sold-name">${title}</h3>
           <p class="sold-loc"><i class="fas fa-map-marker-alt me-1"></i>${loc}</p>
+          ${specsHTML ? `<div class="sc-specs-row">${specsHTML}</div>` : ""}
           <p class="sold-price">${price}</p>
           ${year ? `<p class="sold-year">Closed ${year}</p>` : ""}
         </div>
@@ -339,6 +346,59 @@ function renderSoldCard(property, index) {
     </div>
   `;
 }
+
+/* ── FEATURED SOLD CARD — hero trophy strip ─────────────────── */
+function renderFeaturedSoldCard(property, index) {
+  const title = property.title || property.name || "Property";
+  const loc   = property.location || "California";
+  const price = property.price || "";
+  const year  = property.soldDate || "";
+
+  const VIDEO_EXTS = /\.(mp4|webm|ogg|mov)(\?.*)?$/i;
+  let slides = [];
+  if (property.media && property.media.length) {
+    slides = property.media
+      .map(m => (typeof m === "string" ? m : (m.src || "")))
+      .filter(src => src && !VIDEO_EXTS.test(src));
+  }
+  if (!slides.length && property.cover) slides = [property.cover];
+
+  const imgSrc = slides[0] || "";
+  const cardId = `feat-${property.id || index}`;
+
+  const specsHTML = [
+    property.beds  ? `<div class="fs-spec"><span class="fs-spec-val">${property.beds}</span><span class="fs-spec-lbl">Beds</span></div>` : "",
+    property.baths ? `<div class="fs-spec"><span class="fs-spec-val">${property.baths}</span><span class="fs-spec-lbl">Baths</span></div>` : "",
+    property.area  ? `<div class="fs-spec"><span class="fs-spec-val">${property.area.replace(" sqft","")}</span><span class="fs-spec-lbl">Sq Ft</span></div>` : "",
+  ].filter(Boolean).join(`<div class="fs-spec-div"></div>`);
+
+  return `
+    <div class="featured-sold-card on" id="${cardId}">
+      <div class="fsc-img-wrap">
+        ${imgSrc
+          ? `<img src="${imgSrc}" alt="${title}" loading="lazy" class="fsc-img">`
+          : `<div class="fsc-img fsc-no-img"><i class="fas fa-home"></i></div>`
+        }
+        <div class="fsc-img-ov"></div>
+        <div class="fsc-ribbon">
+          <span class="fsc-ribbon-dot"></span>
+          RECENTLY SOLD
+          <span class="fsc-ribbon-dot"></span>
+        </div>
+      </div>
+      <div class="fsc-body">
+        <p class="fsc-loc"><i class="fas fa-map-marker-alt me-1"></i>${loc}</p>
+        <h3 class="fsc-title">${title}</h3>
+        ${specsHTML ? `<div class="fsc-specs">${specsHTML}</div>` : ""}
+        <div class="fsc-divider"></div>
+        <p class="fsc-price">${price}</p>
+        ${year ? `<p class="fsc-date">Closed &nbsp;${year}</p>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+
 
 /* ── Init carrusel automático en sold cards ─────────────────── */
 function initSoldCarousels() {
@@ -385,13 +445,25 @@ let soldAllProps    = [];
 function renderSoldPage(page) {
   const soldGrid     = document.getElementById("soldGrid");
   const paginationEl = document.getElementById("soldPagination");
+  const featuredEl   = document.getElementById("soldFeatured");
   if (!soldGrid) return;
 
-  const total      = soldAllProps.length;
+  // Separate featured (first 3) from the rest
+  const featured   = soldAllProps.slice(0, 3);
+  const remaining  = soldAllProps.slice(3);
+
+  // Render featured strip
+  if (featuredEl) {
+    featuredEl.innerHTML = featured.map((p, i) => renderFeaturedSoldCard(p, i)).join("");
+    featuredEl.querySelectorAll(".featured-sold-card").forEach(el => obs.observe(el));
+  }
+
+  // Render paginated grid for the rest
+  const total      = remaining.length;
   const totalPages = Math.ceil(total / SOLD_PER_PAGE);
   const start      = (page - 1) * SOLD_PER_PAGE;
   const end        = Math.min(start + SOLD_PER_PAGE, total);
-  const pageItems  = soldAllProps.slice(start, end);
+  const pageItems  = remaining.slice(start, end);
 
   soldGrid.innerHTML = pageItems.map((p, i) => renderSoldCard(p, start + i)).join("");
   soldGrid.querySelectorAll(".sold-card").forEach(el => obs.observe(el));
@@ -405,7 +477,6 @@ function renderSoldPage(page) {
   }
 
   let html = "";
-
   html += `<button class="sold-page-btn sold-page-arrow" ${page === 1 ? "disabled" : ""} data-page="${page - 1}">
     <i class="fas fa-chevron-left"></i>
   </button>`;
@@ -414,7 +485,6 @@ function renderSoldPage(page) {
     const isFirst = i === 1;
     const isLast  = i === totalPages;
     const isNear  = i >= page - 1 && i <= page + 1;
-
     if (isFirst || isLast || isNear) {
       html += `<button class="sold-page-btn sold-page-num ${i === page ? "active" : ""}" data-page="${i}">${i}</button>`;
     } else if (i === page - 2 || i === page + 2) {
@@ -438,6 +508,7 @@ function renderSoldPage(page) {
         const offset = soldSection.getBoundingClientRect().top + window.scrollY - 80;
         window.scrollTo({ top: offset, behavior: "smooth" });
       }
+
     });
   });
 }

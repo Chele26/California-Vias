@@ -7,9 +7,54 @@
 var CV_DATA = {
   properties: [
 
+  // ─── RECENT SOLD — 2025/2026 ────────────────────────────
+
+  {
+    id: "838-classic-ave-beaumont",
+    status: "Sold",
+    title: "Classic Ave — Beaumont",
+    location: "838 Classic Ave, Beaumont, CA 92223",
+    beds: 4, baths: 4, area: "3,111 sqft", price: "$589,000",
+    soldDate: "04/27/2026",
+    cover: "assets/propiedades/propiedad-27/slide-1.jpg",
+    description: "Beautiful single-family residence in Beaumont. Spacious 4 bed / 4 bath home with 3,111 sqft of living space — sold and closed April 2026.",
+    features: ["4 Bedrooms", "4 Bathrooms", "3,111 Sq Ft", "Single Family", "Garage", "Beaumont CA"],
+    media: [
+      "assets/propiedades/propiedad-27/slide-1.jpg"
+    ]
+  },
+
+  {
+    id: "1235-e-35th-st-san-bernardino",
+    status: "Sold",
+    title: "35th St — San Bernardino",
+    location: "1235 E 35th St, San Bernardino, CA 92404",
+    beds: 4, baths: 2, area: "", price: "$585,000",
+    soldDate: "04/14/2026",
+    cover: "assets/propiedades/propiedad-28/slide-1.jpg",
+    description: "Single-family home in San Bernardino — 4 bedrooms, 2 bathrooms. Represented and closed April 2026.",
+    features: ["4 Bedrooms", "2 Bathrooms", "Single Family", "San Bernardino CA"],
+    media: [
+      "assets/propiedades/propiedad-28/slide-1.jpg"
+    ]
+  },
+
+  {
+    id: "820-w-compton-blvd-compton",
+    status: "Sold",
+    title: "Compton Blvd — Compton",
+    location: "820 W Compton Blvd Unit 20, Compton, CA 90220",
+    beds: null, baths: null, area: "", price: "$533,000",
+    soldDate: "03/03/2026",
+    cover: "assets/propiedades/propiedad-29/slide-1.jpg",
+    description: "Unit 20 at 820 W Compton Blvd — successfully represented and closed March 2026.",
+    features: ["Compton CA", "Closed 2026"],
+    media: [
+      "assets/propiedades/propiedad-29/slide-1.jpg"
+    ]
+  },
 
 
-  // ─── 2 ──────────────────────────────────────────────────
   {
     id: "propiedad-2",
     status: "Sold",

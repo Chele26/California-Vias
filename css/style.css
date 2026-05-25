@@ -2354,12 +2354,9 @@ footer {
 /* Responsive */
 @media (max-width: 900px) {
   .sold-featured-wrap { grid-template-columns: 1fr 1fr; }
-  .featured-sold-card:nth-child(3) { display: none; }
 }
 @media (max-width: 580px) {
   .sold-featured-wrap { grid-template-columns: 1fr; }
-  .featured-sold-card:nth-child(2),
-  .featured-sold-card:nth-child(3) { display: none; }
   .fsc-title { font-size: 1.25rem; }
   .fsc-price { font-size: 1.5rem; }
 }
@@ -2434,4 +2431,10 @@ footer {
   line-height: 1;
   margin-top: .15rem;
   white-space: nowrap;
+}
+
+/* ── MOBILE LANGUAGE TOGGLE ──────────────────────────────── */
+.lang-toggle-mob {
+  margin-top: .5rem;
+  align-self: center;
 }

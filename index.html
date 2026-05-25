@@ -29,6 +29,9 @@
     <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
+    <button id="langToggleMob" class="lang-toggle lang-toggle-mob" aria-label="Switch language">
+      <span id="langLabelMob">ES</span>
+    </button>
   </div>
 
   <!-- NAVBAR -->
@@ -871,6 +874,8 @@
         // Toggle button label: show the OTHER language
         const lbl = document.getElementById('langLabel');
         if (lbl) lbl.textContent = lang === 'en' ? 'ES' : 'EN';
+        const lblMob = document.getElementById('langLabelMob');
+        if (lblMob) lblMob.textContent = lang === 'en' ? 'ES' : 'EN';
 
         // Page title
         document.title = lang === 'es'
@@ -895,10 +900,12 @@
       /* ── TOGGLE ────────────────────────────────────────────────── */
       function initToggle() {
         const btn = document.getElementById('langToggle');
-        if (!btn) return;
-        btn.addEventListener('click', () => {
-          const next = window.__currentLang === 'en' ? 'es' : 'en';
-          applyLang(next);
+        if (btn) btn.addEventListener('click', () => {
+          applyLang(window.__currentLang === 'en' ? 'es' : 'en');
+        });
+        const btnMob = document.getElementById('langToggleMob');
+        if (btnMob) btnMob.addEventListener('click', () => {
+          applyLang(window.__currentLang === 'en' ? 'es' : 'en');
         });
       }
 

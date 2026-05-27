@@ -272,7 +272,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 1.5rem 3rem;
+  padding: 1rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -280,7 +280,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 #nav.scrolled {
   background: rgba(6,6,6,.96);
-  padding: .95rem 3rem;
+  padding: .6rem 3rem;
   border-bottom: 1px solid var(--bd-g);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -288,7 +288,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 
 /* LOGO AREA */
 .nav-logo { display:flex; align-items:center; gap:.9rem; text-decoration:none; }
-.logo-img  { height:75px; width: 150px;; display:block; transition:filter .3s; }
+.logo-img  { height:120px; width: 240px; display:block; transition:filter .3s; }
 .logo-img:hover { filter:drop-shadow(0 0 8px rgba(201,168,76,.55)); }
 
 .logo-text-wrap {
@@ -300,7 +300,7 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 }
 .logo-text {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 2rem;
   font-weight: 400;
   letter-spacing: .14em;
   line-height: 1;
@@ -1431,8 +1431,8 @@ footer {
   #nav          { padding: 1rem 1.4rem; }
   #nav.scrolled { padding: .75rem 1.4rem; }
   /* ✅ CORREGIDO: logo más grande en tablet */
-  .logo-img     { height: 62px; width: auto; }
-  .logo-text    { font-size: 1.15rem; }
+  .logo-img     { height: 96px; width: auto; }
+  .logo-text    { font-size: 1.7rem; }
   .cn           { display: none; }
 
   /* Secciones */
@@ -1473,11 +1473,11 @@ footer {
   #nav.scrolled { padding: .7rem 1.2rem; }
   /* ✅ CORREGIDO: logo más grande en mobile */
   .logo-img {
-    height: 64px;
+    height: 84px;
     width: auto;
-    max-width: 180px;
+    max-width: 200px;
   }
-  .logo-text    { font-size: 1.05rem; letter-spacing: .1em; }
+  .logo-text    { font-size: 1.55rem; letter-spacing: .1em; }
 
   /* Hero */
   #hero { min-height: 100svh; }
@@ -1572,8 +1572,8 @@ footer {
 @media (max-width: 576px) {
   /* Navbar */
   /* ✅ CORREGIDO: logo más grande en mobile pequeño */
-  .logo-img  { height: 56px; width: auto; }
-  .logo-text { font-size: .95rem; }
+  .logo-img  { height: 84px; width: auto; }
+  .logo-text { font-size: 1.35rem; }
   #nav       { padding: .85rem 1rem; }
 
   /* Hero */
@@ -2423,7 +2423,7 @@ footer {
 .logo-brokerage {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  font-size: .48rem;
+  font-size: .62rem;
   font-weight: 400;
   letter-spacing: .18em;
   text-transform: uppercase;

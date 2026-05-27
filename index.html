@@ -89,7 +89,7 @@
       <div class="hero-brand">
         <img src="assets/logo.png" alt="Laura L. De Hernandez logo" class="hero-logo">
         <div class="hero-name">LAURA L. DE HERNANDEZ</div>
-        <p class="hero-license" style="color:#ffffff;">✦ CA DRE LICENCE 01820066 ✦</p>
+        <p class="hero-license" style="color:#ffffff;">✦ CA DRE LICENSE 01820066 ✦</p>
       </div>
 
       <h1 class="h-title">
@@ -193,6 +193,15 @@
           and real client testimonials that will guide you through every step of
           your real estate journey.
         </p>
+        <!-- CEO testimonial highlight -->
+        <div class="yt-featured-badge">
+          <div class="yt-badge-icon"><i class="fas fa-star"></i></div>
+          <div class="yt-badge-text">
+            <strong>Featured: CEO Endorsement</strong>
+            <p>When a real estate company CEO publicly highlights your expertise — that speaks for itself.</p>
+          </div>
+        </div>
+
         <a href="https://www.youtube.com/@tucasaconlaura" target="_blank" rel="noopener" class="yt-cta"
           data-i18n="yt.cta">
           <i class="fab fa-youtube"></i>
@@ -206,8 +215,8 @@
         <div class="yt-pro-layout">
 
          <div class="yt-featured-video">
-            <iframe id="mainVideo" src="https://www.youtube.com/embed/Ya_OWZwyD8A?rel=0&modestbranding=1"
-              title="Tu Casa con Laura — Featured Video" frameborder="0"
+            <iframe id="mainVideo" src="https://www.youtube.com/embed/Mp0CxRJPrhk?rel=0&modestbranding=1"
+              title="CEO recomienda a Laura al 100%" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen>
             </iframe>
@@ -215,7 +224,15 @@
 
           <div class="yt-playlist">
 
-            <button class="yt-video-item active" type="button" data-video="Ya_OWZwyD8A">
+            <button class="yt-video-item active" type="button" data-video="Mp0CxRJPrhk">
+              <img src="https://img.youtube.com/vi/Mp0CxRJPrhk/hqdefault.jpg" alt="CEO recomienda a Laura">
+              <div>
+                <span>&#11088; CEO Recomienda a Laura al 100%</span>
+                <small>Avalada por los expertos del sector inmobiliario.</small>
+              </div>
+            </button>
+
+            <button class="yt-video-item" type="button" data-video="Ya_OWZwyD8A">
               <img src="https://img.youtube.com/vi/Ya_OWZwyD8A/hqdefault.jpg" alt="Video">
               <div>
                 <span>Featured Video</span>
@@ -244,6 +261,14 @@
               <div>
                 <span>Market Insight</span>
                 <small>Short real estate tip for buyers and sellers.</small>
+              </div>
+            </button>
+
+            <button class="yt-video-item" type="button" data-video="Z3n0IvfFM1A">
+              <img src="https://img.youtube.com/vi/Z3n0IvfFM1A/hqdefault.jpg" alt="Video">
+              <div>
+                <span>Property Advice</span>
+                <small>Useful guidance in short video format.</small>
               </div>
             </button>
 
@@ -1105,6 +1130,42 @@
     display: block;
   }
 
+
+  /* ── CEO Featured Badge ── */
+  .yt-featured-badge {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(201,168,76,.07);
+    border: 1px solid rgba(201,168,76,.3);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+  .yt-badge-icon {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-top: .1rem;
+    flex-shrink: 0;
+  }
+  .yt-badge-text strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: .3rem;
+  }
+  .yt-badge-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .72rem;
+    font-weight: 300;
+    color: var(--wh2);
+    line-height: 1.6;
+    margin: 0;
+  }
   /* Responsive */
   @media (max-width: 900px) {
     .yt-inner {

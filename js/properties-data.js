@@ -80,7 +80,7 @@ var CV_DATA = {
   {
     id: "propiedad-3",
     status: "Sold",
-    title: "Comunidad de Bungalows en Los Angeles",
+    title: "Commercial Units  (5 units) Los Angeles",
     location: "5111 Ascot Ave, Los Angeles, CA 90011",
     beds: 5, baths: 6, area: "2,745 sqft", price: "$700,000",
     soldDate: "04/16/2018",
@@ -121,7 +121,7 @@ var CV_DATA = {
   {
     id: "propiedad-4",
     status: "Sold",
-    title: "Casa en Lote Esquinero — Long Beach",
+    title: "SFR — Long Beach",
     location: "5690 Orizaba Ave, Long Beach, CA 90805",
     beds: 3, baths: 1, area: "1,160 sqft", price: "$450,000",
     soldDate: "10/28/2016",
@@ -147,7 +147,7 @@ var CV_DATA = {
   {
     id: "propiedad-6",
     status: "Sold",
-    title: "Casa Multifamiliar Remodelada — Los Angeles",
+    title: "Duplex Los Angeles",
     location: "207 E 74th St, Los Angeles, CA 90003",
     beds: 9, baths: 5, area: "4,016 sqft", price: "$630,000",
     soldDate: "10/25/2016",
@@ -172,7 +172,7 @@ var CV_DATA = {
   {
     id: "propiedad-1",
     status: "Sold",
-    title: "Casa Familiar en Compton",
+    title: "SFR Compton",
     location: "1824 E Kay St, Compton, CA 90221",
     beds: 3, baths: 2, area: "1,400 sqft", price: "$405,000",
     soldDate: "01/10/2019",
@@ -190,7 +190,7 @@ var CV_DATA = {
   {
     id: "propiedad-5",
     status: "Sold",
-    title: "Casa Remodelada en Colton",
+    title: "SFR Colton",
     location: "2277 E Mountain Woods St, Colton, CA 92324",
     beds: 3, baths: 2, area: "1,276 sqft", price: "$305,000",
     soldDate: "01/11/2018",
@@ -208,7 +208,7 @@ var CV_DATA = {
   {
     id: "propiedad-7",
     status: "Sold",
-    title: "Casa Unifamiliar en Montebello",
+    title: "SFR Montebello",
     location: "237 N Montebello Blvd, Montebello, CA 90640",
     beds: 3, baths: 1, area: "1,323 sqft", price: "$465,000",
     soldDate: "01/31/2019",
@@ -225,7 +225,7 @@ var CV_DATA = {
   {
     id: "propiedad-9",
     status: "Sold",
-    title: "Casa Unifamiliar en South Gate",
+    title: "SFR South Gate",
     location: "9305 Elizabeth Ave, South Gate, CA 90280",
     beds: 2, baths: 1, area: "960 sqft", price: "$329,000",
     soldDate: "11/04/2014",
@@ -242,7 +242,7 @@ var CV_DATA = {
   {
     id: "propiedad-10",
     status: "Sold",
-    title: "Casa de Entrada en Compton",
+    title: "SFR Compton",
     location: "400 S Bullis Rd, Compton, CA 90221",
     beds: 3, baths: 1, area: "965 sqft", price: "$197,000",
     soldDate: "10/23/2014",
@@ -259,7 +259,7 @@ var CV_DATA = {
   {
     id: "propiedad-11",
     status: "Sold",
-    title: "Casa con Planta Abierta en Compton",
+    title: "SFR Compton",
     location: "1300 N Tamarind Ave, Compton, CA 90222",
     beds: 3, baths: 2, area: "1,520 sqft", price: "$385,000",
     soldDate: "01/22/2018",
@@ -272,42 +272,13 @@ var CV_DATA = {
     ]
   },
 
-  // ─── 12 ─────────────────────────────────────────────────
-  {
-    id: "propiedad-12",
-    status: "sold",
-    title: "Casa con Sala Familiar y Chimenea — Compton",
-    location: "2717 W Tichenor St, Compton, CA 90220",
-    beds: 4, baths: 2, area: "1,764 sqft", price: "$665,000",
-    soldDate: "03/16/2026",
-    cover: "assets/propiedades/propiedad-12/slide-1.jpg",
-    description: "Atractiva propiedad de 4 recámaras y 2 baños en lote de 5,248 sqft. Sala familiar con chimenea, piso de madera y ventana panorámica. Garage para 2 autos. Potencial ADU.",
-    features: ["4 Recámaras", "2 Baños", "Chimenea", "Garage 2 Autos", "Patio Trasero", "Potencial ADU", "Piso de Madera"],
-    photos: 35,
-    media: [
-      "assets/propiedades/propiedad-12/slide-1.jpg",
-      "assets/propiedades/propiedad-12/slide-2.jpg",
-      "assets/propiedades/propiedad-12/slide-3.jpg",
-      "assets/propiedades/propiedad-12/slide-4.jpg",
-      "assets/propiedades/propiedad-12/slide-5.jpg",
-      "assets/propiedades/propiedad-12/slide-6.jpg",
-      "assets/propiedades/propiedad-12/slide-7.jpg",
-      "assets/propiedades/propiedad-12/slide-8.jpg",
-      "assets/propiedades/propiedad-12/slide-9.jpg",
-      "assets/propiedades/propiedad-12/slide-10.jpg",
-      "assets/propiedades/propiedad-12/slide-11.jpg",
-      "assets/propiedades/propiedad-12/slide-12.jpg",
-      "assets/propiedades/propiedad-12/slide-13.jpg",
-      "assets/propiedades/propiedad-12/slide-14.jpg",
-      "assets/propiedades/propiedad-12/slide-15.jpg",
-    ]
-  },
+
 
   // ─── 13 ─────────────────────────────────────────────────
   {
     id: "propiedad-13",
     status: "Sold",
-    title: "Casa Familiar en Compton — McKinley",
+    title: "SFR Compton — McKinley",
     location: "15508 S McKinley Ave, Compton, CA 90220",
     beds: 3, baths: 2, area: "1,422 sqft", price: "$275,000",
     soldDate: "09/26/2013",
@@ -324,7 +295,7 @@ var CV_DATA = {
   {
     id: "propiedad-14",
     status: "Sold",
-    title: "Dúplex en Wilmington",
+    title: "Dúplex - Wilmington",
     location: "1320 E Colon St, Wilmington, CA 90744",
     beds: 4, baths: 2, area: "1,522 sqft", price: "$305,000",
     soldDate: "08/28/2019",
@@ -341,7 +312,7 @@ var CV_DATA = {
   {
     id: "propiedad-15",
     status: "Sold",
-    title: "Casa Acogedora en Carson",
+    title: "SFR Carson",
     location: "335 W 235th St, Carson, CA 90745",
     beds: 3, baths: 1, area: "968 sqft", price: "$255,000",
     soldDate: "09/13/2012",
@@ -358,7 +329,7 @@ var CV_DATA = {
   {
     id: "propiedad-16",
     status: "Sold",
-    title: "Casa para Primer Comprador — Colton",
+    title: "SFR Colton",
     location: "1330 Rialto Ave, Colton, CA 92324",
     beds: 4, baths: 2, area: "1,390 sqft", price: "$120,000",
     soldDate: "07/26/2012",
@@ -375,7 +346,7 @@ var CV_DATA = {
   {
     id: "propiedad-17",
     status: "Sold",
-    title: "Casa en Paramount",
+    title: "SFR Paramount",
     location: "15132 Castana Ave, Paramount, CA 90723",
     beds: 3, baths: 1, area: "880 sqft", price: "$175,000",
     soldDate: "11/07/2011",
@@ -392,7 +363,7 @@ var CV_DATA = {
   {
     id: "propiedad-18",
     status: "Sold",
-    title: "Propiedad Multifamiliar en Signal Hill",
+    title: "3 units Signal Hill",
     location: "967 E Vernon St, Signal Hill, CA 90755",
     beds: 4, baths: 2, area: "2,060 sqft", price: "$499,000",
     soldDate: "N/A",
@@ -409,7 +380,7 @@ var CV_DATA = {
   {
     id: "propiedad-19",
     status: "Sold",
-    title: "Casa Encantadora en Wilmington",
+    title: "SFR Wilmington",
     location: "837 E 246th St, Wilmington, CA 90744",
     beds: 4, baths: 2, area: "1,528 sqft", price: "$250,000",
     soldDate: "04/06/2012",
@@ -427,7 +398,7 @@ var CV_DATA = {
   {
     id: "propiedad-20",
     status: "Sold",
-    title: "Casa Familiar con Chimenea en Ontario",
+    title: "SFR Ontario",
     location: "2540 S Mildred Pl, Ontario, CA 91761",
     beds: 5, baths: 2, area: "2,402 sqft", price: "$270,000",
     soldDate: "11/29/2011",
@@ -444,7 +415,7 @@ var CV_DATA = {
   {
     id: "propiedad-21",
     status: "Sold",
-    title: "Casa para Primer Comprador — Hesperia",
+    title: "SFR Hesperia",
     location: "15795 Dalscote St, Hesperia, CA 92345",
     beds: 2, baths: 1, area: "972 sqft", price: "$74,000",
     soldDate: "09/29/2011",
@@ -461,7 +432,7 @@ var CV_DATA = {
   {
     id: "propiedad-22",
     status: "Sold",
-    title: "Casa en Vecindario Tranquilo — Lakewood",
+    title: "SFR Lakewood",
     location: "4375 Levelside Ave, Lakewood, CA 90712",
     beds: 2, baths: 1, area: "966 sqft", price: "$326,000",
     soldDate: "04/20/2011",
@@ -474,28 +445,12 @@ var CV_DATA = {
     ]
   },
 
-  // ─── 23 ─────────────────────────────────────────────────
-  {
-    id: "propiedad-23",
-    status: "Sold",
-    title: "Casa As-Is en San Bernardino",
-    location: "1172 W 15th St, San Bernardino, CA 92411",
-    beds: 3, baths: 1, area: "1,149 sqft", price: "$87,500",
-    soldDate: "12/08/2010",
-    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=1-ezxGxqBp2PxPy8aCOLxg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=3.2354634&pitch=0&thumbfov=100",
-    description: "Casa unifamiliar de nivel único con 3 recámaras y 1 baño en San Bernardino. Vendida en condición 'as-is'. Lote de 6,534 sqft con garage independiente. Construida en 1943.",
-    features: ["3 Recámaras", "1 Baño", "Garage Independiente", "Terreno 6,534 sqft", "As-Is"],
-    photos: 0,
-    media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=1-ezxGxqBp2PxPy8aCOLxg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=3.2354634&pitch=0&thumbfov=100"
-    ]
-  },
 
   // ─── 24 ─────────────────────────────────────────────────
   {
     id: "propiedad-24",
     status: "Sold",
-    title: "Casa As-Is en Highland",
+    title: "SFR Highland",
     location: "6983 Olive St, Highland, CA 92346",
     beds: 3, baths: 1, area: "1,188 sqft", price: "$83,000",
     soldDate: "07/22/2010",
@@ -505,18 +460,6 @@ var CV_DATA = {
     photos: 0,
     media: [
       "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=UleGFszMNVXvvzk-mVfPzA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=100.46604&pitch=0&thumbfov=100"
-    ]
-  },
- // ─── 25 ─────────────────────────────────────────────────
-    {
-    id: "propiedad-25",
-    status: "Sold",
-    title: "Town House en Compton CA",
-    cover: "assets/propiedades/propiedad-25/slide-1.jpg",
-    description: "Text me for more details about this property: 562-862-1902.",
-    videos: 1,
-    media: [
-      "assets/propiedades/propiedad-25/v2.mp4",
     ]
   },
 

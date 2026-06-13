@@ -1,7 +1,8 @@
 /* ══════════════════════════════════════════════════
-    CALIFORNIA VILLAS — property.js
-    Detail page for a single property
-    ══════════════════════════════════════════════════ */
+   TU CASA CON LAURA — property.js
+   ══════════════════════════════════════════════════ */
+
+document.addEventListener("DOMContentLoaded", function () {
 
   /* ── Mobile menu ── */
   const mob          = document.getElementById("mob");
@@ -42,10 +43,7 @@
 
   /* ── Wait until window.i18n is populated ── */
   function waitForI18n(callback) {
-    if (window.i18n) {
-      callback();
-      return;
-    }
+    if (window.i18n) { callback(); return; }
     let attempts = 0;
     const interval = setInterval(() => {
       attempts++;
@@ -54,7 +52,7 @@
         callback();
       } else if (attempts >= 50) {
         clearInterval(interval);
-        callback(); // fallback: render with English defaults
+        callback();
       }
     }, 20);
   }
@@ -92,8 +90,6 @@
     if (!property) { showError("Property not found."); return; }
 
     _currentProperty = property;
-
-    // Wait for i18n before first render so all labels are correct
     waitForI18n(() => renderProperty(property));
   }
 
@@ -118,12 +114,11 @@
     const status = p.status || p.tag || "Available";
     const isExc  = status === "Featured" || status === "Coming Soon";
 
-    // Translate status label
     const statusLower = status.toLowerCase();
     let statusLabel = status;
-    if (statusLower === "sold")           statusLabel = t("prop.sold", "Sold");
+    if      (statusLower === "sold")      statusLabel = t("prop.sold",      "Sold");
     else if (statusLower === "available") statusLabel = t("prop.available", "Available");
-    else if (statusLower === "pending")   statusLabel = t("prop.pending", "Pending");
+    else if (statusLower === "pending")   statusLabel = t("prop.pending",   "Pending");
 
     const html = `
       <div class="prop-back">
@@ -220,8 +215,8 @@
     initCarousel(mediaItems.length);
   }
 
-  /* ── Re-render when language toggles (called by i18n script in property.html) ── */
-  window.reApplyPropLabels = function() {
+  /* ── Re-render when language toggles ── */
+  window.reApplyPropLabels = function () {
     if (_currentProperty) renderProperty(_currentProperty);
   };
 
@@ -239,10 +234,10 @@
       current = (i + total) % total;
       track.style.transform = `translateX(-${current * 100}%)`;
       if (counter) counter.textContent = `${current + 1} / ${total}`;
-      thumbs.forEach((t, idx) => t.classList.toggle("active", idx === current));
+      thumbs.forEach((th, idx) => th.classList.toggle("active", idx === current));
 
       document.querySelectorAll(".carousel-slide video").forEach((v, idx) => {
-        if (idx === current) v.play().catch(()=>{});
+        if (idx === current) v.play().catch(() => {});
         else { v.pause(); v.currentTime = 0; }
       });
     }
@@ -293,3 +288,5 @@
   }
 
   loadProperty();
+
+}); // end DOMContentLoaded

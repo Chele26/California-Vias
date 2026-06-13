@@ -10,16 +10,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/property.css"/>
+
+  <style>
+    .lang-toggle {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      padding: .28rem .65rem;
+      cursor: pointer;
+      transition: background .25s, color .25s;
+      border-radius: 2px;
+    }
+    .lang-toggle:hover { background: var(--gold); color: var(--bk); }
+
+    /* ── NAVBAR RESPONSIVE — property page ── */
+    .property-page #nav .logo-text     { font-size: 1.55rem; letter-spacing: .1em; }
+    .property-page #nav .logo-brokerage{ font-size: .52rem;  letter-spacing: .12em; }
+    .property-page #nav .nav-ul        { gap: 1.6rem; }
+    .property-page #nav .nav-ul a      { font-size: .62rem;  letter-spacing: .14em; }
+
+    @media (max-width: 1300px) {
+      .property-page #nav                { padding: .6rem 1.8rem; }
+      .property-page #nav .logo-text     { font-size: 1.35rem; }
+      .property-page #nav .logo-brokerage{ font-size: .46rem; letter-spacing: .1em; }
+      .property-page #nav .nav-ul        { gap: 1.2rem; }
+      .property-page #nav .nav-ul a      { font-size: .6rem;  letter-spacing: .12em; }
+    }
+    @media (max-width: 1100px) {
+      .property-page #nav .logo-brokerage{ display: none; }
+      .property-page #nav .logo-text     { font-size: 1.25rem; }
+      .property-page #nav .nav-ul        { gap: 1rem; }
+    }
+    @media (max-width: 900px) {
+      .property-page #nav .nav-ul   { display: none; }
+      .property-page #nav #hbg-btn  { display: flex !important; }
+      .property-page #nav           { padding: .75rem 1.2rem; }
+      .property-page #nav .logo-text     { font-size: 1.45rem; letter-spacing: .08em; }
+      .property-page #nav .logo-brokerage{ display: block; font-size: .44rem; letter-spacing: .08em; }
+    }
+    @media (max-width: 576px) {
+      .property-page #nav           { padding: .65rem .9rem; }
+      .property-page #nav .logo-text     { font-size: 1.2rem;  letter-spacing: .06em; }
+      .property-page #nav .logo-brokerage{ font-size: .4rem;   letter-spacing: .06em; }
+    }
+  </style>
 </head>
 <body class="property-page">
 
 <div id="cur"></div>
 <div id="cur2"></div>
 
-<!-- NAVBAR -->
+<!-- NAVBAR — idéntico al de index.html -->
 <nav id="nav" class="scrolled">
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="Tu Casa con Laura logo" class="logo-img">
     <div class="logo-text-wrap">
       <div class="logo-stars" aria-hidden="true">
         <span class="logo-star"></span>
@@ -27,19 +75,26 @@
         <span class="logo-star"></span>
         <span class="logo-star"></span>
         <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-star"></span>
+        <span class="logo-sparkle"></span>
         <span class="logo-sparkle"></span>
         <span class="logo-sparkle"></span>
       </div>
       <span class="logo-text">Tu Casa con Laura</span>
-      <span class="logo-sub">Real Estate</span>
+      <span class="logo-brokerage">BigBlock Powerhouse Realty &nbsp;·&nbsp; CA DRE LIC 01291397</span>
     </div>
   </a>
 
   <ul class="nav-ul">
-    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+    <li><a href="index.html#about"      data-i18n="nav.about">About</a></li>
     <li><a href="index.html#properties" data-i18n="nav.properties">Properties</a></li>
-    <li><a href="index.html#sold" data-i18n="nav.sold">Sold</a></li>
-    <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
+    <li><a href="index.html#sold"       data-i18n="nav.sold">Sold</a></li>
+    <li><a href="index.html#services"   data-i18n="nav.services">Services</a></li>
+    <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
     <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
     <li>
       <button id="langToggle" class="lang-toggle" aria-label="Switch language">
@@ -54,21 +109,25 @@
 <!-- MOBILE MENU -->
 <div id="mob">
   <button id="mob-x" aria-label="Close menu"><i class="fas fa-times"></i></button>
-  <a href="index.html#about" data-i18n="nav.aboutFull">About Laura</a>
-  <a href="index.html#properties" data-i18n="nav.properties">Properties</a>
-  <a href="index.html#sold" data-i18n="nav.sold">Sold</a>
-  <a href="index.html#services" data-i18n="nav.services">Services</a>
-  <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+  <a href="index.html#about"        data-i18n="nav.aboutFull">About Laura</a>
+  <a href="index.html#properties"   data-i18n="nav.properties">Properties</a>
+  <a href="index.html#sold"         data-i18n="nav.sold">Sold</a>
+  <a href="index.html#services"     data-i18n="nav.services">Services</a>
+  <a href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a>
+  <a href="index.html#contact"      data-i18n="nav.contact">Contact</a>
+  <button id="langToggleMob" class="lang-toggle lang-toggle-mob" aria-label="Switch language">
+    <span id="langLabelMob">ES</span>
+  </button>
 </div>
 
-<!-- Property content injected here by property.js -->
+<!-- Property content injected by property.js -->
 <div id="propRoot" style="min-height:80vh;">
   <div class="prop-loading">
     <div class="prop-spinner"></div>
   </div>
 </div>
 
-<!-- FOOTER (minimal) -->
+<!-- FOOTER -->
 <footer style="padding:2rem 0;">
   <div class="container">
     <div class="gold-bar"></div>
@@ -84,219 +143,122 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/properties-data.js"></script>
 
-<!-- ① i18n PRIMERO — llena window.i18n antes de que property.js arranque -->
+<!-- ① i18n PRIMERO -->
 <script>
 (function() {
   const translations = {
     en: {
-      'nav.about':        'About',
-      'nav.aboutFull':    'About Laura',
-      'nav.properties':   'Properties',
-      'nav.sold':         'Sold',
-      'nav.services':     'Services',
-      'nav.contact':      'Contact',
-
-      'prop.backBtn':     '← Back to Properties',
-      'prop.overview':    'Property Overview',
-      'prop.beds':        'Beds',
-      'prop.baths':       'Baths',
-      'prop.sqft':        'Sq Ft',
-      'prop.garage':      'Garage',
-      'prop.yearBuilt':   'Year Built',
-      'prop.lotSize':     'Lot Size',
-      'prop.status':      'Status',
-      'prop.features':    '✦ Features & Highlights',
-      'prop.description': '✦ About This Property',
-      'prop.contact':     'Interested in This Property?',
-      'prop.contactSub':  'Contact Laura for more information or to schedule a showing.',
-      'prop.callBtn':     'Call Laura',
-      'prop.msgBtn':      'Send a Message',
-      'prop.gallery':     'Photo Gallery',
-      'prop.available':   'Available',
-      'prop.sold':        'Sold',
-      'prop.pending':     'Pending',
-
-      'footer.copy': '© 2026 Tu Casa con Laura. All Rights Reserved.',
-      'footer.made': 'Designed for a refined property experience.',
+      'nav.about':'About','nav.aboutFull':'About Laura','nav.properties':'Properties',
+      'nav.sold':'Sold','nav.services':'Services','nav.testimonials':'Testimonials','nav.contact':'Contact',
+      'prop.backBtn':'← Back to Properties','prop.overview':'Property Overview',
+      'prop.beds':'Beds','prop.baths':'Baths','prop.sqft':'Sq Ft','prop.garage':'Garage',
+      'prop.yearBuilt':'Year Built','prop.lotSize':'Lot Size','prop.status':'Status',
+      'prop.features':'✦ Features & Highlights','prop.description':'✦ About This Property',
+      'prop.contact':'Interested in This Property?',
+      'prop.contactSub':'Contact Laura for more information or to schedule a showing.',
+      'prop.callBtn':'Call Laura','prop.msgBtn':'Send a Message','prop.gallery':'Photo Gallery',
+      'prop.available':'Available','prop.sold':'Sold','prop.pending':'Pending',
+      'footer.copy':'© 2026 Tu Casa con Laura. All Rights Reserved.',
+      'footer.made':'Designed for a refined property experience.',
     },
     es: {
-      'nav.about':        'Acerca',
-      'nav.aboutFull':    'Acerca de Laura',
-      'nav.properties':   'Propiedades',
-      'nav.sold':         'Vendidas',
-      'nav.services':     'Servicios',
-      'nav.contact':      'Contacto',
-
-      'prop.backBtn':     '← Volver a Propiedades',
-      'prop.overview':    'Resumen de la Propiedad',
-      'prop.beds':        'Rec.',
-      'prop.baths':       'Baños',
-      'prop.sqft':        'Pies²',
-      'prop.garage':      'Garage',
-      'prop.yearBuilt':   'Año de Construcción',
-      'prop.lotSize':     'Tamaño del Lote',
-      'prop.status':      'Estado',
-      'prop.features':    '✦ Características Destacadas',
-      'prop.description': '✦ Acerca de Esta Propiedad',
-      'prop.contact':     '¿Interesado en Esta Propiedad?',
-      'prop.contactSub':  'Contáctame para obtener más información o programar una visita.',
-      'prop.callBtn':     'Llamar a Laura',
-      'prop.msgBtn':      'Enviar un Mensaje',
-      'prop.gallery':     'Galería de Fotos',
-      'prop.available':   'Disponible',
-      'prop.sold':        'Vendida',
-      'prop.pending':     'Pendiente',
-
-      'footer.copy': '© 2026 Tu Casa con Laura. Todos los Derechos Reservados.',
-      'footer.made': 'Diseñado para una experiencia inmobiliaria refinada.',
+      'nav.about':'Acerca','nav.aboutFull':'Acerca de Laura','nav.properties':'Propiedades',
+      'nav.sold':'Vendidas','nav.services':'Servicios','nav.testimonials':'Testimonios','nav.contact':'Contacto',
+      'prop.backBtn':'← Volver a Propiedades','prop.overview':'Resumen de la Propiedad',
+      'prop.beds':'Rec.','prop.baths':'Baños','prop.sqft':'Pies²','prop.garage':'Garage',
+      'prop.yearBuilt':'Año de Construcción','prop.lotSize':'Tamaño del Lote','prop.status':'Estado',
+      'prop.features':'✦ Características Destacadas','prop.description':'✦ Acerca de Esta Propiedad',
+      'prop.contact':'¿Interesado en Esta Propiedad?',
+      'prop.contactSub':'Contáctame para obtener más información o programar una visita.',
+      'prop.callBtn':'Llamar a Laura','prop.msgBtn':'Enviar un Mensaje','prop.gallery':'Galería de Fotos',
+      'prop.available':'Disponible','prop.sold':'Vendida','prop.pending':'Pendiente',
+      'footer.copy':'© 2026 Tu Casa con Laura. Todos los Derechos Reservados.',
+      'footer.made':'Diseñado para una experiencia inmobiliaria refinada.',
     }
   };
 
   function applyLang(lang) {
     const t = translations[lang] || translations.en;
     document.documentElement.lang = lang;
-
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
-
-    const lbl = document.getElementById('langLabel');
-    if (lbl) lbl.textContent = lang === 'en' ? 'ES' : 'EN';
-
-    document.title = lang === 'es'
-      ? 'Detalles de Propiedad | Tu Casa con Laura'
-      : 'Property Details | Tu Casa con Laura';
-
+    const lbl  = document.getElementById('langLabel');    if (lbl)  lbl.textContent  = lang === 'en' ? 'ES' : 'EN';
+    const lblM = document.getElementById('langLabelMob'); if (lblM) lblM.textContent = lang === 'en' ? 'ES' : 'EN';
+    document.title = lang === 'es' ? 'Detalles de Propiedad | Tu Casa con Laura' : 'Property Details | Tu Casa con Laura';
     localStorage.setItem('tcl-lang', lang);
     window.__currentLang = lang;
-
-    /* Expose translations so property.js can read them immediately */
     window.i18n     = t;
     window.i18nLang = lang;
-
-    /* If property content is already rendered, re-translate labels */
-    if (typeof window.reApplyPropLabels === 'function') {
-      window.reApplyPropLabels();
-    }
+    if (typeof window.reApplyPropLabels === 'function') window.reApplyPropLabels();
   }
 
   function detectLang() {
     const saved = localStorage.getItem('tcl-lang');
     if (saved && translations[saved]) return saved;
-    const browser = (navigator.language || 'en').toLowerCase();
-    return browser.startsWith('es') ? 'es' : 'en';
+    return (navigator.language || 'en').toLowerCase().startsWith('es') ? 'es' : 'en';
   }
 
   function initToggle() {
-    const btn = document.getElementById('langToggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      applyLang(window.__currentLang === 'en' ? 'es' : 'en');
-    });
+    const b  = document.getElementById('langToggle');    if (b)  b.addEventListener('click',  () => applyLang(window.__currentLang === 'en' ? 'es' : 'en'));
+    const bm = document.getElementById('langToggleMob'); if (bm) bm.addEventListener('click', () => applyLang(window.__currentLang === 'en' ? 'es' : 'en'));
   }
 
-  /* Run immediately — window.i18n is set BEFORE property.js loads */
   applyLang(detectLang());
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initToggle);
-  } else {
-    initToggle();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initToggle);
+  else initToggle();
 })();
 </script>
 
-<!-- ② property.js DESPUÉS — window.i18n ya existe cuando este script corre -->
+<!-- ② property.js -->
 <script src="js/property.js"></script>
 
-<!-- Lang toggle styles -->
-<style>
-  .lang-toggle {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-family: 'Montserrat', sans-serif;
-    font-size: .65rem;
-    font-weight: 500;
-    letter-spacing: .12em;
-    padding: .28rem .65rem;
-    cursor: pointer;
-    transition: background .25s, color .25s;
-    border-radius: 2px;
-  }
-  .lang-toggle:hover {
-    background: var(--gold);
-    color: var(--bk);
-  }
-</style>
-<!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║   TU CASA CON LAURA — Open House Popup v3                   ║
-  ║   FIX: video Shorts sin corte, layout 2 columnas            ║
-  ║   Pegar justo antes de </body> en index.html y property.html ║
-  ╚══════════════════════════════════════════════════════════════╝
--->
-
+<!-- ══════════════════════════════════════════════════════════
+     OPEN HOUSE POPUP v4 — Dúplex USC · 145 E 36th St LA
+     ══════════════════════════════════════════════════════════ -->
 <div id="oh-overlay" role="dialog" aria-modal="true" aria-label="Open House – Reserva tu lugar">
   <div id="oh-modal">
-
     <div class="oh-topbar"></div>
     <button id="oh-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
-
     <div class="oh-urgency">
       <span class="oh-fire">🔥</span>
       <span class="oh-urg-text">Cupos Limitados</span>
       <span class="oh-urg-count" id="ohSpotsLeft">4 disponibles</span>
     </div>
-
     <div class="oh-header">
-      <span class="oh-eyebrow">✦ Este Domingo · Placentia, CA</span>
+      <span class="oh-eyebrow">✦ Vie 12 &amp; Sáb 13 de Junio · Los Ángeles, CA</span>
       <h2 class="oh-title">Open House</h2>
-      <p class="oh-subtitle">619 W Chapman Ave</p>
+      <p class="oh-subtitle">145 E 36th St, Los Ángeles</p>
     </div>
-
     <div class="oh-datebar">
-      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Dom 7<br>Junio</span><span class="oh-dlbl">Fecha</span></div>
-      <div class="oh-ditem"><i class="fas fa-clock"></i><span class="oh-dval">12 PM<br>3 PM</span><span class="oh-dlbl">Horario</span></div>
-      <div class="oh-ditem"><i class="fas fa-home"></i><span class="oh-dval">3 Rec<br>2 Baños</span><span class="oh-dlbl">Propiedad</span></div>
+      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Vie 12<br>2–5 PM</span><span class="oh-dlbl">Día 1</span></div>
+      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Sáb 13<br>12–4 PM</span><span class="oh-dlbl">Día 2</span></div>
+      <div class="oh-ditem"><i class="fas fa-home"></i><span class="oh-dval">Dúplex<br>cerca USC</span><span class="oh-dlbl">Propiedad</span></div>
     </div>
-
     <div class="oh-vtabs" role="tablist">
       <button class="oh-vtab active" data-v="0" role="tab">Video 1</button>
       <button class="oh-vtab" data-v="1" role="tab">Video 2</button>
     </div>
-
-    <!-- VIDEO + INFO: 2 columnas -->
     <div class="oh-vid-section">
       <div class="oh-vid-col" id="ohVidCol">
         <div class="oh-vidph active" id="ohPh0">
           <div class="oh-play-ring"><div class="oh-play-inner"></div></div>
-          <span class="oh-vl">Open House<br>Placentia</span>
+          <span class="oh-vl">Open House<br>Dúplex USC</span>
           <span class="oh-vtap">Toca para ver</span>
         </div>
         <div class="oh-vidph" id="ohPh1">
           <div class="oh-play-ring"><div class="oh-play-inner"></div></div>
-          <span class="oh-vl">3 Rec · 2 Baños<br>Garaje 2 autos</span>
+          <span class="oh-vl">Recorrido<br>145 E 36th St</span>
           <span class="oh-vtap">Toca para ver</span>
         </div>
       </div>
       <div class="oh-vid-info">
-        <div class="oh-vi-row">
-          <i class="fas fa-map-marker-alt"></i>
-          <div><p class="oh-vi-lbl">Dirección</p><p class="oh-vi-val">619 W Chapman Ave<br>Placentia, CA</p></div>
-        </div>
-        <div class="oh-vi-row">
-          <i class="fas fa-user-tie"></i>
-          <div><p class="oh-vi-lbl">Agente</p><p class="oh-vi-val">Laura De Hernandez</p><span class="oh-vi-dre">DRE #01820066</span></div>
-        </div>
-        <div class="oh-vi-row">
-          <i class="fas fa-phone"></i>
-          <div><p class="oh-vi-lbl">Contacto</p><p class="oh-vi-val">(562) 862-1902</p></div>
-        </div>
+        <div class="oh-vi-row"><i class="fas fa-map-marker-alt"></i><div><p class="oh-vi-lbl">Dirección</p><p class="oh-vi-val">145 E 36th St<br>Los Ángeles, CA</p></div></div>
+        <div class="oh-vi-row"><i class="fas fa-user-tie"></i><div><p class="oh-vi-lbl">Agente</p><p class="oh-vi-val">Laura De Hernandez</p><span class="oh-vi-dre">DRE #01820066</span></div></div>
+        <div class="oh-vi-row"><i class="fas fa-phone"></i><div><p class="oh-vi-lbl">Contacto</p><p class="oh-vi-val">(562) 862-1902</p></div></div>
       </div>
     </div>
-
     <div class="oh-spots">
       <div class="oh-spots-head">
         <span class="oh-spots-lbl">Cupos reservados</span>
@@ -305,138 +267,79 @@
       <div class="oh-spots-bar"><div class="oh-spots-fill" id="ohFill" style="width:74%"></div></div>
       <div class="oh-dots" id="ohDots"></div>
     </div>
-
     <div class="oh-form" id="ohForm">
       <p class="oh-form-title">✦ Reserva tu lugar ahora</p>
       <div class="oh-row">
-        <input class="oh-inp" id="ohName" type="text" placeholder="Tu nombre" autocomplete="off"/>
-        <input class="oh-inp" id="ohPhone" type="tel" placeholder="Teléfono / WhatsApp" autocomplete="off"/>
+        <input class="oh-inp" id="ohName"  type="text" placeholder="Tu nombre"             autocomplete="off"/>
+        <input class="oh-inp" id="ohPhone" type="tel"  placeholder="Teléfono / WhatsApp"   autocomplete="off"/>
       </div>
-      <button class="oh-cta" id="ohReserve">
-        <i class="fas fa-check-circle"></i>
-        Reservar mi lugar — Es Gratis
-      </button>
+      <div class="oh-day-sel">
+        <button class="oh-day-btn active" data-day="0" type="button">Vie 12 · 2–5 PM</button>
+        <button class="oh-day-btn"        data-day="1" type="button">Sáb 13 · 12–4 PM</button>
+      </div>
+      <button class="oh-cta" id="ohReserve"><i class="fas fa-check-circle"></i> Reservar mi lugar — Es Gratis</button>
       <button class="oh-skip" id="ohSkip">No gracias, veré después</button>
     </div>
-
     <div class="oh-success" id="ohSuccess">
       <div class="oh-s-ring"><i class="fas fa-check"></i></div>
       <p class="oh-s-title">¡Reserva Confirmada!</p>
-      <p class="oh-s-sub">Te esperamos este <strong>domingo 7 de junio</strong><br>de 12:00 PM a 3:00 PM</p>
-      <p class="oh-s-addr"><i class="fas fa-map-marker-alt"></i> 619 W Chapman Ave, Placentia CA</p>
+      <p class="oh-s-sub" id="ohSuccessSub">Te esperamos este <strong>Viernes 12 de junio</strong><br>de 2:00 PM a 5:00 PM</p>
+      <p class="oh-s-addr"><i class="fas fa-map-marker-alt"></i> 145 E 36th St, Los Ángeles CA</p>
       <a href="tel:+15628621902" class="oh-call-btn"><i class="fas fa-phone"></i>(562) 862-1902</a>
     </div>
-
     <p class="oh-note">¡Te esperamos para mostrarte tu próximo hogar!</p>
   </div>
 </div>
 
 <style>
-#oh-overlay{
-  position:fixed;inset:0;z-index:99990;
-  background:rgba(6,6,6,.9);
-  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-  display:flex;align-items:center;justify-content:center;padding:1rem;
-  opacity:0;visibility:hidden;
-  transition:opacity .45s ease,visibility .45s ease;
-}
+#oh-overlay{position:fixed;inset:0;z-index:99990;background:rgba(6,6,6,.9);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s ease;}
 #oh-overlay.visible{opacity:1;visibility:visible;}
-
-#oh-modal{
-  position:relative;background:var(--bk2,#0D0D0D);
-  border:1px solid rgba(201,168,76,.3);
-  width:100%;max-width:500px;
-  max-height:94vh;overflow-y:auto;overflow-x:hidden;
-  scrollbar-width:thin;scrollbar-color:var(--gold,#C9A84C) transparent;
-  transform:translateY(20px) scale(.97);
-  transition:transform .45s cubic-bezier(.25,.46,.45,.94);
-}
+#oh-modal{position:relative;background:var(--bk2,#0D0D0D);border:1px solid rgba(201,168,76,.3);width:100%;max-width:500px;max-height:94vh;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--gold,#C9A84C) transparent;transform:translateY(20px) scale(.97);transition:transform .45s cubic-bezier(.25,.46,.45,.94);}
 #oh-overlay.visible #oh-modal{transform:translateY(0) scale(1);}
 #oh-modal::-webkit-scrollbar{width:3px;}
 #oh-modal::-webkit-scrollbar-thumb{background:var(--gold,#C9A84C);}
-
-.oh-topbar{
-  height:3px;
-  background:linear-gradient(90deg,transparent,var(--gold,#C9A84C) 25%,var(--gold-xl,#F5E0A0) 50%,var(--gold,#C9A84C) 75%,transparent);
-  background-size:200% 100%;
-  animation:oh-shimmer 2.5s ease-in-out infinite;
-}
+.oh-topbar{height:3px;background:linear-gradient(90deg,transparent,var(--gold,#C9A84C) 25%,var(--gold-xl,#F5E0A0) 50%,var(--gold,#C9A84C) 75%,transparent);background-size:200% 100%;animation:oh-shimmer 2.5s ease-in-out infinite;}
 @keyframes oh-shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-#oh-close{
-  position:absolute;top:.9rem;right:.9rem;
-  background:transparent;border:1px solid rgba(201,168,76,.28);
-  color:var(--gold,#C9A84C);width:32px;height:32px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-size:.8rem;
-  transition:background .2s,color .2s;z-index:10;
-}
+#oh-close{position:absolute;top:.9rem;right:.9rem;background:transparent;border:1px solid rgba(201,168,76,.28);color:var(--gold,#C9A84C);width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.8rem;transition:background .2s,color .2s;z-index:10;}
 #oh-close:hover{background:var(--gold,#C9A84C);color:var(--bk,#060606);}
-
-.oh-urgency{
-  background:var(--gold,#C9A84C);padding:.55rem 2rem;
-  display:flex;align-items:center;justify-content:center;gap:.6rem;
-  animation:oh-pbar 2s ease-in-out infinite;
-}
+.oh-urgency{background:var(--gold,#C9A84C);padding:.55rem 2rem;display:flex;align-items:center;justify-content:center;gap:.6rem;animation:oh-pbar 2s ease-in-out infinite;}
 @keyframes oh-pbar{0%,100%{opacity:1}50%{opacity:.85}}
 .oh-fire{font-size:.9rem;}
 .oh-urg-text{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bk,#060606);font-weight:700;font-family:'Montserrat',sans-serif;}
 .oh-urg-count{background:var(--bk,#060606);color:var(--gold,#C9A84C);font-size:.58rem;letter-spacing:.14em;font-weight:700;padding:.18rem .55rem;font-family:'Montserrat',sans-serif;}
-
 .oh-header{padding:1.4rem 2rem .9rem;text-align:center;}
 .oh-eyebrow{display:block;font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold,#C9A84C);margin-bottom:.45rem;font-family:'Montserrat',sans-serif;}
 .oh-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.9rem,5vw,2.6rem);font-weight:300;color:var(--wh,#F8F5EE);line-height:1;margin-bottom:.25rem;}
 .oh-subtitle{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1rem;color:rgba(232,201,122,.8);}
-
 .oh-datebar{display:flex;border-top:1px solid rgba(201,168,76,.14);border-bottom:1px solid rgba(201,168,76,.14);}
 .oh-ditem{flex:1;padding:.8rem .4rem;display:flex;flex-direction:column;align-items:center;gap:.28rem;border-right:1px solid rgba(201,168,76,.1);}
 .oh-ditem:last-child{border-right:none;}
 .oh-ditem i{color:var(--gold,#C9A84C);font-size:.8rem;}
 .oh-dval{font-size:.68rem;color:var(--wh,#F8F5EE);letter-spacing:.03em;text-align:center;line-height:1.3;font-family:'Montserrat',sans-serif;}
 .oh-dlbl{font-size:.44rem;letter-spacing:.22em;text-transform:uppercase;color:var(--wh3,rgba(248,245,238,.3));font-family:'Montserrat',sans-serif;}
-
 .oh-vtabs{display:flex;border-bottom:1px solid rgba(201,168,76,.12);}
 .oh-vtab{flex:1;background:transparent;border:none;color:var(--wh2,rgba(248,245,238,.45));font-family:'Montserrat',sans-serif;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem;cursor:pointer;transition:color .2s,background .2s;position:relative;}
 .oh-vtab::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold,#C9A84C);transform:scaleX(0);transition:transform .3s;}
 .oh-vtab.active{color:var(--gold,#C9A84C);}
 .oh-vtab.active::after{transform:scaleX(1);}
 .oh-vtab:hover{background:rgba(201,168,76,.05);color:var(--gold,#C9A84C);}
-
-/* ── VIDEO FIX: layout 2 col, proporción 9/16 sin corte ── */
 .oh-vid-section{display:flex;align-items:stretch;background:#050505;}
-
-.oh-vid-col{
-  flex:0 0 42%;
-  position:relative;
-  background:#000;
-  aspect-ratio:9/16;   /* proporción real Shorts */
-  cursor:pointer;
-  overflow:hidden;
-}
-.oh-vid-col iframe{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  border:none;
-}
-.oh-vidph{
-  position:absolute;inset:0;
-  display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;
-}
+.oh-vid-col{flex:0 0 42%;position:relative;background:#000;aspect-ratio:9/16;cursor:pointer;overflow:hidden;}
+.oh-vid-col iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.oh-vidph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;}
 .oh-vidph.active{display:flex;}
-
 .oh-play-ring{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;animation:oh-rpulse 2.2s ease-in-out infinite;}
 @keyframes oh-rpulse{0%,100%{border-color:rgba(201,168,76,.5)}50%{border-color:var(--gold,#C9A84C)}}
 .oh-play-inner{width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;}
 .oh-play-inner::after{content:'▶';color:var(--gold,#C9A84C);font-size:1rem;margin-left:3px;}
 .oh-vl{font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,245,238,.4);text-align:center;padding:0 .5rem;font-family:'Montserrat',sans-serif;}
 .oh-vtap{font-size:.42rem;letter-spacing:.1em;color:rgba(201,168,76,.5);font-family:'Montserrat',sans-serif;}
-
 .oh-vid-info{flex:1;display:flex;flex-direction:column;justify-content:center;padding:.9rem;gap:.7rem;border-left:1px solid rgba(201,168,76,.1);}
 .oh-vi-row{display:flex;align-items:flex-start;gap:.55rem;}
 .oh-vi-row i{color:var(--gold,#C9A84C);font-size:.75rem;flex-shrink:0;margin-top:.1rem;}
 .oh-vi-lbl{font-size:.44rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold,#C9A84C);margin-bottom:.1rem;font-family:'Montserrat',sans-serif;}
 .oh-vi-val{font-size:.66rem;color:var(--wh2,rgba(248,245,238,.65));letter-spacing:.02em;line-height:1.4;font-family:'Montserrat',sans-serif;}
 .oh-vi-dre{font-size:.48rem;color:var(--wh3,rgba(248,245,238,.25));letter-spacing:.06em;display:block;margin-top:.08rem;font-family:'Montserrat',sans-serif;}
-
 .oh-spots{padding:.9rem 2rem;border-bottom:1px solid rgba(201,168,76,.1);}
 .oh-spots-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem;}
 .oh-spots-lbl{font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--wh3,rgba(248,245,238,.3));font-family:'Montserrat',sans-serif;}
@@ -447,30 +350,22 @@
 .oh-dot{width:10px;height:10px;border-radius:50%;}
 .oh-dot.taken{background:var(--gold,#C9A84C);}
 .oh-dot.free{background:rgba(255,255,255,.07);border:1px solid rgba(201,168,76,.18);}
-
 .oh-form{padding:1rem 2rem .9rem;}
 .oh-form-title{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold,#C9A84C);margin-bottom:.7rem;font-family:'Montserrat',sans-serif;}
 .oh-row{display:flex;gap:.45rem;margin-bottom:.5rem;}
 .oh-inp{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--wh,#F8F5EE);font-family:'Montserrat',sans-serif;font-size:.66rem;padding:.6rem .75rem;outline:none;transition:border-color .2s;min-width:0;}
 .oh-inp::placeholder{color:rgba(248,245,238,.25);}
 .oh-inp:focus{border-color:rgba(201,168,76,.6);}
-
-.oh-cta{
-  width:100%;background:var(--gold,#C9A84C);border:none;color:var(--bk,#060606);
-  font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
-  padding:.95rem 1.2rem;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;gap:.55rem;
-  transition:background .25s,transform .15s;
-  position:relative;overflow:hidden;margin-bottom:.45rem;
-}
+.oh-day-sel{display:flex;gap:.4rem;margin-bottom:.65rem;}
+.oh-day-btn{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--wh2,rgba(248,245,238,.5));font-family:'Montserrat',sans-serif;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem .4rem;cursor:pointer;transition:all .2s;}
+.oh-day-btn.active{background:rgba(201,168,76,.12);border-color:var(--gold,#C9A84C);color:var(--gold,#C9A84C);}
+.oh-day-btn:hover{border-color:rgba(201,168,76,.5);color:var(--wh,#F8F5EE);}
+.oh-cta{width:100%;background:var(--gold,#C9A84C);border:none;color:var(--bk,#060606);font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;padding:.95rem 1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.55rem;transition:background .25s,transform .15s;position:relative;overflow:hidden;margin-bottom:.45rem;}
 .oh-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);animation:oh-shine 2.8s ease-in-out infinite 1s;}
 @keyframes oh-shine{0%{transform:translateX(-100%)}30%{transform:translateX(100%)}100%{transform:translateX(100%)}}
 .oh-cta:hover{background:var(--gold-l,#E8C97A);transform:translateY(-1px);}
-.oh-cta:active{transform:translateY(0);}
-
 .oh-skip{width:100%;background:transparent;border:none;color:var(--wh3,rgba(248,245,238,.25));font-family:'Montserrat',sans-serif;font-size:.5rem;letter-spacing:.16em;padding:.35rem;cursor:pointer;text-transform:uppercase;transition:color .2s;}
 .oh-skip:hover{color:var(--wh2,rgba(248,245,238,.5));}
-
 .oh-success{display:none;flex-direction:column;align-items:center;justify-content:center;padding:2.2rem 2rem;text-align:center;gap:.9rem;}
 .oh-s-ring{width:60px;height:60px;border-radius:50%;border:1.5px solid var(--gold,#C9A84C);display:flex;align-items:center;justify-content:center;animation:oh-spop .5s ease-out;}
 @keyframes oh-spop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
@@ -481,38 +376,33 @@
 .oh-s-addr{font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#C9A84C);font-family:'Montserrat',sans-serif;}
 .oh-call-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--gold,#C9A84C);color:var(--bk,#060606);font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.7rem 1.4rem;text-decoration:none;margin-top:.3rem;transition:background .2s;}
 .oh-call-btn:hover{background:var(--gold-l,#E8C97A);color:var(--bk,#060606);}
-
 .oh-note{text-align:center;font-size:.5rem;letter-spacing:.08em;color:var(--wh3,rgba(248,245,238,.2));padding:.35rem 2rem 1.3rem;font-family:'Montserrat',sans-serif;}
-
-/* ── RESPONSIVE ── */
 @media(max-width:540px){
   #oh-modal{border-left:none;border-right:none;}
   .oh-vid-section{flex-direction:column;}
-  .oh-vid-col{
-    flex:none;
-    width:100%;
-    /* En móvil columna: el video se muestra completo en su totalidad */
-    aspect-ratio:9/16;
-    max-height:72vw;  /* limita altura total en pantallas muy altas */
-  }
+  .oh-vid-col{flex:none;width:100%;aspect-ratio:9/16;max-height:72vw;}
   .oh-vid-info{border-left:none;border-top:1px solid rgba(201,168,76,.1);flex-direction:row;flex-wrap:wrap;gap:.5rem;padding:.75rem 1rem;}
   .oh-vi-row{flex:1;min-width:44%;}
   .oh-header{padding:1.2rem 1.2rem .7rem;}
   .oh-spots,.oh-form{padding-left:1.2rem;padding-right:1.2rem;}
   .oh-row{flex-direction:column;}
   .oh-inp{width:100%;}
+  .oh-day-sel{flex-direction:column;}
 }
 </style>
 
 <script>
 (function(){
-  var TOTAL=20,TAKEN=15,curVid=0;
-  var STORAGE_KEY='tcl-oh-v3';
-  var srcs=[
-    'https://www.youtube.com/embed/laT5XwRhdhY?autoplay=1&mute=1&loop=1&playlist=laT5XwRhdhY&rel=0&modestbranding=1',
-    'https://www.youtube.com/embed/iJvW5mCIozA?rel=0&modestbranding=1'
+  var TOTAL=20,TAKEN=15,curVid=0,curDay=0;
+  var STORAGE_KEY='tcl-oh-v4';
+  var DAYS=[
+    {label:'Viernes 12 de junio',hours:'2:00 PM – 5:00 PM'},
+    {label:'Sábado 13 de junio', hours:'12:00 PM – 4:00 PM'}
   ];
-
+  var srcs=[
+    'https://www.youtube.com/embed/deh2aqeSToU?autoplay=1&mute=1&loop=1&playlist=deh2aqeSToU&rel=0&modestbranding=1',
+    'https://www.youtube.com/embed/J7yFJ2hIbBQ?rel=0&modestbranding=1'
+  ];
   var overlay=document.getElementById('oh-overlay');
   var closeBtn=document.getElementById('oh-close');
   var skipBtn=document.getElementById('ohSkip');
@@ -522,94 +412,37 @@
   var vidCol=document.getElementById('ohVidCol');
   var tabs=document.querySelectorAll('.oh-vtab');
   var dotsEl=document.getElementById('ohDots');
+  var dayBtns=document.querySelectorAll('.oh-day-btn');
 
-  function buildDots(){
-    dotsEl.innerHTML='';
-    for(var i=0;i<TOTAL;i++){var d=document.createElement('div');d.className='oh-dot '+(i<TAKEN?'taken':'free');dotsEl.appendChild(d);}
-  }
-  function updSpots(){
-    var free=TOTAL-TAKEN;
-    document.getElementById('ohSpotsLeft').textContent=free+' disponible'+(free!==1?'s':'');
-    var p=Math.round(TAKEN/TOTAL*100);
-    document.getElementById('ohPct').textContent=p+'% ocupado';
-    document.getElementById('ohFill').style.width=p+'%';
-    buildDots();
-  }
+  function buildDots(){dotsEl.innerHTML='';for(var i=0;i<TOTAL;i++){var d=document.createElement('div');d.className='oh-dot '+(i<TAKEN?'taken':'free');dotsEl.appendChild(d);}}
+  function updSpots(){var free=TOTAL-TAKEN;document.getElementById('ohSpotsLeft').textContent=free+' disponible'+(free!==1?'s':'');var p=Math.round(TAKEN/TOTAL*100);document.getElementById('ohPct').textContent=p+'% ocupado';document.getElementById('ohFill').style.width=p+'%';buildDots();}
   updSpots();
 
-  tabs.forEach(function(tab){
-    tab.addEventListener('click',function(){
-      var idx=parseInt(this.dataset.v);
-      tabs.forEach(function(t){t.classList.remove('active');});
-      this.classList.add('active');
-      document.getElementById('ohPh0').classList.toggle('active',idx===0);
-      document.getElementById('ohPh1').classList.toggle('active',idx===1);
-      vidCol.querySelectorAll('iframe').forEach(function(f){f.remove();});
-      curVid=idx;
-    });
-  });
+  dayBtns.forEach(function(btn){btn.addEventListener('click',function(){curDay=parseInt(this.dataset.day);dayBtns.forEach(function(b){b.classList.remove('active');});this.classList.add('active');});});
 
-  vidCol.addEventListener('click',function(){
-    if(vidCol.querySelector('iframe'))return;
-    document.getElementById('ohPh0').classList.remove('active');
-    document.getElementById('ohPh1').classList.remove('active');
-    var f=document.createElement('iframe');
-    f.src=srcs[curVid];
-    f.setAttribute('allowfullscreen','');
-    f.setAttribute('allow','autoplay; encrypted-media');
-    f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none;';
-    vidCol.appendChild(f);
-  });
+  tabs.forEach(function(tab){tab.addEventListener('click',function(){var idx=parseInt(this.dataset.v);tabs.forEach(function(t){t.classList.remove('active');});this.classList.add('active');document.getElementById('ohPh0').classList.toggle('active',idx===0);document.getElementById('ohPh1').classList.toggle('active',idx===1);vidCol.querySelectorAll('iframe').forEach(function(f){f.remove();});curVid=idx;});});
+
+  vidCol.addEventListener('click',function(){if(vidCol.querySelector('iframe'))return;document.getElementById('ohPh0').classList.remove('active');document.getElementById('ohPh1').classList.remove('active');var f=document.createElement('iframe');f.src=srcs[curVid];f.setAttribute('allowfullscreen','');f.setAttribute('allow','autoplay; encrypted-media');f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:none;';vidCol.appendChild(f);});
 
   resBtn.addEventListener('click',function(){
     var n=document.getElementById('ohName').value.trim();
     var p=document.getElementById('ohPhone').value.trim();
-    if(!n||!p){
-      ['ohName','ohPhone'].forEach(function(id){
-        var e=document.getElementById(id);
-        e.style.borderColor='rgba(201,168,76,.8)';
-        setTimeout(function(){e.style.borderColor='rgba(201,168,76,.2)';},1500);
-      });
-      return;
-    }
-
-    /* Abrir WhatsApp con mensaje pre-llenado */
-    var msg='Hola Laura! Me gustaría reservar mi lugar para el Open House.\n\n'
-          +'*Mis datos:*\n'
-          +'Nombre: '+n+'\n'
-          +'Teléfono: '+p+'\n\n'
-          +'*Propiedad:* 619 W Chapman Ave, Placentia, CA\n'
-          +'*Fecha:* Domingo 7 de Junio\n'
-          +'*Hora:* 12:00 PM – 3:00 PM\n\n'
-          +'¡Espero confirmar mi asistencia!';
-    var waURL='https://wa.me/15628621902?text='+encodeURIComponent(msg);
-    window.open(waURL,'_blank');
-
-    formEl.style.display='none';
-    successEl.style.display='flex';
-    TAKEN=Math.min(TAKEN+1,TOTAL);
-    updSpots();
-    sessionStorage.setItem(STORAGE_KEY,'reserved');
+    if(!n||!p){['ohName','ohPhone'].forEach(function(id){var e=document.getElementById(id);e.style.borderColor='rgba(201,168,76,.8)';setTimeout(function(){e.style.borderColor='rgba(201,168,76,.2)';},1500);});return;}
+    var day=DAYS[curDay];
+    var msg='Hola Laura! Me gustaría reservar mi lugar para el Open House.\n\n*Mis datos:*\nNombre: '+n+'\nTeléfono: '+p+'\n\n*Propiedad:* 145 E 36th St, Los Ángeles, CA (Dúplex cerca de USC)\n*Fecha:* '+day.label+'\n*Hora:* '+day.hours+'\n\n¡Espero confirmar mi asistencia!';
+    window.open('https://wa.me/15628621902?text='+encodeURIComponent(msg),'_blank');
+    document.getElementById('ohSuccessSub').innerHTML='Te esperamos este <strong>'+day.label+'</strong><br>de '+day.hours;
+    formEl.style.display='none';successEl.style.display='flex';
+    TAKEN=Math.min(TAKEN+1,TOTAL);updSpots();sessionStorage.setItem(STORAGE_KEY,'reserved');
   });
 
-  function closePopup(){
-    overlay.classList.remove('visible');
-    document.body.style.overflow='';
-    vidCol.querySelectorAll('iframe').forEach(function(f){f.src=f.src;});
-    if(!sessionStorage.getItem(STORAGE_KEY)) sessionStorage.setItem(STORAGE_KEY,'dismissed');
-  }
-
+  function closePopup(){overlay.classList.remove('visible');document.body.style.overflow='';vidCol.querySelectorAll('iframe').forEach(function(f){f.src=f.src;});if(!sessionStorage.getItem(STORAGE_KEY))sessionStorage.setItem(STORAGE_KEY,'dismissed');}
   closeBtn.addEventListener('click',closePopup);
   skipBtn.addEventListener('click',closePopup);
   overlay.addEventListener('click',function(e){if(e.target===overlay)closePopup();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('visible'))closePopup();});
 
-  if(!sessionStorage.getItem(STORAGE_KEY)){
-    setTimeout(function(){
-      overlay.classList.add('visible');
-      document.body.style.overflow='hidden';
-    },1200);
-  }
+  if(!sessionStorage.getItem(STORAGE_KEY)){setTimeout(function(){overlay.classList.add('visible');document.body.style.overflow='hidden';},1200);}
 })();
 </script>
 </body>

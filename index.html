@@ -592,8 +592,8 @@
   </script>
 <!--
   ╔══════════════════════════════════════════════════════════════╗
-  ║   TU CASA CON LAURA — Open House Popup v3                   ║
-  ║   FIX: video Shorts sin corte, layout 2 columnas            ║
+  ║   TU CASA CON LAURA — Open House Popup v4                   ║
+  ║   Dúplex cerca de USC · 145 E 36th St, Los Ángeles          ║
   ║   Pegar justo antes de </body> en index.html y property.html ║
   ╚══════════════════════════════════════════════════════════════╝
 -->
@@ -611,15 +611,15 @@
     </div>
 
     <div class="oh-header">
-      <span class="oh-eyebrow">✦ Este Domingo · Placentia, CA</span>
+      <span class="oh-eyebrow">✦ Vie 12 &amp; Sáb 13 de Junio · Los Ángeles, CA</span>
       <h2 class="oh-title">Open House</h2>
-      <p class="oh-subtitle">619 W Chapman Ave</p>
+      <p class="oh-subtitle">145 E 36th St, Los Ángeles</p>
     </div>
 
     <div class="oh-datebar">
-      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Dom 7<br>Junio</span><span class="oh-dlbl">Fecha</span></div>
-      <div class="oh-ditem"><i class="fas fa-clock"></i><span class="oh-dval">12 PM<br>3 PM</span><span class="oh-dlbl">Horario</span></div>
-      <div class="oh-ditem"><i class="fas fa-home"></i><span class="oh-dval">3 Rec<br>2 Baños</span><span class="oh-dlbl">Propiedad</span></div>
+      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Vie 12<br>2–5 PM</span><span class="oh-dlbl">Día 1</span></div>
+      <div class="oh-ditem"><i class="fas fa-calendar-day"></i><span class="oh-dval">Sáb 13<br>12–4 PM</span><span class="oh-dlbl">Día 2</span></div>
+      <div class="oh-ditem"><i class="fas fa-home"></i><span class="oh-dval">Dúplex<br>cerca USC</span><span class="oh-dlbl">Propiedad</span></div>
     </div>
 
     <div class="oh-vtabs" role="tablist">
@@ -632,19 +632,19 @@
       <div class="oh-vid-col" id="ohVidCol">
         <div class="oh-vidph active" id="ohPh0">
           <div class="oh-play-ring"><div class="oh-play-inner"></div></div>
-          <span class="oh-vl">Open House<br>Placentia</span>
+          <span class="oh-vl">Open House<br>Dúplex USC</span>
           <span class="oh-vtap">Toca para ver</span>
         </div>
         <div class="oh-vidph" id="ohPh1">
           <div class="oh-play-ring"><div class="oh-play-inner"></div></div>
-          <span class="oh-vl">3 Rec · 2 Baños<br>Garaje 2 autos</span>
+          <span class="oh-vl">Recorrido<br>145 E 36th St</span>
           <span class="oh-vtap">Toca para ver</span>
         </div>
       </div>
       <div class="oh-vid-info">
         <div class="oh-vi-row">
           <i class="fas fa-map-marker-alt"></i>
-          <div><p class="oh-vi-lbl">Dirección</p><p class="oh-vi-val">619 W Chapman Ave<br>Placentia, CA</p></div>
+          <div><p class="oh-vi-lbl">Dirección</p><p class="oh-vi-val">145 E 36th St<br>Los Ángeles, CA</p></div>
         </div>
         <div class="oh-vi-row">
           <i class="fas fa-user-tie"></i>
@@ -672,6 +672,11 @@
         <input class="oh-inp" id="ohName" type="text" placeholder="Tu nombre" autocomplete="off"/>
         <input class="oh-inp" id="ohPhone" type="tel" placeholder="Teléfono / WhatsApp" autocomplete="off"/>
       </div>
+      <!-- Selector de día -->
+      <div class="oh-day-sel">
+        <button class="oh-day-btn active" data-day="0" type="button">Vie 12 · 2–5 PM</button>
+        <button class="oh-day-btn" data-day="1" type="button">Sáb 13 · 12–4 PM</button>
+      </div>
       <button class="oh-cta" id="ohReserve">
         <i class="fas fa-check-circle"></i>
         Reservar mi lugar — Es Gratis
@@ -682,8 +687,8 @@
     <div class="oh-success" id="ohSuccess">
       <div class="oh-s-ring"><i class="fas fa-check"></i></div>
       <p class="oh-s-title">¡Reserva Confirmada!</p>
-      <p class="oh-s-sub">Te esperamos este <strong>domingo 7 de junio</strong><br>de 12:00 PM a 3:00 PM</p>
-      <p class="oh-s-addr"><i class="fas fa-map-marker-alt"></i> 619 W Chapman Ave, Placentia CA</p>
+      <p class="oh-s-sub" id="ohSuccessSub">Te esperamos este <strong>Viernes 12 de junio</strong><br>de 2:00 PM a 5:00 PM</p>
+      <p class="oh-s-addr"><i class="fas fa-map-marker-alt"></i> 145 E 36th St, Los Ángeles CA</p>
       <a href="tel:+15628621902" class="oh-call-btn"><i class="fas fa-phone"></i>(562) 862-1902</a>
     </div>
 
@@ -761,28 +766,14 @@
 .oh-vtab.active::after{transform:scaleX(1);}
 .oh-vtab:hover{background:rgba(201,168,76,.05);color:var(--gold,#C9A84C);}
 
-/* ── VIDEO FIX: layout 2 col, proporción 9/16 sin corte ── */
 .oh-vid-section{display:flex;align-items:stretch;background:#050505;}
-
 .oh-vid-col{
-  flex:0 0 42%;
-  position:relative;
-  background:#000;
-  aspect-ratio:9/16;   /* proporción real Shorts */
-  cursor:pointer;
-  overflow:hidden;
+  flex:0 0 42%;position:relative;background:#000;
+  aspect-ratio:9/16;cursor:pointer;overflow:hidden;
 }
-.oh-vid-col iframe{
-  position:absolute;inset:0;
-  width:100%;height:100%;
-  border:none;
-}
-.oh-vidph{
-  position:absolute;inset:0;
-  display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;
-}
+.oh-vid-col iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.oh-vidph{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;}
 .oh-vidph.active{display:flex;}
-
 .oh-play-ring{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(201,168,76,.5);display:flex;align-items:center;justify-content:center;animation:oh-rpulse 2.2s ease-in-out infinite;}
 @keyframes oh-rpulse{0%,100%{border-color:rgba(201,168,76,.5)}50%{border-color:var(--gold,#C9A84C)}}
 .oh-play-inner{width:38px;height:38px;border-radius:50%;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;}
@@ -815,6 +806,17 @@
 .oh-inp::placeholder{color:rgba(248,245,238,.25);}
 .oh-inp:focus{border-color:rgba(201,168,76,.6);}
 
+/* Day selector */
+.oh-day-sel{display:flex;gap:.4rem;margin-bottom:.65rem;}
+.oh-day-btn{
+  flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);
+  color:var(--wh2,rgba(248,245,238,.5));font-family:'Montserrat',sans-serif;
+  font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.55rem .4rem;cursor:pointer;transition:all .2s;
+}
+.oh-day-btn.active{background:rgba(201,168,76,.12);border-color:var(--gold,#C9A84C);color:var(--gold,#C9A84C);}
+.oh-day-btn:hover{border-color:rgba(201,168,76,.5);color:var(--wh,#F8F5EE);}
+
 .oh-cta{
   width:100%;background:var(--gold,#C9A84C);border:none;color:var(--bk,#060606);
   font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
@@ -844,48 +846,54 @@
 
 .oh-note{text-align:center;font-size:.5rem;letter-spacing:.08em;color:var(--wh3,rgba(248,245,238,.2));padding:.35rem 2rem 1.3rem;font-family:'Montserrat',sans-serif;}
 
-/* ── RESPONSIVE ── */
 @media(max-width:540px){
   #oh-modal{border-left:none;border-right:none;}
   .oh-vid-section{flex-direction:column;}
-  .oh-vid-col{
-    flex:none;
-    width:100%;
-    /* En móvil columna: el video se muestra completo en su totalidad */
-    aspect-ratio:9/16;
-    max-height:72vw;  /* limita altura total en pantallas muy altas */
-  }
+  .oh-vid-col{flex:none;width:100%;aspect-ratio:9/16;max-height:72vw;}
   .oh-vid-info{border-left:none;border-top:1px solid rgba(201,168,76,.1);flex-direction:row;flex-wrap:wrap;gap:.5rem;padding:.75rem 1rem;}
   .oh-vi-row{flex:1;min-width:44%;}
   .oh-header{padding:1.2rem 1.2rem .7rem;}
   .oh-spots,.oh-form{padding-left:1.2rem;padding-right:1.2rem;}
   .oh-row{flex-direction:column;}
   .oh-inp{width:100%;}
+  .oh-day-sel{flex-direction:column;}
 }
 </style>
 
 <script>
 (function(){
-  var TOTAL=20,TAKEN=15,curVid=0;
-  var STORAGE_KEY='tcl-oh-v3';
-  var srcs=[
-    'https://www.youtube.com/embed/laT5XwRhdhY?autoplay=1&mute=1&loop=1&playlist=laT5XwRhdhY&rel=0&modestbranding=1',
-    'https://www.youtube.com/embed/iJvW5mCIozA?rel=0&modestbranding=1'
+  var TOTAL=20, TAKEN=15, curVid=0, curDay=0;
+  var STORAGE_KEY='tcl-oh-v4';
+
+  var DAYS=[
+    {label:'Viernes 12 de junio', hours:'2:00 PM – 5:00 PM'},
+    {label:'Sábado 13 de junio',  hours:'12:00 PM – 4:00 PM'}
   ];
 
-  var overlay=document.getElementById('oh-overlay');
-  var closeBtn=document.getElementById('oh-close');
-  var skipBtn=document.getElementById('ohSkip');
-  var resBtn=document.getElementById('ohReserve');
-  var formEl=document.getElementById('ohForm');
-  var successEl=document.getElementById('ohSuccess');
-  var vidCol=document.getElementById('ohVidCol');
-  var tabs=document.querySelectorAll('.oh-vtab');
-  var dotsEl=document.getElementById('ohDots');
+  var srcs=[
+    'https://www.youtube.com/embed/deh2aqeSToU?autoplay=1&mute=1&loop=1&playlist=deh2aqeSToU&rel=0&modestbranding=1',
+    'https://www.youtube.com/embed/J7yFJ2hIbBQ?rel=0&modestbranding=1'
+  ];
 
+  var overlay  = document.getElementById('oh-overlay');
+  var closeBtn = document.getElementById('oh-close');
+  var skipBtn  = document.getElementById('ohSkip');
+  var resBtn   = document.getElementById('ohReserve');
+  var formEl   = document.getElementById('ohForm');
+  var successEl= document.getElementById('ohSuccess');
+  var vidCol   = document.getElementById('ohVidCol');
+  var tabs     = document.querySelectorAll('.oh-vtab');
+  var dotsEl   = document.getElementById('ohDots');
+  var dayBtns  = document.querySelectorAll('.oh-day-btn');
+
+  /* dots */
   function buildDots(){
     dotsEl.innerHTML='';
-    for(var i=0;i<TOTAL;i++){var d=document.createElement('div');d.className='oh-dot '+(i<TAKEN?'taken':'free');dotsEl.appendChild(d);}
+    for(var i=0;i<TOTAL;i++){
+      var d=document.createElement('div');
+      d.className='oh-dot '+(i<TAKEN?'taken':'free');
+      dotsEl.appendChild(d);
+    }
   }
   function updSpots(){
     var free=TOTAL-TAKEN;
@@ -897,6 +905,16 @@
   }
   updSpots();
 
+  /* day selector */
+  dayBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      curDay=parseInt(this.dataset.day);
+      dayBtns.forEach(function(b){b.classList.remove('active');});
+      this.classList.add('active');
+    });
+  });
+
+  /* video tabs */
   tabs.forEach(function(tab){
     tab.addEventListener('click',function(){
       var idx=parseInt(this.dataset.v);
@@ -910,7 +928,7 @@
   });
 
   vidCol.addEventListener('click',function(){
-    if(vidCol.querySelector('iframe'))return;
+    if(vidCol.querySelector('iframe')) return;
     document.getElementById('ohPh0').classList.remove('active');
     document.getElementById('ohPh1').classList.remove('active');
     var f=document.createElement('iframe');
@@ -921,6 +939,7 @@
     vidCol.appendChild(f);
   });
 
+  /* reserve */
   resBtn.addEventListener('click',function(){
     var n=document.getElementById('ohName').value.trim();
     var p=document.getElementById('ohPhone').value.trim();
@@ -933,17 +952,20 @@
       return;
     }
 
-    /* Abrir WhatsApp con mensaje pre-llenado */
-     var msg='Hola Laura! Me gustaría reservar mi lugar para el Open House.\n\n'
+    var day=DAYS[curDay];
+    var msg='Hola Laura! Me gustaría reservar mi lugar para el Open House.\n\n'
           +'*Mis datos:*\n'
           +'Nombre: '+n+'\n'
           +'Teléfono: '+p+'\n\n'
-          +'*Propiedad:* 619 W Chapman Ave, Placentia, CA\n'
-          +'*Fecha:* Domingo 7 de Junio\n'
-          +'*Hora:* 12:00 PM – 3:00 PM\n\n'
+          +'*Propiedad:* 145 E 36th St, Los Ángeles, CA (Dúplex cerca de USC)\n'
+          +'*Fecha:* '+day.label+'\n'
+          +'*Hora:* '+day.hours+'\n\n'
           +'¡Espero confirmar mi asistencia!';
-    var waURL='https://wa.me/15628621902?text='+encodeURIComponent(msg);
-    window.open(waURL,'_blank');
+    window.open('https://wa.me/15628621902?text='+encodeURIComponent(msg),'_blank');
+
+    /* update success message with chosen day */
+    document.getElementById('ohSuccessSub').innerHTML=
+      'Te esperamos este <strong>'+day.label+'</strong><br>de '+day.hours;
 
     formEl.style.display='none';
     successEl.style.display='flex';
@@ -952,18 +974,19 @@
     sessionStorage.setItem(STORAGE_KEY,'reserved');
   });
 
+  /* close */
   function closePopup(){
     overlay.classList.remove('visible');
     document.body.style.overflow='';
     vidCol.querySelectorAll('iframe').forEach(function(f){f.src=f.src;});
     if(!sessionStorage.getItem(STORAGE_KEY)) sessionStorage.setItem(STORAGE_KEY,'dismissed');
   }
-
   closeBtn.addEventListener('click',closePopup);
   skipBtn.addEventListener('click',closePopup);
-  overlay.addEventListener('click',function(e){if(e.target===overlay)closePopup();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('visible'))closePopup();});
+  overlay.addEventListener('click',function(e){if(e.target===overlay) closePopup();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&overlay.classList.contains('visible')) closePopup();});
 
+  /* auto-show */
   if(!sessionStorage.getItem(STORAGE_KEY)){
     setTimeout(function(){
       overlay.classList.add('visible');

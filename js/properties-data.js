@@ -494,7 +494,28 @@ photos: 4,
       "assets/propiedades/propiedad-26/slide-3.jpeg",
       "assets/propiedades/propiedad-26/slide-4.jpeg",
  ]
-  }
+  },
 
+   // ─── 27 ─────────────────────────────────────────────────
+
+
+  {
+  id: "propiedad-27",
+  status: "Active",
+  title: "Casa - Placentia",
+  location: "619 W Chapman, Placentia, CA",
+  beds: 3,
+  baths: 2,
+  area: "",
+  price: "$919,000",
+  soldDate: "",
+  cover: "",
+  description: "Hermosa casa moderna lista para mudarse. Cuenta con espacios llenos de luz, una cocina bellamente actualizada y un patio perfecto para relajarse.",
+  features: ["Casa", "3 Recámaras", "2 Baños", "Cocina Actualizada", "Interiores Modernos"],
+  photos: 0,
+  media: [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=xXnXVkw8rwXiFdDCcw7Pag&cb_client=search.gws-prod.gps&w=408&h=240&yaw=13.286746&pitch=0&thumbfov=100"
+    ]
+}
 ]
 };

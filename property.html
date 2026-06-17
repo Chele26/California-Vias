@@ -214,9 +214,10 @@
 <!-- ② property.js -->
 <script src="js/property.js"></script>
 
-<!-- ══════════════════════════════════════════════════════════
-     OPEN HOUSE POPUP v4 — Dúplex USC · 145 E 36th St LA
-     ══════════════════════════════════════════════════════════ -->
+<!-- OPEN HOUSE POPUP v4 — COMENTADO / DESACTIVADO
+     Todo este bloque queda guardado dentro de <template>, por eso NO se muestra ni ejecuta.
+     Para reactivarlo, sacá el contenido del <template> y dejalo antes de </body>. -->
+<template id="open-house-popup-disabled">
 <div id="oh-overlay" role="dialog" aria-modal="true" aria-label="Open House – Reserva tu lugar">
   <div id="oh-modal">
     <div class="oh-topbar"></div>
@@ -445,5 +446,6 @@
   if(!sessionStorage.getItem(STORAGE_KEY)){setTimeout(function(){overlay.classList.add('visible');document.body.style.overflow='hidden';},1200);}
 })();
 </script>
+</template>
 </body>
 </html>

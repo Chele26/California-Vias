@@ -76,44 +76,56 @@ const obs = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("on"); });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(".rv,.rvL,.rvR,.p-card,.s-card,.t-card,.sold-card").forEach((el) => {
+document.querySelectorAll(".rv,.rvL,.rvR,.p-card,.s-card,.sold-card").forEach((el) => {
   obs.observe(el);
 });
 
-/* ── TESTIMONIAL SLIDER ── */
-const track       = document.getElementById("tTrack");
-const dotsWrapper = document.getElementById("tDots");
-const nextBtn     = document.getElementById("tNext");
-const prevBtn     = document.getElementById("tPrev");
-
-if (track && dotsWrapper && nextBtn && prevBtn) {
-  const totalSlides = document.querySelectorAll(".t-slide").length;
-  let currentSlide = 0, autoTimer;
-
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("div");
-    dot.className = "t-dot" + (i === 0 ? " on" : "");
+/* ── REVIEWS 3D CAROUSEL ── */
+(function () {
+  const cards = document.querySelectorAll(".rvw-card");
+  const track = document.getElementById("rvwTrack");
+  const dotsWrap = document.getElementById("rvwDots");
+  const prevBtn = document.getElementById("rvwPrev");
+  const nextBtn = document.getElementById("rvwNext");
+  if (!cards.length || !track || !dotsWrap || !prevBtn || !nextBtn) return;
+  const total = cards.length;
+  let current = 0;
+  let auto;
+  cards.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "rvw-dot" + (i === 0 ? " on" : "");
+    dot.setAttribute("aria-label", "Review " + (i + 1));
     dot.addEventListener("click", () => goTo(i));
-    dotsWrapper.appendChild(dot);
+    dotsWrap.appendChild(dot);
+  });
+  const dots = document.querySelectorAll(".rvw-dot");
+  function update() {
+    cards.forEach((card, i) => {
+      const offset = i - current;
+      const abs = Math.abs(offset);
+      let x = offset * 300, z = -abs * 160, ry = offset * -32, op = abs > 1 ? 0 : 1 - abs * 0.5, sc = 1 - abs * 0.12;
+      if (abs > 1) { x = offset > 0 ? 700 : -700; op = 0; }
+      card.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${ry}deg) scale(${sc})`;
+      card.style.opacity = op;
+      card.style.zIndex = total - abs;
+    });
+    dots.forEach((d, i) => d.classList.toggle("on", i === current));
   }
-
-  function goTo(index) {
-    currentSlide = (index + totalSlides) % totalSlides;
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    document.querySelectorAll(".t-dot").forEach((d, i) => d.classList.toggle("on", i === currentSlide));
-    const cards = document.querySelectorAll(".t-card");
-    if (cards[currentSlide] && !cards[currentSlide].classList.contains("on")) {
-      cards[currentSlide].classList.add("on");
-    }
-  }
-
-  const startAuto = () => { autoTimer = setInterval(() => goTo(currentSlide + 1), 5500); };
-  const stopAuto  = () => clearInterval(autoTimer);
-
-  nextBtn.addEventListener("click", () => { stopAuto(); goTo(currentSlide + 1); startAuto(); });
-  prevBtn.addEventListener("click", () => { stopAuto(); goTo(currentSlide - 1); startAuto(); });
-  startAuto();
-}
+  function goTo(i) { current = ((i % total) + total) % total; update(); resetAuto(); }
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+  function resetAuto() { clearInterval(auto); auto = setInterval(next, 6000); }
+  prevBtn.addEventListener("click", prev);
+  nextBtn.addEventListener("click", next);
+  let startX = 0;
+  track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; });
+  track.addEventListener("touchend", (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+  });
+  update();
+  resetAuto();
+})();
 
 /* ══════════════════════════════════════════════════
    CONTACT FORM — WhatsApp submission

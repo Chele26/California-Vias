@@ -11,36 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    /* Footer brokerage — no truncar, permitir salto de línea */
-    .f-brokerage {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-size: .62rem;
-      font-weight: 400;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: rgba(201, 168, 76, .75);
-      line-height: 1.5;
-      white-space: normal;
-      margin: .35rem 0 .8rem;
-      max-width: 280px;
-    }
-
-    /* Navbar — misma altura de referencia para links, botón CTA y toggle de idioma */
-    #nav { align-items: center; }
-    .nav-ul { align-items: center; height: 2.6rem; }
-    .nav-ul li { display: flex; align-items: center; height: 100%; }
-    .nav-ul li a { display: inline-flex; align-items: center; height: 100%; line-height: 1; }
-    .nav-cta {
-      display: inline-flex; align-items: center; justify-content: center;
-      line-height: 1; padding: 0 1.3rem; height: 2.2rem; box-sizing: border-box;
-    }
-    .lang-toggle {
-      display: inline-flex; align-items: center; justify-content: center;
-      line-height: 1; padding: 0 .7rem; height: 2.2rem; box-sizing: border-box;
-    }
-  </style>
 </head>
 
 <body>
@@ -82,6 +52,7 @@
           <span class="logo-sparkle"></span>
         </div>
         <span class="logo-text">Tu Casa con Laura</span>
+        <span class="logo-brokerage">BigBlock Powerhouse Realty &nbsp;·&nbsp; CA DRE LIC 01291397</span>
       </div>
     </a>
 
@@ -274,34 +245,6 @@
               <div>
                 <span>Market Insight</span>
                 <small>Short real estate tip for buyers and sellers.</small>
-              </div>
-            </button>
-            <button class="yt-video-item" type="button" data-video="w5BcuLr_w9M">
-              <img src="https://img.youtube.com/vi/w5BcuLr_w9M/hqdefault.jpg" alt="Video">
-              <div>
-                <span>Real Estate Short</span>
-                <small>Quick highlight from Tu Casa con Laura.</small>
-              </div>
-            </button>
-            <button class="yt-video-item" type="button" data-video="UYqZAMh3toc">
-              <img src="https://img.youtube.com/vi/UYqZAMh3toc/hqdefault.jpg" alt="Video">
-              <div>
-                <span>Real Estate Short</span>
-                <small>Quick highlight from Tu Casa con Laura.</small>
-              </div>
-            </button>
-            <button class="yt-video-item" type="button" data-video="6POJ5WmYUS0">
-              <img src="https://img.youtube.com/vi/6POJ5WmYUS0/hqdefault.jpg" alt="Video">
-              <div>
-                <span>Real Estate Short</span>
-                <small>Quick highlight from Tu Casa con Laura.</small>
-              </div>
-            </button>
-            <button class="yt-video-item" type="button" data-video="mP1hzwkBPr0">
-              <img src="https://img.youtube.com/vi/mP1hzwkBPr0/hqdefault.jpg" alt="Video">
-              <div>
-                <span>Featured Video</span>
-                <small>Full video from Tu Casa con Laura's channel.</small>
               </div>
             </button>
           </div>
@@ -644,82 +587,6 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════════
-       RESERVA TU VIDEOLLAMADA
-       ══════════════════════════════════════════════════ -->
-  <section id="booking" class="pad bg3 silver-grid-bg">
-    <div class="container text-center rv">
-      <span class="lbl" data-i18n="booking.label">✦ Consulta Virtual</span>
-      <h2 class="sec-h mb-3" data-i18n="booking.title">Reserva tu <em>Videollamada</em></h2>
-      <div class="mini-bar"></div>
-      <p class="section-sub mb-4" data-i18n="booking.sub">
-        Agenda una consulta de 60 minutos con Laura, desde donde estés. Elige el día y la hora que mejor te acomoden.
-      </p>
-      <button type="button" class="btn-g" id="openBookingBtn" data-i18n="booking.cta">
-        <i class="fas fa-video me-2"></i>Agendar Ahora
-      </button>
-    </div>
-  </section>
-
-  <!-- MODAL DE RESERVA -->
-  <div id="booking-overlay" role="dialog" aria-modal="true" aria-label="Reservar Videollamada">
-    <div id="booking-modal">
-      <button id="booking-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
-      <div id="booking-loading"><div class="booking-spinner"></div></div>
-      <iframe id="booking-iframe"
-        src="https://script.google.com/macros/s/AKfycbyvYEDCFNaEzCsGnqNFECmfclBjdbOhCYGZlGN8nuOE8sapiVQiofUqjrzeMdBx0jLr/exec"
-        title="Reserva tu videollamada"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-
-  <style>
-    #booking-overlay{position:fixed;inset:0;z-index:99996;background:rgba(6,6,6,.92);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:1.2rem;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s ease;}
-    #booking-overlay.visible{opacity:1;visibility:visible;}
-    #booking-modal{position:relative;width:100%;max-width:1040px;height:min(88vh,780px);background:#0a0a0a;border:1px solid rgba(201,168,76,.3);border-radius:16px;overflow:hidden;transform:translateY(16px) scale(.98);transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
-    #booking-overlay.visible #booking-modal{transform:translateY(0) scale(1);}
-    #booking-iframe{width:100%;height:100%;border:0;display:block;background:#0a0a0a;}
-    #booking-close{position:absolute;top:.9rem;right:.9rem;z-index:5;background:rgba(8,8,8,.7);border:1px solid rgba(201,168,76,.35);color:var(--gold,#C9A84C);width:34px;height:34px;border-radius:50%;cursor:pointer;transition:background .25s,color .25s;display:flex;align-items:center;justify-content:center;}
-    #booking-close:hover{background:var(--gold,#C9A84C);color:#080808;}
-    #booking-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#0a0a0a;transition:opacity .3s ease;z-index:2;}
-    #booking-loading.hide{opacity:0;pointer-events:none;}
-    .booking-spinner{width:38px;height:38px;border:2px solid rgba(201,168,76,.2);border-top-color:var(--gold,#C9A84C);border-radius:50%;animation:booking-spin .8s linear infinite;}
-    @keyframes booking-spin{to{transform:rotate(360deg);}}
-    @media (max-width:600px){
-      #booking-overlay{padding:0;}
-      #booking-modal{height:100vh;max-width:100%;border-radius:0;}
-    }
-  </style>
-
-  <script>
-  (function(){
-    const overlay  = document.getElementById('booking-overlay');
-    const closeBtn = document.getElementById('booking-close');
-    const openBtn  = document.getElementById('openBookingBtn');
-    const iframe   = document.getElementById('booking-iframe');
-    const loading  = document.getElementById('booking-loading');
-    let loaded = false;
-
-    function openBooking(){
-      overlay.classList.add('visible');
-      document.body.style.overflow = 'hidden';
-      if (!loaded) { loading.classList.remove('hide'); }
-    }
-    function closeBooking(){
-      overlay.classList.remove('visible');
-      document.body.style.overflow = '';
-    }
-
-    if (openBtn) openBtn.addEventListener('click', openBooking);
-    closeBtn.addEventListener('click', closeBooking);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeBooking(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay.classList.contains('visible')) closeBooking(); });
-
-    iframe.addEventListener('load', () => { loaded = true; loading.classList.add('hide'); });
-  })();
-  </script>
-
   <!-- CONTACT -->
   <section id="contact" class="pad bg2 grid-bg">
     <div class="container">
@@ -832,7 +699,6 @@
       <div class="row g-5 mb-5">
         <div class="col-lg-4">
           <span class="f-logo">Tu Casa con Laura</span>
-          <span class="f-brokerage">BigBlock Powerhouse Realty &nbsp;·&nbsp; CA DRE LIC 01291397</span>
           <p class="f-tag mb-3" data-i18n="footer.tag">Homes with style and perspective.</p>
           <div class="mini-bar footer-bar"></div>
           <p class="footer-text" data-i18n="footer.desc">A clean and polished property presentation built around strong visuals, good structure and personal communication.</p>
@@ -1028,7 +894,6 @@
           'sold.label':'✦ Closed Transactions','sold.title':'Properties <em class="silver">Sold</em>','sold.sub':'A selection of homes successfully represented and closed — each one a story of trust, care and results.','sold.cta':'Thinking of Selling?',
           'services.label':'✦ What We Do','services.title':'Our <em>Services</em>','services.s1.title':'Home Sales','services.s1.desc':'We present properties with structure, visuals and clarity to help them connect with the right audience.','services.s2.title':'Buyer Guidance','services.s2.desc':'Support through the search process with clear communication and a more personalized experience.','services.s3.title':'Rental Assistance','services.s3.desc':'Help finding homes and spaces that match practical needs, lifestyle and preferred location.','services.s4.title':'Market Perspective','services.s4.desc':'Useful context around price, value and presentation to support better decisions.','services.s5.title':'Property Presentation','services.s5.desc':'Strong visual display for homes through photos, layout and polished property detail pages.','services.s6.title':'Personal Support','services.s6.desc':'Direct contact, organized follow-up and a process that feels approachable from start to finish.',
           'test.label':'✦ Client Feedback','test.title':'What Clients <em>Say</em>',
-          'booking.label':'✦ Virtual Consultation','booking.title':'Book Your <em>Video Call</em>','booking.sub':'Schedule a 60-minute consultation with Laura, from wherever you are. Choose the day and time that works best for you.','booking.cta':'Book Now',
           'contact.label':"✦ Let's Connect",'contact.title':'Contact <em>Laura</em>','contact.sub':'Please give me a call or fill out the form below.','contact.getInTouch':'Get in Touch','contact.call':'Call','contact.website':'Website','contact.sendMsg':'Send a Message','contact.fname':'Full Name *','contact.fnamePh':'Your full name','contact.femail':'Email Address *','contact.fphone':'Phone Number','contact.fdate':'Preferred Date','contact.fmsg':'Message','contact.fmsgPh':"Tell Laura what type of home or property you're looking for...",'contact.send':'Send','contact.consentShort':'I consent to receive communications in accordance with the terms below.','contact.tcpa':'By proceeding, I am electronically signing and consenting to receive marketing communications (about real estate brokerage services and one or more properties that I may buy, sell, or rent), that may be delivered to me via email, telephone and/or text messaging (using "automated technology" such as an automatic telephone dialing system, and/or an artificial or prerecorded voice), from Laura Hernandez and its independent contractor real estate professionals using the contact information I provided. Your consent is not a condition of purchase and you may revoke it at any time by replying to any of our texts to opt-out, unsubscribing via email, or contacting us directly at the email or telephone number listed on this website.','contact.errName':'Please enter your name.','contact.errEmail':'Please enter a valid email.','contact.errTcpa':'You must accept the consent terms to continue.','contact.successMsg':'Thank you! Laura will get back to you soon.',
           'footer.tag':'Homes with style and perspective.','footer.desc':'A clean and polished property presentation built around strong visuals, good structure and personal communication.','footer.quickLinks':'Quick Links','footer.legalLink':'Privacy & Terms',
           'test.ugcNote':`Reviews shown are submitted by clients on third-party platforms (Google, Realtor.com) and reflect the opinions of their individual authors. <a href="#" class="ugc-note-link" data-tab="ugc">Learn more</a>.`,
@@ -1080,7 +945,6 @@
           'sold.label':'✦ Transacciones Cerradas','sold.title':'Propiedades <em class="silver">Vendidas</em>','sold.sub':'Una selección de hogares representados y cerrados exitosamente — cada uno, una historia de confianza, dedicación y resultados.','sold.cta':'¿Pensando en Vender?',
           'services.label':'✦ Lo Que Hacemos','services.title':'Nuestros <em>Servicios</em>','services.s1.title':'Venta de Propiedades','services.s1.desc':'Presentamos propiedades con estructura, imágenes y claridad para conectarlas con el comprador indicado.','services.s2.title':'Asesoría al Comprador','services.s2.desc':'Acompañamiento en el proceso de búsqueda con comunicación clara y una experiencia más personalizada.','services.s3.title':'Asistencia en Renta','services.s3.desc':'Ayuda para encontrar hogares y espacios que se adapten a tus necesidades, estilo de vida y ubicación preferida.','services.s4.title':'Perspectiva de Mercado','services.s4.desc':'Contexto útil sobre precios, valor y presentación para apoyar mejores decisiones.','services.s5.title':'Presentación de Propiedades','services.s5.desc':'Visualización sólida de hogares a través de fotos, diseño y páginas de detalle de propiedades de alta calidad.','services.s6.title':'Apoyo Personal','services.s6.desc':'Contacto directo, seguimiento organizado y un proceso accesible de principio a fin.',
           'test.label':'✦ Opiniones de Clientes','test.title':'Lo Que Dicen <em>Nuestros Clientes</em>',
-          'booking.label':'✦ Consulta Virtual','booking.title':'Reserva tu <em>Videollamada</em>','booking.sub':'Agenda una consulta de 60 minutos con Laura, desde donde estés. Elige el día y la hora que mejor te acomoden.','booking.cta':'Agendar Ahora',
           'contact.label':'✦ Conectemos','contact.title':'Contacta a <em>Laura</em>','contact.sub':'Llámame o completa el formulario a continuación.','contact.getInTouch':'Ponte en Contacto','contact.call':'Llamar','contact.website':'Sitio Web','contact.sendMsg':'Enviar un Mensaje','contact.fname':'Nombre Completo *','contact.fnamePh':'Tu nombre completo','contact.femail':'Correo Electrónico *','contact.fphone':'Número de Teléfono','contact.fdate':'Fecha Preferida','contact.fmsg':'Mensaje','contact.fmsgPh':'¿Qué tipo de hogar o propiedad estás buscando?','contact.send':'Enviar','contact.consentShort':'Doy mi consentimiento para recibir comunicaciones según los términos a continuación.','contact.tcpa':'Al continuar, firmo electrónicamente y doy mi consentimiento para recibir comunicaciones de marketing (sobre servicios de corretaje de bienes raíces y propiedades que pueda comprar, vender o rentar), que pueden ser entregadas por correo electrónico, teléfono y/o mensajes de texto (usando "tecnología automatizada"), de parte de Laura Hernández y sus agentes independientes, usando la información de contacto que proporcioné. Mi consentimiento no es condición de compra y puedo revocarlo en cualquier momento respondiendo a un mensaje de texto, cancelando la suscripción por correo o contactando directamente al número o email de este sitio.','contact.errName':'Por favor ingresa tu nombre.','contact.errEmail':'Por favor ingresa un correo válido.','contact.errTcpa':'Debes aceptar los términos de consentimiento para continuar.','contact.successMsg':'¡Gracias! Laura se pondrá en contacto contigo pronto.',
           'footer.tag':'Hogares con estilo y visión.','footer.desc':'Una presentación limpia y elegante de propiedades basada en imágenes de calidad, buena estructura y comunicación personal.','footer.quickLinks':'Enlaces Rápidos','footer.legalLink':'Privacidad y Términos',
           'test.ugcNote':`Las reseñas mostradas fueron enviadas por clientes en plataformas externas (Google, Realtor.com) y reflejan la opinión individual de cada autor. <a href="#" class="ugc-note-link" data-tab="ugc">Conoce más</a>.`,

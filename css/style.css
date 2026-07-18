@@ -160,10 +160,10 @@ body.lh #cur  { transform:translate(-50%,-50%) scale(1.5); }
 .nav-inner {
   max-width: 1360px;
   margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: center; gap: 3.5rem;
 }
 
-.nav-logo { display:flex; align-items:center; gap:.9rem; text-decoration:none; min-width:0; flex:1; }
+.nav-logo { display:flex; align-items:center; gap:.9rem; text-decoration:none; min-width:0; flex:0 1 auto; }
 
 .logo-text-wrap {
   display:flex; flex-direction:column; justify-content:center; gap:.08rem;
@@ -669,6 +669,7 @@ footer { background:var(--bk); border-top:1px solid rgba(201,168,76,.12); paddin
    ══════════════════════════════════════════════════ */
 @media (max-width:900px) {
   .nav-ul  { display:none; }
+  .nav-inner { justify-content:space-between; gap:0; }
   #hbg-btn { display:flex !important; align-items:center; justify-content:center; }
   #nav          { padding:.85rem 1.2rem; }
   #nav.scrolled { padding:.7rem 1.2rem; }
@@ -1028,7 +1029,7 @@ footer { background:var(--bk); border-top:1px solid rgba(201,168,76,.12); paddin
 .gr-card:hover::before { opacity:1; }
 @keyframes gr-shimmer-rotate { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 .gr-quote { font-size:2.4rem; color:var(--gold-d); line-height:1; font-family:'Cormorant Garamond',serif; opacity:.6; margin-bottom:6px; flex-shrink:0; }
-.gr-text { color:var(--wh); font-size:.92rem; line-height:1.6; flex-grow:1; font-style:italic; position:relative; z-index:1; display:-webkit-box; -webkit-line-clamp:6; -webkit-box-orient:vertical; overflow:hidden; }
+.gr-text { color:var(--wh); font-size:.92rem; line-height:1.6; flex-grow:1; font-style:italic; position:relative; z-index:1; display:-webkit-box; -webkit-line-clamp-:6; -webkit-box-orient:vertical; overflow:hidden; }
 .gr-stars { display:flex; gap:4px; margin:12px 0; flex-shrink:0; }
 .gr-stars svg { width:18px; height:18px; fill:var(--gold); filter:drop-shadow(0 0 4px rgba(201,168,76,.4)); }
 .gr-author { display:flex; align-items:center; gap:14px; border-top:1px solid var(--bd-g); padding-top:16px; margin-top:auto; min-width:0; flex-shrink:0; }

@@ -57,6 +57,61 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 20);
   }
 
+  /* ── SEO: actualizar metadatos dinámicamente ── */
+  const SITE = "https://tucasaconlaura.com";
+
+  function setMeta(id, attr, value) {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute(attr, value);
+  }
+
+  function updateSeo(p, id) {
+    const url = `${SITE}/property.html?id=${encodeURIComponent(id)}`;
+    const name = p.title || p.name || "Propiedad";
+    const desc = (p.description || `${name} — presentada por Laura De Hernandez, Realtor® (CA DRE #01820066), FF Homes CA LIC 01526567.`)
+                   .replace(/<[^>]*>/g, "").slice(0, 300);
+    const img  = p.cover ? (p.cover.startsWith("http") ? p.cover : `${SITE}/${p.cover.replace(/^\//, "")}`)
+                         : `${SITE}/assets/logo.png`;
+
+    document.title = `${name} | Tu Casa con Laura`;
+
+    let d = document.querySelector('meta[name="description"]');
+    if (d) d.setAttribute("content", desc);
+
+    setMeta("metaRobots",   "content", "index, follow, max-image-preview:large");
+    setMeta("linkCanonical","href",    url);
+    setMeta("ogUrl",        "content", url);
+    setMeta("ogTitle",      "content", `${name} | Tu Casa con Laura`);
+    setMeta("ogDesc",       "content", desc);
+    setMeta("ogImage",      "content", img);
+
+    // JSON-LD de la propiedad
+    const old = document.getElementById("propLd");
+    if (old) old.remove();
+    const ld = document.createElement("script");
+    ld.type = "application/ld+json";
+    ld.id   = "propLd";
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RealEstateListing",
+      "name": name,
+      "url": url,
+      "description": desc,
+      "image": img,
+      "provider": {
+        "@type": "RealEstateAgent",
+        "name": "Tu Casa con Laura",
+        "telephone": "+1-562-862-1902",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "FF Homes",
+          "identifier": "CA LIC 01526567"
+        }
+      }
+    });
+    document.head.appendChild(ld);
+  }
+
   /* ── Store current property for re-renders ── */
   let _currentProperty = null;
 
@@ -90,6 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!property) { showError("Property not found."); return; }
 
     _currentProperty = property;
+    updateSeo(property, property.id);
     waitForI18n(() => renderProperty(property));
   }
 
@@ -278,6 +334,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showError(msg) {
+    // Página inexistente: no debe indexarse ni dejar título viejo en Google
+    setMeta("metaRobots", "content", "noindex, follow");
+    setMeta("linkCanonical", "href", SITE + "/");
+    document.title = "Propiedad no disponible | Tu Casa con Laura";
+
     const root = document.getElementById("propRoot");
     if (root) root.innerHTML = `
       <div style="min-height:60vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;padding:2rem;">

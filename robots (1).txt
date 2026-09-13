@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Evita que se indexen páginas de propiedad sin parámetro (soft 404)
+Disallow: /property.html$
+
+Sitemap: https://tucasaconlaura.com/sitemap.xml

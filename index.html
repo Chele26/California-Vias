@@ -1,16 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- ══════════════════════════════════════════════════════════
+     REEMPLAZA TODO EL <head> ... </head> DE index.html
+     POR ESTE BLOQUE COMPLETO
+     ══════════════════════════════════════════════════════════ -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laura D. Hernandez | Realtor® and Top Producer</title>
+
+  <!-- ── SEO PRINCIPAL ── -->
+  <title>Tu Casa con Laura | Laura De Hernandez, Realtor® en Long Beach, CA</title>
+  <meta name="description" content="Laura De Hernandez (CA DRE #01820066), Realtor® bilingüe con más de 20 años de experiencia en Long Beach, South Gate, Huntington Park, Los Angeles y Compton. Afiliada a FF Homes, CA LIC 01526567." />
+  <link rel="canonical" href="https://tucasaconlaura.com/" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Laura De Hernandez" />
+
+  <!-- ── OPEN GRAPH (Facebook / WhatsApp / LinkedIn) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tu Casa con Laura" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:url" content="https://tucasaconlaura.com/" />
+  <meta property="og:title" content="Tu Casa con Laura | Laura De Hernandez, Realtor® en Long Beach, CA" />
+  <meta property="og:description" content="Realtor® bilingüe con más de 20 años de experiencia en el sur de California. Afiliada a FF Homes (CA LIC 01526567)." />
+  <meta property="og:image" content="https://tucasaconlaura.com/assets/hero/Background.png" />
+  <meta property="og:image:alt" content="Tu Casa con Laura — Laura De Hernandez, Realtor®" />
+
+  <!-- ── TWITTER / X ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tu Casa con Laura | Laura De Hernandez, Realtor®" />
+  <meta name="twitter:description" content="Realtor® bilingüe en el sur de California. FF Homes — CA LIC 01526567." />
+  <meta name="twitter:image" content="https://tucasaconlaura.com/assets/hero/Background.png" />
 
   <link rel="icon" href="assets/logo.png" type="image/png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ══════════════════════════════════════════════════════
+       DATOS ESTRUCTURADOS — esto es lo que le dice a Google
+       cuál es el brokerage correcto (FF Homes / 01526567)
+       ══════════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "RealEstateAgent",
+        "@id": "https://tucasaconlaura.com/#agent",
+        "name": "Tu Casa con Laura",
+        "alternateName": "Laura De Hernandez, Realtor®",
+        "url": "https://tucasaconlaura.com/",
+        "logo": "https://tucasaconlaura.com/assets/logo.png",
+        "image": "https://tucasaconlaura.com/assets/logo.png",
+        "telephone": "+1-562-862-1902",
+        "priceRange": "$$$",
+        "description": "Laura De Hernandez, Realtor® bilingüe con más de 20 años de experiencia asistiendo a compradores, vendedores e inversionistas en el sur de California.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3452 E Florence Ave",
+          "addressLocality": "Huntington Park",
+          "addressRegion": "CA",
+          "postalCode": "90255",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Long Beach" },
+          { "@type": "City", "name": "South Gate" },
+          { "@type": "City", "name": "Huntington Park" },
+          { "@type": "City", "name": "Los Angeles" },
+          { "@type": "City", "name": "Compton" }
+        ],
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "FF Homes",
+          "identifier": "CA LIC 01526567"
+        },
+        "employee": { "@id": "https://tucasaconlaura.com/#laura" },
+        "sameAs": [
+          "https://www.instagram.com/tucasaconlaura/",
+          "https://www.facebook.com/TuCasaConLaura/",
+          "https://www.tiktok.com/@tucasaconlaura",
+          "https://www.linkedin.com/in/tucasaconlaura",
+          "https://www.youtube.com/@tucasaconlaura"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://tucasaconlaura.com/#laura",
+        "name": "Laura De Hernandez",
+        "jobTitle": "Realtor®",
+        "identifier": "CA DRE #01820066",
+        "telephone": "+1-562-862-1902",
+        "url": "https://tucasaconlaura.com/",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "FF Homes",
+          "identifier": "CA LIC 01526567"
+        },
+        "knowsLanguage": ["es", "en"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tucasaconlaura.com/#website",
+        "url": "https://tucasaconlaura.com/",
+        "name": "Tu Casa con Laura",
+        "publisher": { "@id": "https://tucasaconlaura.com/#agent" },
+        "inLanguage": ["en", "es"]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>

@@ -1,0 +1,97 @@
+# ═══════════════════════════════════════════════════════════
+#  TU CASA CON LAURA — .htaccess
+#  Va en /public_html/  (junto a index.html)
+# ═══════════════════════════════════════════════════════════
+
+# ── 1. FORZAR HTTPS Y DOMINIO SIN WWW ──────────────────────
+# Unifica todo en https://tucasaconlaura.com
+# (esto es lo que elimina el contenido duplicado www vs no-www)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # http → https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^(.*)$ https://tucasaconlaura.com/$1 [R=301,L]
+
+  # www → sin www
+  RewriteCond %{HTTP_HOST} ^www\.tucasaconlaura\.com$ [NC]
+  RewriteRule ^(.*)$ https://tucasaconlaura.com/$1 [R=301,L]
+
+  # /index.html → /
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # URL vieja indexada (ajusta si Search Console te muestra otra)
+  RewriteRule ^casa-placentia/?$ / [R=301,L]
+</IfModule>
+
+
+# ── 2. CABECERAS DE SEGURIDAD ──────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+  # HSTS — activar SOLO cuando confirmes que https funciona en
+  # tucasaconlaura.com Y en www. Descomentar después:
+  # Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob: https://i.ytimg.com https://img.youtube.com https://api.qrserver.com; connect-src 'self' https://wa.me https://api.whatsapp.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://script.google.com https://*.googleusercontent.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://wa.me"
+
+  # No cachear el HTML (para que los cambios se vean de una)
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+
+# ── 3. TIPOS MIME CORRECTOS ────────────────────────────────
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+  AddType text/plain .txt
+  AddType application/json .json
+  AddType video/mp4 .mp4
+  AddType image/webp .webp
+</IfModule>
+
+
+# ── 4. COMPRESIÓN ──────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+
+# ── 5. CACHÉ DE ESTÁTICOS ──────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 month"
+  ExpiresByType application/javascript  "access plus 1 month"
+  ExpiresByType image/jpeg              "access plus 6 months"
+  ExpiresByType image/png               "access plus 6 months"
+  ExpiresByType image/webp              "access plus 6 months"
+  ExpiresByType video/mp4               "access plus 6 months"
+  ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+
+# ── 6. ENDURECIMIENTO ──────────────────────────────────────
+# Sin listado de directorios
+Options -Indexes
+
+# Bloquear archivos sensibles
+<FilesMatch "(^\.|\.(json|md|log|bak|old|zip|sql|env|yml|yaml)$)">
+  Require all denied
+</FilesMatch>
+
+# Excepción: properties.json sí debe ser accesible (lo lee el sitio)
+<Files "properties.json">
+  Require all granted
+</Files>
+
+# Proteger el propio .htaccess
+<Files ".htaccess">
+  Require all denied
+</Files>

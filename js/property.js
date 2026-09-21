@@ -2,6 +2,17 @@
    TU CASA CON LAURA — property.js
    ══════════════════════════════════════════════════ */
 
+/* ── FALLBACK DE IMÁGENES ROTAS (property.html no carga main.js) ── */
+window.cvImgFallback = window.cvImgFallback || function (img) {
+  if (!img || img.dataset.failed) return;
+  img.dataset.failed = "1";
+  img.onerror = null;
+  const ph = document.createElement("div");
+  ph.className = "img-fallback";
+  ph.innerHTML = '<i class="fas fa-home"></i><span>Tu Casa con Laura</span>';
+  img.replaceWith(ph);
+};
+
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ── Mobile menu ── */
@@ -190,15 +201,19 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="col-lg-7">
             <div class="carousel-wrap" id="carouselWrap">
               <div class="carousel-track" id="carTrack">
-                ${mediaItems.map((m, i) => `
+                ${mediaItems.length ? mediaItems.map((m, i) => `
                   <div class="carousel-slide" data-index="${i}">
                     ${m.type === "video"
                       ? `<video src="${m.src}" muted playsinline loop autoplay></video>`
-                      : `<img src="${m.src}" alt="${m.caption || p.title || ''}" loading="${i === 0 ? 'eager' : 'lazy'}">`
+                      : `<img src="${m.src}" alt="${m.caption || p.title || ''}" loading="${i === 0 ? 'eager' : 'lazy'}" referrerpolicy="no-referrer" onerror="cvImgFallback(this)">`
                     }
                     ${m.caption ? `<div class="car-caption">${m.caption}</div>` : ""}
                   </div>
-                `).join("")}
+                `).join("") : `
+                  <div class="carousel-slide" data-index="0">
+                    <div class="img-fallback"><i class="fas fa-home"></i><span>Tu Casa con Laura</span></div>
+                  </div>
+                `}
               </div>
 
               ${mediaItems.length > 1 ? `
@@ -206,7 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button class="car-arrow car-next" id="carNext" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
               ` : ""}
 
-              <div class="car-counter" id="carCounter">1 / ${mediaItems.length}</div>
+              <div class="car-counter" id="carCounter">1 / ${Math.max(mediaItems.length, 1)}</div>
             </div>
 
             ${mediaItems.length > 1 ? `
@@ -215,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <div class="car-thumb ${i === 0 ? "active" : ""}" data-index="${i}">
                     ${m.type === "video"
                       ? `<video src="${m.src}" muted playsinline></video><div class="car-thumb-video-icon"><i class="fas fa-play"></i></div>`
-                      : `<img src="${m.src}" alt="Slide ${i+1}" loading="lazy">`
+                      : `<img src="${m.src}" alt="Slide ${i+1}" loading="lazy" referrerpolicy="no-referrer" onerror="cvImgFallback(this)">`
                     }
                   </div>
                 `).join("")}

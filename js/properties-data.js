@@ -199,7 +199,7 @@ var CV_DATA = {
     features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
     photos: 0,
     media: [
-      "assets/propiedades/propiedad-5/COLTON.jfif"
+      "assets/propiedades/propiedad-5/COLTON.jpg"
     ]
   },
 
@@ -212,13 +212,12 @@ var CV_DATA = {
     location: "237 N Montebello Blvd, Montebello, CA 90640",
     beds: 3, baths: 1, area: "1,323 sqft", price: "$465,000",
     soldDate: "01/31/2019",
-    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100",
+    cover: "assets/propiedades/propiedad-7/slide-1.jpg",
     description: "Casa unifamiliar de 1,323 sqft con 3 recámaras y 1 baño, construida en 1936. Terreno de 3,920 sqft en Montebello. Nivel único.",
     features: ["3 Recámaras", "1 Baño", "Nivel único", "Terreno 3,920 sqft", "Construida 1936"],
     photos: 0,
     media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=07y9mGYupJzG55Fw1r928w&cb_client=search.gws-prod.gps&w=408&h=240&yaw=270.16257&pitch=0&thumbfov=100"
-    ]
+ "assets/propiedades/propiedad-7/slide-1.jpg"    ]
   },
 
   // ─── 9 ──────────────────────────────────────────────────

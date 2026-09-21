@@ -217,7 +217,7 @@ var CV_DATA = {
     features: ["3 Recámaras", "1 Baño", "Nivel único", "Terreno 3,920 sqft", "Construida 1936"],
     photos: 0,
     media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=PP8E3dlJiDDFL06pLzRECA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=285.91647&pitch=0&thumbfov=100"
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=07y9mGYupJzG55Fw1r928w&cb_client=search.gws-prod.gps&w=408&h=240&yaw=270.16257&pitch=0&thumbfov=100"
     ]
   },
 

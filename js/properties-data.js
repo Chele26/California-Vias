@@ -194,12 +194,12 @@ var CV_DATA = {
     location: "2277 E Mountain Woods St, Colton, CA 92324",
     beds: 3, baths: 2, area: "1,276 sqft", price: "$305,000",
     soldDate: "01/11/2018",
-    cover: "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100",
+    cover: "assets/propiedades/propiedad-5/slide-1.jpg",
     description: "Hermosa casa remodelada de 3 recámaras y 2 baños con pisos de madera laminada. Recámara principal con baño privado, chimenea y vistas al agua. Garage para 2 autos. Ideal para compradores primerizos.",
     features: ["3 Recámaras", "2 Baños", "Garage 2 Autos", "Piso Laminado", "Chimenea", "Vista al Agua"],
     photos: 0,
     media: [
-      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=lxEk_Eztj9240Elp38bgSA&cb_client=search.gws-prod.gps&w=408&h=240&yaw=340.2352&pitch=0&thumbfov=100"
+      "assets/propiedades/propiedad-5/COLTON.jfif"
     ]
   },
 

@@ -33,21 +33,6 @@
   <link rel="stylesheet" href="css/property.css"/>
 
   <style>
-    .lang-toggle {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: 'Montserrat', sans-serif;
-      font-size: .65rem;
-      font-weight: 500;
-      letter-spacing: .12em;
-      padding: .28rem .65rem;
-      cursor: pointer;
-      transition: background .25s, color .25s;
-      border-radius: 2px;
-    }
-    .lang-toggle:hover { background: var(--gold); color: var(--bk); }
-
     /* ── NAVBAR RESPONSIVE — property page ── */
     .property-page #nav .logo-text     { font-size: 1.55rem; letter-spacing: .1em; }
     .property-page #nav .logo-brokerage{ font-size: .52rem;  letter-spacing: .12em; }
@@ -117,9 +102,15 @@
     <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
     <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
     <li>
-      <button id="langToggle" class="lang-toggle" aria-label="Switch language">
-        <span id="langLabel">ES</span>
-      </button>
+      <div class="lang-switch" role="group" aria-label="Language / Idioma">
+        <span class="ls-thumb"></span>
+        <button type="button" class="ls-opt" data-lang="en" aria-label="English">
+          <i class="ls-flag flag-us"></i><span>EN</span>
+        </button>
+        <button type="button" class="ls-opt" data-lang="es" aria-label="Español">
+          <i class="ls-flag flag-mx"></i><span>ES</span>
+        </button>
+      </div>
     </li>
   </ul>
 
@@ -135,9 +126,15 @@
   <a href="index.html#services"     data-i18n="nav.services">Services</a>
   <a href="index.html#testimonials" data-i18n="nav.testimonials">Testimonials</a>
   <a href="index.html#contact"      data-i18n="nav.contact">Contact</a>
-  <button id="langToggleMob" class="lang-toggle lang-toggle-mob" aria-label="Switch language">
-    <span id="langLabelMob">ES</span>
-  </button>
+  <div class="lang-switch lang-switch-mob" role="group" aria-label="Language / Idioma">
+    <span class="ls-thumb"></span>
+    <button type="button" class="ls-opt" data-lang="en" aria-label="English">
+      <i class="ls-flag flag-us"></i><span>English</span>
+    </button>
+    <button type="button" class="ls-opt" data-lang="es" aria-label="Español">
+      <i class="ls-flag flag-mx"></i><span>Español</span>
+    </button>
+  </div>
 </div>
 
 <!-- Property content injected by property.js -->
@@ -207,8 +204,10 @@
       const key = el.getAttribute('data-i18n');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
-    const lbl  = document.getElementById('langLabel');    if (lbl)  lbl.textContent  = lang === 'en' ? 'ES' : 'EN';
-    const lblM = document.getElementById('langLabelMob'); if (lblM) lblM.textContent = lang === 'en' ? 'ES' : 'EN';
+    document.querySelectorAll('.lang-switch').forEach(s => {
+      s.dataset.active = lang;
+      s.querySelectorAll('.ls-opt').forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+    });
     document.title = lang === 'es' ? 'Detalles de Propiedad | Tu Casa con Laura' : 'Property Details | Tu Casa con Laura';
     localStorage.setItem('tcl-lang', lang);
     window.__currentLang = lang;
@@ -224,8 +223,14 @@
   }
 
   function initToggle() {
-    const b  = document.getElementById('langToggle');    if (b)  b.addEventListener('click',  () => applyLang(window.__currentLang === 'en' ? 'es' : 'en'));
-    const bm = document.getElementById('langToggleMob'); if (bm) bm.addEventListener('click', () => applyLang(window.__currentLang === 'en' ? 'es' : 'en'));
+    document.querySelectorAll('.lang-switch .ls-opt').forEach(b => {
+      b.addEventListener('click', () => {
+        if (b.dataset.lang === window.__currentLang) return;
+        applyLang(b.dataset.lang);
+        const sw = b.closest('.lang-switch');
+        sw.classList.remove('ls-pop'); void sw.offsetWidth; sw.classList.add('ls-pop');
+      });
+    });
   }
 
   applyLang(detectLang());

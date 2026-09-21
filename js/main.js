@@ -4,6 +4,19 @@
 
 const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
+/* ── FALLBACK DE IMÁGENES ROTAS ──
+   Si una foto no carga, se reemplaza por un placeholder elegante
+   en vez de mostrar el texto alt y el ícono de imagen rota. */
+window.cvImgFallback = function (img) {
+  if (!img || img.dataset.failed) return;
+  img.dataset.failed = "1";
+  img.onerror = null;
+  const ph = document.createElement("div");
+  ph.className = "img-fallback";
+  ph.innerHTML = '<i class="fas fa-home"></i><span>Tu Casa con Laura</span>';
+  img.replaceWith(ph);
+};
+
 /* ── CUSTOM CURSOR (desktop only) ── */
 if (!isTouchDevice) {
   const cur  = document.getElementById("cur");
@@ -278,7 +291,7 @@ function renderPropertyCard(property, index) {
 
   return `
     <div class="p-card ${index < 3 ? "on" : ""}">
-      ${cover ? `<img src="${cover}" class="p-img" alt="${title}" loading="lazy">` : ""}
+      ${cover ? `<img src="${cover}" class="p-img" alt="${title}" loading="lazy" referrerpolicy="no-referrer" onerror="cvImgFallback(this)">` : `<div class="img-fallback"><i class="fas fa-home"></i><span>Tu Casa con Laura</span></div>`}
       <div class="p-ov">
         <span class="p-tag ${tagClass(status)}">${status}</span>
         <h3 class="p-name">${title}</h3>
@@ -319,11 +332,15 @@ function renderSoldCard(property, index) {
   const hasMultiple = slides.length > 1;
   const cardId = `sold-${property.id || index}`;
 
-  const slidesHTML = slides.map(src => `
+  const slidesHTML = slides.length ? slides.map(src => `
     <div class="sold-card-slide">
-      <img src="${src}" alt="${title}" loading="lazy">
+      <img src="${src}" alt="${title}" loading="lazy" referrerpolicy="no-referrer" onerror="cvImgFallback(this)">
     </div>
-  `).join("");
+  `).join("") : `
+    <div class="sold-card-slide">
+      <div class="img-fallback"><i class="fas fa-home"></i><span>Tu Casa con Laura</span></div>
+    </div>
+  `;
 
   const dotsHTML = hasMultiple ? `
     <div class="sold-card-dots" id="dots-${cardId}">
@@ -388,8 +405,8 @@ function renderFeaturedSoldCard(property, index) {
     <div class="featured-sold-card on" id="${cardId}">
       <div class="fsc-img-wrap">
         ${imgSrc
-          ? `<img src="${imgSrc}" alt="${title}" loading="lazy" class="fsc-img">`
-          : `<div class="fsc-img fsc-no-img"><i class="fas fa-home"></i></div>`
+          ? `<img src="${imgSrc}" alt="${title}" loading="lazy" class="fsc-img" referrerpolicy="no-referrer" onerror="cvImgFallback(this)">`
+          : `<div class="img-fallback"><i class="fas fa-home"></i><span>Tu Casa con Laura</span></div>`
         }
         <div class="fsc-img-ov"></div>
         <div class="fsc-ribbon">
